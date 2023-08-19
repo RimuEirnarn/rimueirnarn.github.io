@@ -28,13 +28,13 @@
     <!-- sw.js -->
     <!-- some were copied into here -->
     <meta name="theme-color" content="#212529">
-    <link rel="manifest" href="/static/manifest.json">
+    <link rel="manifest" href="/manifest.json">
 
 
     <script>
       if(location.protocol == 'http:') location.protocol = 'https:';
       if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('static/sw.js')
+        navigator.serviceWorker.register('/sw.js')
           .then(reg => console.log('SW registered', reg))
           .catch(err => console.error('SW not registered', err));
       } else {
