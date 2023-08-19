@@ -8,12 +8,6 @@
       "type": "image/png",
       "src": "https://rimueirnarn.github.io/static/rimu-enhanced-reduced.png",
       "purpose": "any"
-    },
-    {
-      "sizes": "180x180",
-      "type": "image/png",
-      "src": "https://cdn.glitch.me/efc5414a-882b-4708-af81-8461abbc1a82%2Ftouch-icon.png?v=1633521972305",
-      "purpose": "maskable"
     }
   ],
   "display": "standalone",
