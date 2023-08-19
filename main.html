@@ -5,8 +5,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="RimuEirnarn's home page">
+    <meta name="description" content="RimuEirnarn's homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:description" content="RimuEirnarn's homepage" />
+    <meta property="og:image" content="/static/rimu-enhanced-reduced.png" />
+    <meta property="og:title" content="RimuEirnarn - About Me" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="twitter:card" content="summary" />
 
     <!-- CSS -->
     <!--link href="assets/css/bootstrap.min.css" rel="stylesheet" -->
@@ -17,6 +24,24 @@
     <!--script src="assets/js/bootstrap.bundle.min.js" defer></script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="static/main.js" defer></script>
+
+    <!-- sw.js -->
+    <!-- some were copied into here -->
+    <meta name="theme-color" content="#212529">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="apple-touch-icon" href="https://cdn.glitch.me/efc5414a-882b-4708-af81-8461abbc1a82%2Ftouch-icon.png?v=1633521972305">
+
+
+    <script>
+      if(location.protocol == 'http:') location.protocol = 'https:';
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registered', reg))
+          .catch(err => console.error('SW not registered', err));
+      } else {
+        console.warn('Service Worker not supported in this browser');
+      }
+    </script>
 
     <title>RimuEirnarn - About Me</title>
 </head>
