@@ -42,7 +42,7 @@ function __redir_anime() {
         <p>Proceed?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refresh_modal()">No</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="${target}-no">No</button>
         <button type="button" class="btn btn-primary" id="${target}">Yes</button>
       </div>
     </div>
@@ -57,6 +57,7 @@ function __redir_anime() {
     target_element.onclick = () => {
         document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
+    document.querySelector(`#${target}-no`).onclick = refresh_modal
     sleep(0.1, () => {
         var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {
             focus: true
