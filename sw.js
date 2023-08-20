@@ -15,6 +15,10 @@ self.addEventListener("install", e => {
         "/favicon.ico",
         "/main.html",
         "/static/main.js",
+        "/static/utils.js",
+        "/static/seamless.js",
+        "/static/alerts.js",
+        "/components/main.html",
         "/static/rimu-enhanced-reduced.png",
         "/static/color.css",
         "/.well-known/discord"
