@@ -1,4 +1,9 @@
 // lmao, pythonic
+
+import { getCookie, setCookie } from "/static/utils.js"
+import { showAlert } from "/static/alerts.js"
+import { transitionRoot, transitionTo } from "/static/seamless.js"
+
 var __version__ = "0.0.2"
 
 /**
@@ -59,20 +64,33 @@ function __redir_anime() {
     modal.show()
 }
 
+async function _sleep(time) {
+    await new Promise(resolve => setTimeout(resolve, time * 1000))
+}
 /**
  * sleep
  * @param time time as second
  */
-async function sleep(time) {
-    await new Promise(resolve => setTimeout(resolve, time * 1000))
+function sleep(time, callback) {
+    _sleep(1).then(callback)
 }
 
 async function __beta_popup() {
     await sleep(0.2)
 }
 
+
 // To Be Added
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-  console.info(`Loaded ${window.location.host}/main.js [${__version__}]`)
+    console.info(`Loaded ${window.location.host}/main.js [${__version__}]`)
+    transitionRoot()
+    let initCookie = getCookie("init")
+    if (initCookie === undefined) {
+        showAlert({
+            body: "This site is in beta version! Some is not in a good form and some haven't been added yet. More and more content will be there in the future. I hope. Also, this site uses cookies. No information is shared anyway.",
+            type: "info"
+        })
+        setCookie("init", "yes")
+    }
 });

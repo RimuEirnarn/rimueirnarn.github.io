@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <!-- Required meta tags -->
@@ -17,13 +17,14 @@
 
     <!-- CSS -->
     <!--link href="assets/css/bootstrap.min.css" rel="stylesheet" -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="static/color.css">
-
     <!-- JS -->
     <!--script src="assets/js/bootstrap.bundle.min.js" defer></script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="static/main.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="static/main.js" defer type='module'></script>
 
     <!-- sw.js -->
     <!-- some were copied into here -->
@@ -32,7 +33,7 @@
 
 
     <script>
-      if(location.protocol == 'http:') location.protocol = 'https:';
+      if ((location.protocol == 'http:') && location.host != "localhost") location.protocol = 'https:';
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
           .then(reg => console.log('SW registered', reg))
@@ -63,48 +64,15 @@
             </ul>
         </header>
     </nav>
-    <main class="container-fluid">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            This site is in beta version! Some is not in a good form and some haven't been added yet.
-            More and more content will be there in the future. I hope.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="container-fluid" id="alerts"></div>
+    <main class="container-fluid" id="app">
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-        <div class="card text-white bg-dark mb-3">
-            <div class="card-body">
-                <div class="d-flex m-2 mb-5">
-                    <img src="static/rimu-enhanced-reduced.png" width="120px" height="120px"
-                        class="rounded-circle justify-content-around border border-dark" />
-                    <div class="align-self-center m-4">
-                        <h4 class="card-title justify-content-around align-self-baseline">RimuEirnarn</h4>
-                        <h5 class="card-subtitle justify-content-around align-self-end">Vocational Highschool Student
-                        </h5>
-                    </div>
-                </div>
-                <p>I'm RimuEirnarn, second-year vocational highschool student. Taking a domination (of learning) on Python. Attempted to set sail at Web Development, Game Development, and Machine Learning</p>
-                <p>I am now a part of a random organization at <a href="https://github.com/Roris-Vardshus">Roris Värdshus</a>.</p>
-                <h5><strong><u>Skills</u></strong></h5>
-                <p>I frequently uses Python. In other side, i use C/C++, and PHP.</p>
-                <p>Tools frequently used:</p>
-                <ul>
-                    <li>Flask</li>
-                    <li>Argh</li>
-                    <li>SQLite</li>
-                    <li>Bootstrap</li>
-                    <li>Laravel (still learning!)</li>
-                </ul>
-                <p>Languages i learn so far (sorted by frequency)</p>
-                <ul>
-                    <li>Python</li>
-                    <li>PHP</li>
-                    <li>C/C++</li>
-                    <li>JavaScript</li>
-                    <li>Java</li>
-                </ul>
-            </div>
-        </div>
+      </div>
     </main>
-    <div class="container-0">
-    </div>
+    <div class="container-0"></div>
 </body>
 
 </html>
