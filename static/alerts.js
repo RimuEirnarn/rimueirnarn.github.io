@@ -49,6 +49,9 @@ function showAlert(config) {
     ${title} ${sanitize(body)}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
     $(ALERT_CONFIG.target).prepend(html)
+    console.info("[alerts.js] Invoked alert")
 }
+
+console.info(`${window.location.host}/static/alerts.js Loaded`)
 
 export { showAlert }

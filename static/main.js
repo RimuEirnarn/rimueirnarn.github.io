@@ -4,7 +4,7 @@ import { getCookie, setCookie } from "/static/utils.js"
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.0.2"
+var __version__ = "0.1.0"
 
 /**
  * show current project version or atleast the new version/rework version.
@@ -56,12 +56,12 @@ function __redir_anime() {
     target_element.onclick = () => {
         document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
-    sleep(0.1).then(() => {})
-
-    var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {
-        focus: true
+    sleep(0.1).then(() => {
+        var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {
+            focus: true
+        })
+        modal.show()
     })
-    modal.show()
 }
 
 async function _sleep(time) {
@@ -72,7 +72,7 @@ async function _sleep(time) {
  * @param time time as second
  */
 function sleep(time, callback) {
-    _sleep(1).then(callback)
+    _sleep(time).then(callback !== undefined ? callback : () => null)
 }
 
 async function __beta_popup() {

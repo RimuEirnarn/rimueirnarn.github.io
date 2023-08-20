@@ -42,7 +42,9 @@ function transitionTo(component) {
     $.ajax({
         url: `/components/${component}.html`,
         success(response) {
-            processAjaxData(response, `${constructURL()}#/${component}`)
+            let title = `${constructURL()}#/${component}`
+            console.info(`[seamless.js] Transition to ${title}`)
+            processAjaxData(response, title)
         },
         error(response, statusN, text){
             console.error(`${statusN} -> ${text}`)
@@ -54,19 +56,8 @@ function transitionRoot() {
      $.ajax({
         url: "/components/main.html",
         success(response) {
+            console.info("[seamless.js] Transitioning to root")
             processAjaxData(response, "/")
-        },
-        error(response, statusN, text){
-            console.error(`${statusN} -> ${text}`)
-        }
-    })
-}
-
-function initRoot() {
-    $.ajax({
-        url: "/components/main.html",
-        success(response) {
-            _ProcessData($("#app"), response)
         },
         error(response, statusN, text){
             console.error(`${statusN} -> ${text}`)
@@ -78,6 +69,6 @@ function constructURL() {
     return `${window.location.pathname}`
 }
 
-console.log(`${window.location.host}/static/seamless.js Loaded`)
+console.info(`${window.location.host}/static/seamless.js Loaded`)
 
 export { CONFIG, transitionTo, transitionRoot }
