@@ -1,6 +1,6 @@
 // lmao, pythonic
 
-import { getCookie, setCookie } from "/static/utils.js"
+import { getCookie, setCookie, sleep } from "/static/utils.js"
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
@@ -19,10 +19,11 @@ function refresh_modal(){
     if (x) {
         x.classList.add("fade")
         x.style = ""
-        sleep(0.3).then(() => {})
-    }
-    while (container.firstChild) {
-          container.removeChild(container.firstChild);
+        sleep(0.3, () => {
+            while (container.firstChild) {
+                container.removeChild(container.firstChild)
+            }
+        })
     }
 }
 
@@ -56,7 +57,7 @@ function __redir_anime() {
     target_element.onclick = () => {
         document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
-    sleep(0.1).then(() => {
+    sleep(0.1, () => {
         var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {
             focus: true
         })
@@ -64,26 +65,11 @@ function __redir_anime() {
     })
 }
 
-async function _sleep(time) {
-    await new Promise(resolve => setTimeout(resolve, time * 1000))
-}
-/**
- * sleep
- * @param time time as second
- */
-function sleep(time, callback) {
-    _sleep(time).then(callback !== undefined ? callback : () => null)
-}
-
-async function __beta_popup() {
-    await sleep(0.2)
-}
-
-
 // To Be Added
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     console.info(`Loaded ${window.location.host}/main.js [${__version__}]`)
+    $("button#anime").on("click", __redir_anime)
     transitionRoot()
     let initCookie = getCookie("init")
     if (initCookie === undefined) {

@@ -13,6 +13,18 @@ function sanitize(string) {
   return string.replace(reg, (match)=>(map[match]));
 }
 
+
+async function _sleep(time) {
+    await new Promise(resolve => setTimeout(resolve, time * 1000))
+}
+/**
+ * sleep
+ * @param time time as second
+ */
+function sleep(time, callback) {
+    _sleep(time).then(callback !== undefined ? callback : () => null)
+}
+
 /**
  * Get the value of a cookie
  * Source: https://gist.github.com/wpsmith/6cf23551dd140fb72ae7
@@ -40,4 +52,4 @@ function setCookie(name, value) {
     document.cookie = value;
 }
 
-export { sanitize, getCookie, setCookie }
+export { sanitize, getCookie, setCookie, sleep }
