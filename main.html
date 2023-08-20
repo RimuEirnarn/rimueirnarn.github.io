@@ -36,8 +36,8 @@
       if ((location.protocol == 'http:') && location.host != "localhost") location.protocol = 'https:';
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
-          .then(reg => console.log('SW registered', reg))
-          .catch(err => console.error('SW not registered', err));
+          .then(reg => console.info('/sw.js registered', window.location.host === "localhost" ? reg : null))
+          .catch(err => console.error('/sw.js not registered', err));
       } else {
         console.warn('Service Worker not supported in this browser');
       }
