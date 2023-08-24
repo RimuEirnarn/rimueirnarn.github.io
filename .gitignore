@@ -1,0 +1,4 @@
+.venv
+.env
+start.sh
+main.py

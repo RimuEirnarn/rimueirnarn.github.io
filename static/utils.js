@@ -52,4 +52,8 @@ function setCookie(name, value) {
     document.cookie = value;
 }
 
-export { sanitize, getCookie, setCookie, sleep }
+function isDebug() {
+    return ["localhost", "local.rimueirnarn.net"].includes(location.host)
+}
+
+export { sanitize, getCookie, setCookie, sleep, isDebug }

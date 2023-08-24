@@ -45,8 +45,7 @@ function showAlert(config) {
     let aType = _reparse(config.type)
 
     let html = `<div class="alert alert-${aType} alert-dismissible fade show" role="alert">
-    ${_fetchIcon(aType)}
-    ${title} ${sanitize(body)}
+    ${_fetchIcon(aType)} ${title} - ${sanitize(body)}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
     $(ALERT_CONFIG.target).prepend(html)
     console.info("[alerts.js] Invoked alert")

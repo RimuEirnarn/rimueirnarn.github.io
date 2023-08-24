@@ -1,3 +1,6 @@
+import { getCookie } from "/static/utils.js"
+import { showAlert } from "/static/alerts.js"
+
 /**
  * @summary Application Config
  */
@@ -25,7 +28,14 @@ function processAjaxData(response, urlPath){
     if ((content.tagName !== "DIV") && (content.tagName !== "MAIN")) throw new Error("Content wrapper is not a div or main")
     
     let title = _ProcessData(target, response)
-    window.history.pushState({"html": response, "pageTitle": title},"", urlPath)
+    let currentHistory = window.history.state || {'url': "/"}
+    console.info(`[seamless.js] current history length: ${window.history.length}`)
+    if ((currentHistory.url == urlPath) && window.history.length >= 2) {
+        console.info("[seamless.js] Found matching state, attempted to replace than adding")
+        window.history.replaceState({'html': response, 'pageTitle': title, "url": urlPath}, "", urlPath)
+        return
+    }
+    window.history.pushState({"html": response, "pageTitle": title, "url": urlPath},"", urlPath)
 }
 
 window.onpopstate = function(e){
@@ -34,33 +44,63 @@ window.onpopstate = function(e){
     }
 };
 
+function _makeTransitionConfig(config) {
+    return config === undefined ? {
+        success(response) {},
+        error(response, statusN, text) {
+            showAlert({title: `Transition failed`, body: text, type: "error"})
+        },
+        init: false
+    } : {
+        success: config.success !== undefined ? config.success : (default_response) => null,
+        error: config.error !== undefined ? config.error : (default_response, statusN, text) => null,
+        init: config.init !== undefined ? config.init : false
+    }
+}
+
+function _checkPath(path) {
+    return path.includes("..")
+}
+
 /**
  * @brief Transition To, fetch -> change
  * @param {String} component
  */
-function transitionTo(component) {
+function transitionTo(component, config) {
+    let _config = _makeTransitionConfig(config)
+    if (_checkPath(component)) {
+        console.error("Nope, what are you gonna do?")
+        _config.error({}, 500, "Path Traversal Error")
+        return
+    }
     $.ajax({
         url: `/components/${component}.html`,
         success(response) {
             let title = `${constructURL()}#/${component}`
             console.info(`[seamless.js] Transition to ${title}`)
             processAjaxData(response, title)
+            _config.success(response)
         },
         error(response, statusN, text){
             console.error(`${statusN} -> ${text}`)
+            _config.error(response, statusN, text)
         }
     })
 }
 
-function transitionRoot() {
-     $.ajax({
-        url: "/components/main.html",
+function transitionRoot(config) {
+    let _config = _makeTransitionConfig(config)
+    let component = getCookie('default.view') || 'main'
+    $.ajax({
+        url: `/components/${component}.html`,
         success(response) {
             console.info("[seamless.js] Transitioning to root")
             processAjaxData(response, "/")
+            _config.success(response)
         },
         error(response, statusN, text){
             console.error(`${statusN} -> ${text}`)
+            _config.error(response, statusN, text)
         }
     })
 }

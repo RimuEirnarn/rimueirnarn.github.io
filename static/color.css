@@ -94,3 +94,15 @@
 .color-border-292836,.color-hover-border-292836:hover{border-color: #292836!important;}
 .color-353546,.color-hover-353546:hover{background-color: #353546!important;}
 .color-border-353546,.color-hover-border-353546:hover{border-color: #353546!important;}
+
+.app-background {
+    background-color: rgba(41, 40, 54, 0.6) !important;
+}
+
+.nav-background {
+    background-color: rgba(53, 53, 70, 0.8) !important;
+}
+
+.cmain-background {
+    background-color: rgba(33, 37, 41, 0.6) !important;
+}
