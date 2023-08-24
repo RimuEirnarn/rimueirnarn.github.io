@@ -2,3 +2,4 @@
 .env
 start.sh
 main.py
+*.swp
