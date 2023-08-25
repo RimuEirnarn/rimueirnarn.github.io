@@ -4,13 +4,43 @@ import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.1.3"
+var __version__ = "0.1.3a"
 
 /**
  * show current project version or atleast the new version/rework version.
  */
 function show_version() {
     console.log(__version__)
+}
+
+function swCacheControl(){
+    $.ajax({
+        url: "https://serviceworker.dummy", // yes.
+        method: "POST",
+        headers: {
+            "data": (() => {
+                let state = getCookie('sw.cache').toString()
+                if (state === 'false')
+                    return 'true'
+                return 'false'
+            })()
+        },
+        success(response) {
+            setCookie('sw.cache', response)
+            showAlert({
+                title: "Done",
+                body: `Service worker now ${response === 'true' ? "will cache request" : "fetch from network"}`,
+                type: 'info'
+            })
+        },
+        error(jqxhr, statusN, text) {
+            showAlert({
+                title: 'Failed',
+                body: `Unable to interact with service worker ${text}`,
+                type: 'error'
+            })
+        }
+    })
 }
 
 const varies = {
@@ -209,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $("button#nav-root-goto").on("click", () => {
         transitionRoot()
     })
+    $("#swc-control").on("click", swCacheControl)
     $("button#anime").on("click", __redir_anime)
     main_switcher()
     debugNav()
