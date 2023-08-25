@@ -13,6 +13,23 @@ function show_version() {
     console.log(__version__)
 }
 
+function _swtellInit(){
+    $.ajax({
+        url: "https://serviceworker.dummy", // yes.
+        method: "POST",
+        headers: {
+            "data": getCookie("sw.cache") || 'false'
+        },
+        success(response) {
+            setCookie('sw.cache', response)
+        },
+        error(jqxhr, statusN, text) {
+            console.info("Error telling service worker, refresh may do.")
+        }
+    })
+
+}
+
 function swCacheControl(){
     $.ajax({
         url: "https://serviceworker.dummy", // yes.
@@ -232,8 +249,8 @@ function __redir_anime() {
 
 // To Be Added
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    console.info(`Loaded ${window.location.host}/main.js [${__version__}] [debug? ${isDebug()}]`)
+document.addEventListener("DOMContentLoaded", function(event) {
+    _swtellInit()
     $("#version").append(` v${sanitize(__version__)}`)
     $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
     $("button#nav-root-goto").on("click", () => {
@@ -254,4 +271,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
         setCookie("sw.cache.external", "no")
         setCookie("init", "yes")
     }
+    console.info(`Loaded ${window.location.host}/main.js [${__version__}] [debug? ${isDebug()}]`)
 });
