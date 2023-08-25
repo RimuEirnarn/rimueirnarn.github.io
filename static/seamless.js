@@ -29,9 +29,7 @@ function processAjaxData(response, urlPath){
     
     let title = _ProcessData(target, response)
     let currentHistory = window.history.state || {'url': "/"}
-    console.info(`[seamless.js] current history length: ${window.history.length}`)
     if ((currentHistory.url == urlPath) && window.history.length >= 2) {
-        console.info("[seamless.js] Found matching state, attempted to replace than adding")
         window.history.replaceState({'html': response, 'pageTitle': title, "url": urlPath}, "", urlPath)
         return
     }

@@ -4,7 +4,7 @@ import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.1.0"
+var __version__ = "0.1.3"
 
 /**
  * show current project version or atleast the new version/rework version.
@@ -204,6 +204,7 @@ function __redir_anime() {
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     console.info(`Loaded ${window.location.host}/main.js [${__version__}] [debug? ${isDebug()}]`)
+    $("#version").append(` v${sanitize(__version__)}`)
     $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
     $("button#nav-root-goto").on("click", () => {
         transitionRoot()
