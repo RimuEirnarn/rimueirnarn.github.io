@@ -4,7 +4,11 @@ import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.1.3a"
+var __version__ = "0.1.3b"
+
+const STATE = {
+    isGaveUp: false
+}
 
 /**
  * show current project version or atleast the new version/rework version.
@@ -117,6 +121,9 @@ function main_switcher(){
     $("#target-cmain-switch").on('click', () => {
         $(".container-0").html(data)
         $("#mcs-select").html(_fetchSelection())
+        if (STATE.isGaveUp) {
+            $("#mcs-select").prop('disabled', true)
+        }
         let textError = $("#mcs-modal-error-text")
         let transitionConfig = {
             success(response) {
@@ -139,6 +146,7 @@ function main_switcher(){
         modal.show()
         $("#mcs-modal-close").on('click', refresh_modal)
         $("#mcs-modal-submit").on('click', () => {
+            if (STATE.isGaveUp) return
             let component = $("#mcs-select").val()
             if (!component) {
                 return
@@ -251,25 +259,47 @@ function __redir_anime() {
 
 document.addEventListener("DOMContentLoaded", function(event) {
     _swtellInit()
-    $("#version").append(` v${sanitize(__version__)}`)
-    $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
-    $("button#nav-root-goto").on("click", () => {
-        transitionRoot()
+    $.ajax({
+        url: "/status",
+        success(response) {
+            console.info(`status -> ${response}`)
+            if (response === "13") {
+                STATE.isGaveUp = true
+                setCookie('backup.default.view', getCookie('default.view'))
+                setCookie("default.view", 'gaveup')
+            } else {
+                let backup = getCookie("backup.default.view") || getCookie('default.view')
+                setCookie('default.view', backup)
+            }
+            $("#version").append(` v${sanitize(__version__)}`)
+            $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
+            $("button#nav-root-goto").on("click", () => {
+                transitionRoot()
+            })
+            $("#swc-control").on("click", swCacheControl)
+            $("button#anime").on("click", __redir_anime)
+            main_switcher()
+            debugNav()
+            transitionRoot()
+            let initCookie = getCookie("init")
+            if (initCookie === undefined) {
+                showAlert({
+                    title: "Hello!",
+                    body: "This site is in beta version! Some is not in a good form and some haven't been added yet. More and more content will be there in the future. I hope. Also, this site uses cookies. No information is shared anyway.",
+                    type: "info"
+                })
+                setCookie("default.view", "main")
+                setCookie("sw.cache.external", "no")
+                setCookie("init", "yes")
+            }
+        },
+        error(jqxhr, status_, text) {
+            showAlert({
+                title: "Uh no!",
+                body: "Error has occurred, no status of its owner has found.",
+                type: 'error'
+            })
+        }
     })
-    $("#swc-control").on("click", swCacheControl)
-    $("button#anime").on("click", __redir_anime)
-    main_switcher()
-    debugNav()
-    transitionRoot()
-    let initCookie = getCookie("init")
-    if (initCookie === undefined) {
-        showAlert({
-            body: "This site is in beta version! Some is not in a good form and some haven't been added yet. More and more content will be there in the future. I hope. Also, this site uses cookies. No information is shared anyway.",
-            type: "info"
-        })
-        setCookie("default.view", "main")
-        setCookie("sw.cache.external", "no")
-        setCookie("init", "yes")
-    }
     console.info(`Loaded ${window.location.host}/main.js [${__version__}] [debug? ${isDebug()}]`)
 });
