@@ -38,7 +38,14 @@ function _swtellInit(){
 }
 
 function swCacheControl(){
-    if (!SWEnabled) return
+    if (!SWEnabled) {
+        showAlert({
+            title: "No service worker",
+            body: "The service worker is not registered.",
+            type: 'info'
+        })
+        return
+    }
     $.ajax({
         url: "https://serviceworker.dummy", // yes.
         method: "POST",
@@ -287,7 +294,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             $("button#nav-root-goto").on("click", () => {
                 transitionRoot()
             })
-            $("#swc-control").on("click", swCacheControl)
+            if (SWEnabled) {
+                $("#swc-control").on("click", swCacheControl)
+            } else {
+                $("#swc-control").remove()
+            }
             $("button#anime").on("click", __redir_anime)
             main_switcher()
             debugNav()
