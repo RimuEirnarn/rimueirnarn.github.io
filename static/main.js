@@ -269,8 +269,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             console.info(`status -> ${response}`)
             if (response === "13") {
                 STATE.isGaveUp = true
-                setCookie('backup.default.view', getCookie('default.view') || 'main')
-                setCookie("default.view", 'gaveup')
+                let backup = getCookie('default.view')
+                if (backup !== 'gaveup') {
+                    setCookie('default.view', 'gaveup')
+                    setCookie('backup.default.view', backup)
+                }
             } else {
                 let backup = getCookie("backup.default.view") || getCookie('default.view')
                 setCookie('default.view', backup)
