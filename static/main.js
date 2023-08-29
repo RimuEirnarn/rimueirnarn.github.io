@@ -150,7 +150,11 @@ function main_switcher(){
         modal.show()
         $("#mcs-modal-close").on('click', refresh_modal)
         $("#mcs-modal-submit").on('click', () => {
-            if (STATE.isGaveUp) return textError.text("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
+            if (STATE.isGaveUp) {
+                textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
+                textError.text("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
+                return
+            }
             let component = $("#mcs-select").val()
             if (!component) {
                 return
