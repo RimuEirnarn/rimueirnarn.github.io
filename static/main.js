@@ -10,6 +10,8 @@ const STATE = {
     isGaveUp: false
 }
 
+const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
+
 /**
  * show current project version or atleast the new version/rework version.
  */
@@ -18,6 +20,7 @@ function show_version() {
 }
 
 function _swtellInit(){
+    if (!SWEnabled) return
     $.ajax({
         url: "https://serviceworker.dummy", // yes.
         method: "POST",
@@ -35,6 +38,7 @@ function _swtellInit(){
 }
 
 function swCacheControl(){
+    if (!SWEnabled) return
     $.ajax({
         url: "https://serviceworker.dummy", // yes.
         method: "POST",

@@ -25,14 +25,25 @@
     <!-- JS -->
      <script>
       console.log("Starting on checking service worker")
-      if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
-      else console.info("Running on debug")
-      if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/sw.js')
-          .then(reg => console.info('/sw.js registered'))
-          .catch(err => console.error('/sw.js not registered', err));
+      if (true) {
+        if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
+        else console.info("Running on debug")
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+              .then(reg => {
+                  console.info('/sw.js registered')
+                  $("#app").attr('data-sw', 'true')
+                  reg.unregister().then((stat) => {
+                      console.log('no service worker')
+                      $("#app").attr('data-sw', 'false')
+                  })
+              })
+              .catch(err => console.error('/sw.js not registered', err));
+        } else {
+          console.warn('Service Worker not supported in this browser');
+        }
       } else {
-        console.warn('Service Worker not supported in this browser');
+        console.info("No service worker for today.")
       }
     </script>   <!--script src="assets/js/bootstrap.bundle.min.js" defer></script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
