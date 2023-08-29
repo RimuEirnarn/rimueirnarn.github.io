@@ -4,7 +4,7 @@ import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js
 import { showAlert } from "/static/alerts.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.1.3b"
+var __version__ = "0.1.3c"
 
 const STATE = {
     isGaveUp: false
