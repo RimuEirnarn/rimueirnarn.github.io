@@ -167,6 +167,7 @@ function main_switcher(){
                 return
             }
             setCookie('default.view', component)
+            setCookie('backup.default.view', component)
             transitionRoot(transitionConfig)
         })
     })
