@@ -41,10 +41,10 @@
         navigator.serviceWorker.register('/sw.js')
           .then(reg => {
             GJobControl.updateJob('ServiceWorker', 'done', 'is registered')
-            $("#app").attr('data-sw', 'true')
+            document.querySelector("#app").setAttribute('data-sw', 'true')
             reg.unregister().then((stat) => {
               GJobControl.updateJob('ServiceWorker', 'done', 'is unregistered')
-              $("#app").attr('data-sw', 'false')
+              document.querySelector("#app").setAttribute('data-sw', 'false')
             })
           })
           .catch(err => {
