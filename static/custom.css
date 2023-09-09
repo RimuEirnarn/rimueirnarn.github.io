@@ -73,3 +73,10 @@ span, h1, h2, h3, h4, h5, p, li, button, q {
     z-index: -1;
     pointer-events: none;
 }
+
+header > div > span{
+    pointer-events: none;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+}

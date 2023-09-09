@@ -289,5 +289,6 @@ document.addEventListener('jobs.control.completed', (e) => {
 })
 
 window.onload = () => {
+    GJobControl.updateJob('RimuEirnarn', 'done', 'Everything has been loaded')
     GJobControl.setComplete()
 }
