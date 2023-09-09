@@ -1,0 +1,9 @@
+#app > div {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+}
+
+.bd-image > img {
+    opacity: 0.4;
+}

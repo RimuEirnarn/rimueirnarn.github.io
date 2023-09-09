@@ -55,6 +55,7 @@ function _fetchSelection() {
     return selections
 }
 
+/*
 function main_switcher(){
     if (!(Object.keys($("#target-cmain-switch")).length === 0)) return
     let data = `
@@ -108,21 +109,10 @@ function main_switcher(){
         modal.show()
         $("#mcs-modal-close").on('click', refresh_modal)
         $("#mcs-modal-submit").on('click', () => {
-            if (STATE.isGaveUp) {
-                textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
-                textError.text("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
-                return
-            }
-            let component = $("#mcs-select").val()
-            if (!component) {
-                return
-            }
-            setCookie('default.view', component)
-            setCookie('backup.default.view', component)
-            transitionRoot(transitionConfig)
+
         })
     })
-}
+}*/
 
 function debugNav() {
     if ((Object.keys(("#target-debug")).length === 0)) return
@@ -183,14 +173,60 @@ function debugNav() {
     }
 }
 
+function _onViewSelect(textError) {
+    let transitionConfig = {
+        success() {
+            !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
+            $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
+        },
+        error(_, __, error) {
+            textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
+            textError.text(error)
+            setCookie('default.view', currentView)
+        }
+    }
+    if (STATE.isGaveUp) {
+        textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
+        textError.text("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
+        return
+    }
+    let component = $("#viewSelect").val()
+    if (!component) {
+        return
+    }
+    setCookie('default.view', component)
+    setCookie('backup.default.view', component)
+    transitionRoot(transitionConfig)
+
+}
+
 function settings() {
     if ((Object.keys(("#ms-button")).length === 0)) return
     $("#navd-functions").append(`<li><button id="ms-button" class='dropdown-item' type='button'><i class="bi bi-gear"></i> Settings</button></li>`)
     $("#ms-button").on('click', () => {
         makeModal("main-settings", {
             title: "Site settings",
-            body: "",
-            submitText: "Save"
+            body: `<form class="row g-3">
+  <div>
+    <label for="viewSelect" class="form-label">Change if you don't like default view</label>
+    <select id="viewSelect" class="form-select">
+    ${_fetchSelection()}
+    </select>
+    <p class='visually-hidden text-danger' id='selectionFailure'></p>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="swc-cache" disabled>
+      <label class="form-check-label" for="swc-cache">
+        Service Worker Cache Control
+      </label>
+    </div>
+  </div>
+</form>`,
+            submitText: "Save",
+            onSubmit() {
+                _onViewSelect($("#selectionFailure"))
+            }
         })
         var modal = new bootstrap.Modal(document.querySelector("#main-settings"), {
                 focus: true
@@ -268,7 +304,7 @@ function mainLoaded() {
         $("#swc-control").remove()
     }
     $("button#anime").on("click", __redir_anime)
-    main_switcher()
+    //main_switcher()
     debugNav()
     settings()
     transitionRoot()

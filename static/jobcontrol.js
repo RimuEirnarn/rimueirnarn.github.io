@@ -27,7 +27,7 @@ const _JobControl = () => {
                 reason: null
             }
             runningJobs.push(name)
-            console.info(`[${name}] Starting...`)
+            //console.info(`[${name}] Starting...`)
         },
         /**
          * Fetch a job
