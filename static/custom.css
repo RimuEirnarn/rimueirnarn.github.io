@@ -7,8 +7,45 @@
     position: sticky;
 }
 
-#editor-command:not(:focus) {
-    display: none !important;
+#editor-command {
+    font-family: 'Fira Code', monospace !important;
+    position: fixed;
+    z-index: 2000;
+    transform: translateY(-100%);
+    top: auto;
+    pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-color: rgba(0,0,0, 0.8);
+}
+
+
+#buffer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#editor-command > #buffer > input {
+    width: 98%;
+    opacity: 1 !important;
+    border: none;
+    background: none;
+}
+
+.dis-inline {
+    display: inline;
+}
+
+#buffer > input:focus {
+    outline: none;
 }
 
 span, h1, h2, h3, h4, h5, p, li, button {
@@ -19,12 +56,19 @@ span, h1, h2, h3, h4, h5, p, li, button {
     display: none;
 }
 
+.enable {
+    display: flex;
+}
+
 .bd-image {
     position: fixed;
     object-fit: cover;
+    display: inline-block;
 }
 
 .bd-image > img {
     width: 100%;
     opacity: 0.75;
+    z-index: -1;
+    pointer-events: none;
 }

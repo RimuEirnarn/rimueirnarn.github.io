@@ -77,8 +77,10 @@
 </head>
 
 <body class="color-292836 text-light">
-  <div class='bd-image'>
-    <img src="/static/23389.jpeg">
+  <div>
+    <div class='bd-image'>
+      <img src="/static/23389.jpeg">
+    </div>
   </div>
   <nav class="container-fluid nav-background sticky-top">
     <header class="d-flex flex-wrap py-2 mb-4 border-bottom">
@@ -142,8 +144,11 @@
   </main>
   <div class="container-0"></div>
   <div class="places"></div>
-  <div>
-    <input type="text" id="editor-command"/>
+  <div id='editor-command' class='disable'>
+    <div id="buffer">
+      <div id="buffout"></div>
+      <span class='dis-inline'>:</span><input class='dis-inline' type="text"/>
+    </div>
   </div>
 </body>
 

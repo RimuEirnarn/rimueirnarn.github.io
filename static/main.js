@@ -4,8 +4,9 @@ import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js
 import { showAlert } from "/static/html_utils/alerts.js"
 import { makeModal } from "/static/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
+import "/static/editor-command.js"
 
-const __version__ = "0.1.4"
+const __version__ = "0.1.5"
 const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false
@@ -22,6 +23,8 @@ const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
 function show_version() {
     console.log(__version__)
 }
+
+function swCacheControl() {}
 
 const varies = {
     main: "Default view",
