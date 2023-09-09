@@ -18,3 +18,13 @@ span, h1, h2, h3, h4, h5, p, li, button {
 .disable {
     display: none;
 }
+
+.bd-image {
+    position: fixed;
+    object-fit: cover;
+}
+
+.bd-image > img {
+    width: 100%;
+    opacity: 0.75;
+}
