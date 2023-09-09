@@ -1,0 +1,23 @@
+.premount-block {
+    font-family: 'Fira Code', monospace !important;
+    position: fixed;
+    z-index: 2001;
+    transform: translateY(-100%);
+    top: auto;
+    pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-color: #000;
+    color: #fff;
+}
+
+#premount {
+    z-index: 2001;
+    width: 85%;
+    pointer-events: none;
+}

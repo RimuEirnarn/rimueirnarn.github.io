@@ -55,65 +55,6 @@ function _fetchSelection() {
     return selections
 }
 
-/*
-function main_switcher(){
-    if (!(Object.keys($("#target-cmain-switch")).length === 0)) return
-    let data = `
-<div class="modal fade" tabindex="-1" id="main-component-switcher">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Change Default View</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="mcs-modal-close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Tired of seeing long stuff? You can pick other views i created.</p>
-        <select class="form-select" aria-label="Switch views" id="mcs-select">
-        </select>
-        <p class='visually-hidden text-danger' id='mcs-modal-error-text'></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="mcs-modal-close">Close</button>
-        <button type="button" class="btn btn-primary" id="mcs-modal-submit">Change</button>
-      </div>
-    </div>
-  </div>
-</div>
-`
-    $("#navd-functions").append(`<li><button id="target-cmain-switch" class='dropdown-item' type='button'><i class="bi bi-sliders2"></i> View Switch</button></li>`)
-    $("#target-cmain-switch").on('click', () => {
-        $(".container-0").html(data)
-        $("#mcs-select").html(_fetchSelection())
-        if (STATE.isGaveUp) {
-            $("#mcs-select").prop('disabled', true)
-        }
-        let textError = $("#mcs-modal-error-text")
-        let transitionConfig = {
-            success() {
-                !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
-                let _modal = $("#main-component-switcher")
-                modal.hide()
-                _modal.on('hidden.bs.modal', () => _modal.remove())
-                $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
-            },
-            error(_, __, error) {
-                textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
-                textError.text(error)
-                setCookie('default.view', currentView)
-            }
-        }
-
-        var modal = new bootstrap.Modal(document.querySelector("#main-component-switcher"), {
-            focus: true
-        })
-        modal.show()
-        $("#mcs-modal-close").on('click', refresh_modal)
-        $("#mcs-modal-submit").on('click', () => {
-
-        })
-    })
-}*/
-
 function debugNav() {
     if ((Object.keys(("#target-debug")).length === 0)) return
 
@@ -307,7 +248,7 @@ function mainLoaded() {
     //main_switcher()
     debugNav()
     settings()
-    transitionRoot()
+    transitionRoot({success() { GJobControl.setComplete() }})
     let initCookie = getCookie("init")
     if (initCookie === undefined) {
         showAlert({
@@ -320,7 +261,6 @@ function mainLoaded() {
         setCookie("init", "yes")
     }
     GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
-    GJobControl.setComplete()
 
 }
 
@@ -345,5 +285,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('jobs.control.completed', (e) => {
     const detail = e.detail
-    console.info(`[${JOBNAME}] ${detail.success} / ${detail.jobs} (${detail.rate*100}%) [${detail.errors} errors]`)
+    console.info(`[${JOBNAME}] ${detail.stats.success} / ${detail.stats.jobs} (${detail.stats.rate*100}%) [${detail.stats.errors} errors]`)
 })

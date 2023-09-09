@@ -8,6 +8,7 @@ const _JobControl = () => {
     let success = 0
     let errors = 0
     let completed = false
+    let hasFinished = false
     // Example:
     // "main.css": {
     //   status: "starting",
@@ -59,11 +60,21 @@ const _JobControl = () => {
                   runningJobs.splice(index, 1); // 2nd parameter means remove one item only
                 }
             }
-            if (completed && runningJobs.length === 0) {
+            const jobsDetails = {
+                detail: {
+                        stats: this.getStats(),
+                        jobs: this.getJobs()
+                }
+            }
+            if (this.getCompleted()) {
                 console.info("[Job Control] Done")
-                document.dispatchEvent(new CustomEvent("jobs.control.completed", {
-                    detail: this.getStats()
-                }))
+                hasFinished = true
+                !hasFinished ? document.dispatchEvent(new CustomEvent("jobs.control.completed", jobsDetails)) : null
+            }
+            if (!completed){
+                jobsDetails.detail.job = job
+                jobsDetails.detail.job.name = name
+                document.dispatchEvent(new CustomEvent("jobs.control.updated", jobsDetails))
             }
 
         },
@@ -89,6 +100,7 @@ const _JobControl = () => {
                 jobs: 0,
                 success: 0,
                 errors: 0,
+                runs: 0,
                 running: 0,
                 rate: null,
                 completed: completed
@@ -107,16 +119,35 @@ const _JobControl = () => {
         * Marks this job control as finished
         */
         setComplete() {
+            if (hasFinished) return
             const stats = this.getStats()
             // Let the running as is, this only marks there's no more jobs
             if (stats.jobs >= 1) {
                 completed = true
-                return
             }
-            throw new Error("Cannot set while there's no jobs!")
+            if (completed && runningJobs.length === 0) {
+                if (!hasFinished) {
+                    document.dispatchEvent(new CustomEvent("jobs.control.completed", {
+                        detail: {
+                            stats: this.getStats(),
+                            jobs: this.getJobs()
+                        }
+                    }))
+                    hasFinished = true
+                }
+                return true
+            }
         },
         getCompleted() {
-            if (completed && runningJobs.length === 0) return true
+            if ((completed === true) && runningJobs.length === 0) {
+                if (!hasFinished) document.dispatchEvent(new CustomEvent("jobs.control.completed", {
+                    detail: {
+                        stats: this.getStats(),
+                        jobs: this.getJobs()
+                    }
+                }))
+                return true
+            }
             return false
         }
     }
