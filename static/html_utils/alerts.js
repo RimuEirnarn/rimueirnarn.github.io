@@ -2,6 +2,10 @@
 
 import { sanitize } from "/static/utils.js"
 
+const JOBNAME = "Alerts.js"
+GJobControl.setJob(JOBNAME)
+
+
 const ALERT_CONFIG = {
     target: "#alerts"
 }
@@ -51,6 +55,6 @@ function showAlert(config) {
     console.info("[alerts.js] Invoked alert")
 }
 
-console.info(`${window.location.host}/static/alerts.js Loaded`)
+GJobControl.updateJob(JOBNAME, 'done', 'loaded')
 
 export { showAlert }

@@ -1,14 +1,18 @@
 // lmao, pythonic
 
 import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js"
-import { showAlert } from "/static/alerts.js"
+import { showAlert } from "/static/html_utils/alerts.js"
+import { makeModal } from "/static/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/seamless.js"
 
-var __version__ = "0.1.3c"
-
+const __version__ = "0.1.4"
+const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false
 }
+
+// Has been declared in main.html
+// GJobControl.setJob(JOBNAME)
 
 const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
 
@@ -17,62 +21,6 @@ const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
  */
 function show_version() {
     console.log(__version__)
-}
-
-function _swtellInit(){
-    if (!SWEnabled) return
-    $.ajax({
-        url: "https://serviceworker.dummy", // yes.
-        method: "POST",
-        headers: {
-            "data": getCookie("sw.cache") || 'false'
-        },
-        success(response) {
-            setCookie('sw.cache', response)
-        },
-        error(jqxhr, statusN, text) {
-            console.info("Error telling service worker, refresh may do.")
-        }
-    })
-
-}
-
-function swCacheControl(){
-    if (!SWEnabled) {
-        showAlert({
-            title: "No service worker",
-            body: "The service worker is not registered.",
-            type: 'info'
-        })
-        return
-    }
-    $.ajax({
-        url: "https://serviceworker.dummy", // yes.
-        method: "POST",
-        headers: {
-            "data": (() => {
-                let state = getCookie('sw.cache').toString()
-                if (state === 'false')
-                    return 'true'
-                return 'false'
-            })()
-        },
-        success(response) {
-            setCookie('sw.cache', response)
-            showAlert({
-                title: "Done",
-                body: `Service worker now ${response === 'true' ? "will cache request" : "fetch from network"}`,
-                type: 'info'
-            })
-        },
-        error(jqxhr, statusN, text) {
-            showAlert({
-                title: 'Failed',
-                body: `Unable to interact with service worker ${text}`,
-                type: 'error'
-            })
-        }
-    })
 }
 
 const varies = {
@@ -105,7 +53,7 @@ function _fetchSelection() {
 }
 
 function main_switcher(){
-    if ($("#target-cmain-switch") === {}) return
+    if (!(Object.keys($("#target-cmain-switch")).length === 0)) return
     let data = `
 <div class="modal fade" tabindex="-1" id="main-component-switcher">
   <div class="modal-dialog">
@@ -137,14 +85,14 @@ function main_switcher(){
         }
         let textError = $("#mcs-modal-error-text")
         let transitionConfig = {
-            success(response) {
+            success() {
                 !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
                 let _modal = $("#main-component-switcher")
                 modal.hide()
                 _modal.on('hidden.bs.modal', () => _modal.remove())
                 $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
             },
-            error(jqxhr, stat, error) {
+            error(_, __, error) {
                 textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
                 textError.text(error)
                 setCookie('default.view', currentView)
@@ -174,7 +122,8 @@ function main_switcher(){
 }
 
 function debugNav() {
-    if ($("#target-debug") === {}) return
+    if ((Object.keys(("#target-debug")).length === 0)) return
+
     if (isDebug()) {
         let data = `
 <div class="modal fade" tabindex="-1" id="debug-modal">
@@ -202,13 +151,13 @@ function debugNav() {
             $('.container-0').html(data)
             let textError = $("#debug-modal-error-text")
             let transitionConfig = {
-                success(response) {
+                success() {
                     !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
                     let _modal = $("#debug-modal")
                     modal.hide()
                     _modal.on('hidden.bs.modal', () => _modal.remove())
                 },
-                error(jqxhr, stat, error) {
+                error(_, __, error) {
                     textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
                     textError.text(error)
                 }
@@ -229,6 +178,23 @@ function debugNav() {
             })
         })
     }
+}
+
+function settings() {
+    if ((Object.keys(("#ms-button")).length === 0)) return
+    $("#navd-functions").append(`<li><button id="ms-button" class='dropdown-item' type='button'><i class="bi bi-gear"></i> Settings</button></li>`)
+    $("#ms-button").on('click', () => {
+        makeModal("main-settings", {
+            title: "Site settings",
+            body: "",
+            submitText: "Save"
+        })
+        var modal = new bootstrap.Modal(document.querySelector("#main-settings"), {
+                focus: true
+        })
+        modal.show()
+
+    })
 }
 
 function __redir_anime() {
@@ -271,52 +237,64 @@ function __redir_anime() {
     })
 }
 
+function Status13(response){
+    console.info(`status -> ${response}`)
+    if (response === "13") {
+        STATE.isGaveUp = true
+        let backup = getCookie('default.view') || 'main'
+        if (backup !== 'gaveup') {
+            setCookie('default.view', 'gaveup')
+            setCookie('backup.default.view', backup)
+        }
+    } else {
+        let backup = getCookie("backup.default.view") || getCookie('default.view')
+        setCookie('default.view', backup)
+    }
+}
+
+function mainLoaded() {
+    if (GJobControl.getCompleted()) return
+    $("#version").append(` v${sanitize(__version__)}`)
+    $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
+    $("button#nav-root-goto").on("click", () => {
+        transitionRoot()
+    })
+    if (SWEnabled) {
+        $("#swc-control").on("click", swCacheControl)
+    } else {
+        $("#swc-control").remove()
+    }
+    $("button#anime").on("click", __redir_anime)
+    main_switcher()
+    debugNav()
+    settings()
+    transitionRoot()
+    let initCookie = getCookie("init")
+    if (initCookie === undefined) {
+        showAlert({
+            title: "Hello!",
+            body: "This site is in beta version! Some is not in a good form and some haven't been added yet. More and more content will be there in the future. I hope. Also, this site uses cookies. No information is shared anyway.",
+                    type: "info"
+        })
+        setCookie("default.view", "main")
+        setCookie("sw.cache.external", "no")
+        setCookie("init", "yes")
+    }
+    GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
+    GJobControl.setComplete()
+
+}
+
 // To Be Added
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    _swtellInit()
+document.addEventListener("DOMContentLoaded", function() {
     $.ajax({
         url: "/status",
         success(response) {
-            console.info(`status -> ${response}`)
-            if (response === "13") {
-                STATE.isGaveUp = true
-                let backup = getCookie('default.view') || 'main'
-                if (backup !== 'gaveup') {
-                    setCookie('default.view', 'gaveup')
-                    setCookie('backup.default.view', backup)
-                }
-            } else {
-                let backup = getCookie("backup.default.view") || getCookie('default.view')
-                setCookie('default.view', backup)
-            }
-            $("#version").append(` v${sanitize(__version__)}`)
-            $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
-            $("button#nav-root-goto").on("click", () => {
-                transitionRoot()
-            })
-            if (SWEnabled) {
-                $("#swc-control").on("click", swCacheControl)
-            } else {
-                $("#swc-control").remove()
-            }
-            $("button#anime").on("click", __redir_anime)
-            main_switcher()
-            debugNav()
-            transitionRoot()
-            let initCookie = getCookie("init")
-            if (initCookie === undefined) {
-                showAlert({
-                    title: "Hello!",
-                    body: "This site is in beta version! Some is not in a good form and some haven't been added yet. More and more content will be there in the future. I hope. Also, this site uses cookies. No information is shared anyway.",
-                    type: "info"
-                })
-                setCookie("default.view", "main")
-                setCookie("sw.cache.external", "no")
-                setCookie("init", "yes")
-            }
+            Status13(response)
+            mainLoaded()
         },
-        error(jqxhr, status_, text) {
+        error() {
             showAlert({
                 title: "Uh no!",
                 body: "Error has occurred, no status of its owner has found.",
@@ -324,5 +302,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             })
         }
     })
-    console.info(`Loaded ${window.location.host}/main.js [${__version__}] [debug? ${isDebug()}]`)
 });
+
+document.addEventListener('jobs.control.completed', (e) => {
+    const detail = e.detail
+    console.info(`[${JOBNAME}] ${detail.success} / ${detail.jobs} (${detail.rate*100}%) [${detail.errors} errors]`)
+})

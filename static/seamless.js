@@ -1,5 +1,8 @@
 import { getCookie } from "/static/utils.js"
-import { showAlert } from "/static/alerts.js"
+import { showAlert } from "/static/html_utils/alerts.js"
+
+const JOBNAME = "Seamless.js"
+GJobControl.setJob(JOBNAME)
 
 /**
  * @summary Application Config
@@ -44,14 +47,14 @@ window.onpopstate = function(e){
 
 function _makeTransitionConfig(config) {
     return config === undefined ? {
-        success(response) {},
-        error(response, statusN, text) {
+        success() {},
+        error(_, __, text) {
             showAlert({title: `Transition failed`, body: text, type: "error"})
         },
         init: false
     } : {
-        success: config.success !== undefined ? config.success : (default_response) => null,
-        error: config.error !== undefined ? config.error : (default_response, statusN, text) => null,
+        success: config.success !== undefined ? config.success : (_) => null,
+        error: config.error !== undefined ? config.error : (_, __, ___) => null,
         init: config.init !== undefined ? config.init : false
     }
 }
@@ -112,6 +115,6 @@ function constructURL() {
     return `${window.location.pathname}`
 }
 
-console.info(`${window.location.host}/static/seamless.js Loaded`)
+GJobControl.updateJob(JOBNAME, 'done', 'loaded')
 
 export { CONFIG, transitionTo, transitionRoot }

@@ -7,3 +7,14 @@
     position: sticky;
 }
 
+#editor-command:not(:focus) {
+    display: none !important;
+}
+
+span, h1, h2, h3, h4, h5, p, li, button {
+    font-family: 'Fira Code', monospace;
+}
+
+.disable {
+    display: none;
+}
