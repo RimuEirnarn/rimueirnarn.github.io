@@ -248,7 +248,7 @@ function mainLoaded() {
     //main_switcher()
     debugNav()
     settings()
-    transitionRoot({success() { GJobControl.setComplete() }})
+    transitionRoot()
     let initCookie = getCookie("init")
     if (initCookie === undefined) {
         showAlert({
@@ -287,3 +287,7 @@ document.addEventListener('jobs.control.completed', (e) => {
     const detail = e.detail
     console.info(`[${JOBNAME}] ${detail.stats.success} / ${detail.stats.jobs} (${detail.stats.rate*100}%) [${detail.stats.errors} errors]`)
 })
+
+window.onload = () => {
+    GJobControl.setComplete()
+}
