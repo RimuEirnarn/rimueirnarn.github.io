@@ -91,7 +91,9 @@ function transitionTo(component, config) {
 
 function transitionRoot(config) {
     let _config = _makeTransitionConfig(config)
-    let component = getCookie('default.view') || 'main'
+    let component = getCookie('default.view')
+    if (!component)
+        component = "main"
     if (_checkPath(component)) {
         console.error("Nope, what are you gonna do?")
         component = "main"

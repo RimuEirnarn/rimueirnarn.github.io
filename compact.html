@@ -35,7 +35,6 @@
     GJobControl.setJob('RimuEirnarn')
     GJobControl.setJob("main.js")
     GJobControl.setJob('ServiceWorker')
-    document.querySelector("#app").setAttribute('data-sw', 'false')
     if (false) {
       if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
       else console.info("Running on debug")
@@ -135,7 +134,27 @@
       </div>
     </noscript>
   </div>
-  <main class="container-fluid" id="app"></main>
+  <main class="container-fluid" id="app" data-sw="false">
+    <div class="card text-white cmain-background mb-3 shadow-lg">
+      <div class="card-body">
+        <div class="d-flex m-2 mb-5">
+          <img src="static/rimu-enhanced-reduced.png" width="120px" height="120px"
+            class="rounded-circle justify-content-around border border-dark" />
+          <div class="align-self-center m-4">
+            <h4 class="card-title justify-content-around align-self-baseline">RimuEirnarn</h4>
+            <h5 class="card-subtitle justify-content-around align-self-end">Vocational Highschool Student
+            </h5>
+          </div>
+        </div>
+        <p>I'm RimuEirnarn, second-year vocational highschool student. Taking a domination (of learning) on Python.
+          Attempted to set sail at Web Development, Game Development, and Machine Learning</p>
+        <p>I am now a part of a random organization at <a href="https://github.com/Roris-Vardshus">Roris Värdshus</a>.
+        </p>
+        <p>These are sites that i created: <a href="https://rimueirnarn.github.io">rimueirnarn.github.io</a> and at <a
+            href="https://rimueirnarn.glitch.me">rimueirnarn.glitch.me</a>.
+      </div>
+    </div>
+  </main>
   <div class="container-0"></div>
   <div class="places"></div>
   <div id='loading'>

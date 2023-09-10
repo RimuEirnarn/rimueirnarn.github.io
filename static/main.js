@@ -248,7 +248,6 @@ function mainLoaded() {
     //main_switcher()
     debugNav()
     settings()
-    transitionRoot()
     let initCookie = getCookie("init")
     if (initCookie === undefined) {
         showAlert({
@@ -260,6 +259,8 @@ function mainLoaded() {
         setCookie("sw.cache.external", "no")
         setCookie("init", "yes")
     }
+    if (!(document.location.pathname === '/compact.html'))
+        transitionRoot()
     GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
 
 }
