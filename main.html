@@ -35,7 +35,7 @@
     GJobControl.setJob('RimuEirnarn')
     GJobControl.setJob("main.js")
     GJobControl.setJob('ServiceWorker')
-    document.querySelector("#app").setAttribute('data-sw', 'false')
+    //document.querySelector("#app").setAttribute('data-sw', 'false')
     if (false) {
       if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
       else console.info("Running on debug")
@@ -80,7 +80,7 @@
   <title>RimuEirnarn</title>
 </head>
 
-<body class="color-292836 text-light" style='overflow: hidden'>
+<body class="color-292836 text-light" style='overflow: hidden' data-sw='false'>
   <div>
     <div class='bd-image'>
       <img src="/static/23389.jpeg">
