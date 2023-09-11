@@ -1,5 +1,5 @@
 .venv
 .env
 start.sh
-main.py
 *.swp
+/dist

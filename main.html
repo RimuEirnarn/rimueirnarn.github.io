@@ -35,7 +35,6 @@
     GJobControl.setJob('RimuEirnarn')
     GJobControl.setJob("main.js")
     GJobControl.setJob('ServiceWorker')
-    //document.querySelector("#app").setAttribute('data-sw', 'false')
     if (false) {
       if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
       else console.info("Running on debug")
@@ -82,7 +81,7 @@
 
 <body class="color-292836 text-light" style='overflow: hidden' data-sw='false'>
   <div>
-    <div class='bd-image'>
+    <div class='bd-image' style='display: none;'>
       <img src="/static/23389.jpeg">
     </div>
   </div>
@@ -137,7 +136,6 @@
   </div>
   <main class="container-fluid" id="app"></main>
   <div class="container-0"></div>
-  <div class="places"></div>
   <div id='loading'>
     <div class='premount-block'></div>
     <div id="premount" class='position-absolute top-50 start-50 translate-middle'>
@@ -153,6 +151,9 @@
       <div id="buffout"></div>
       <span class='dis-inline'>:</span><input class='dis-inline' type="text" />
     </div>
+  </div>
+  <!-- Backup contents -->
+  <div id="app-backup" class='disable'>
   </div>
 </body>
 
