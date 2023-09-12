@@ -8,6 +8,12 @@
       "type": "image/png",
       "src": "https://rimueirnarn.github.io/static/rimu-enhanced-reduced.png",
       "purpose": "any"
+    },
+    {
+      "sizes": "600x600",
+      "type": "image/webp",
+      "src": "https://rimueirnarn.github.io/static/rimu-enhanced-reduced.webp",
+      "purpose": "any"
     }
   ],
   "display": "standalone",
