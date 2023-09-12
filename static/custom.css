@@ -82,7 +82,7 @@ header > div > span{
 }
 
 body {
-    background-image: url('/static/23389.jpeg');
+    background-image: url('/static/background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
