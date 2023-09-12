@@ -3,3 +3,4 @@
 start.sh
 *.swp
 /dist
+/node_modules
