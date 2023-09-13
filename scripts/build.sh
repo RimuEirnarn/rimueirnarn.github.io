@@ -24,16 +24,13 @@ fi
 cp -r ./public/* $DIST/
 cp -r ./public/.[!.]* $DIST/
 
-mkdir $DIST/static
-
-cp ./static/* $DIST/static/
-
 # Step 2, /src
 
 cp -r $SRC/js $DIST/static/
 cp -r $SRC/css $DIST/static/
 cp -r $SRC/components $DIST/
 cp $SRC/main.html $DIST/
+cp $SRC/404.html $DIST/
 
 # Step 3, patching.
 
