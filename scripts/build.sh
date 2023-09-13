@@ -2,7 +2,9 @@
 
 # Compactingly minify, copy files to dist.
 
-. .venv/bin/activate
+if [ -f .venv/bin/activate ]; then 
+    . .venv/bin/activate
+fi
 
 DIST="./dist"
 SRC="./src"
