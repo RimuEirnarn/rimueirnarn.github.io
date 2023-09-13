@@ -1,6 +1,6 @@
 // Alerts
 
-import { sanitize } from "/static/utils.js"
+import { sanitize } from "/static/js/utils.js"
 
 const JOBNAME = "Alerts.js"
 GJobControl.setJob(JOBNAME)

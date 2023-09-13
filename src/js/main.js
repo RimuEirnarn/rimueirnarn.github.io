@@ -1,10 +1,10 @@
 // lmao, pythonic
 
-import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/utils.js"
-import { showAlert } from "/static/html_utils/alerts.js"
-import { makeModal } from "/static/html_utils/modals.js"
-import { transitionRoot, transitionTo } from "/static/seamless.js"
-import "/static/editor-command.js"
+import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/js/utils.js"
+import { showAlert } from "/static/js/html_utils/alerts.js"
+import { makeModal } from "/static/js/html_utils/modals.js"
+import { transitionRoot, transitionTo } from "/static/js/seamless.js"
+import "/static/js/editor-command.js"
 
 const __version__ = "0.1.5"
 const JOBNAME = "main.js"

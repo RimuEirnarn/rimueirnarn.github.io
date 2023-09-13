@@ -1,5 +1,5 @@
-import { getCookie } from "/static/utils.js"
-import { showAlert } from "/static/html_utils/alerts.js"
+import { getCookie } from "/static/js/utils.js"
+import { showAlert } from "/static/js/html_utils/alerts.js"
 
 const JOBNAME = "Seamless.js"
 GJobControl.setJob(JOBNAME)

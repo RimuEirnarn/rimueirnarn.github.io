@@ -5,8 +5,10 @@ from os import chdir
 from pathlib import Path
 from flask import Flask, send_file, abort
 from argh import arg, dispatch_command
+from os.path import realpath, commonpath, join
 
 app = Flask(__name__)
+ROOT_DIR = realpath(__file__+'/../')
 
 @app.errorhandler(404)
 def error_handler404(e):
@@ -21,7 +23,11 @@ def root():
 def files(filename=""):
     if filename == "":
         filename = "index.html"
-    print(str(filename))
+    true_filename = realpath(filename)
+    prefix = commonpath(ROOT_DIR, true_filename)
+    if prefix != ROOT_DIR:
+        return abort(403)
+
     path = Path(filename)
     if path.is_dir():
         path = path / "index.html"
@@ -29,7 +35,7 @@ def files(filename=""):
             return abort(404)
     if not path.exists():
         return abort(404)
-    return send_file(filename)
+    return send_file(join(base, true_filename)
 
 @arg("--host", "-H", help="""The host to bind to, for example 'localhost'.
     Can be a domain, IPv4 or IPv6 address, or file path starting

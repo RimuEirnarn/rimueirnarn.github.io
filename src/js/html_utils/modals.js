@@ -1,4 +1,4 @@
-import { sanitize } from "/static/utils.js"
+import { sanitize } from "/static/js/utils.js"
 
 function makeModal(modalId, config) {
     const _config = {
