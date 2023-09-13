@@ -26,6 +26,8 @@ cp -r ./public/.[!.]* $DIST/
 
 # Step 2, /src
 
+mkdir $DIST/static
+
 cp -r $SRC/js $DIST/static/
 cp -r $SRC/css $DIST/static/
 cp -r $SRC/components $DIST/
