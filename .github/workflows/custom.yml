@@ -35,9 +35,9 @@ jobs:
           python-version: '3.11'
           cache: 'pip' # caching pip dependencies
       - name: Install build dependency
-        run: pip install -r build-requirements.txt
+        run: pip install -r requirements.txt
       - name: Build site content
-        run: sh scripts/build.sh
+        run: scripts/build.sh
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
