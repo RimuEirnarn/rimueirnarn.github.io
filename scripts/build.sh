@@ -9,6 +9,15 @@ fi
 DIST="./dist"
 SRC="./src"
 
+hashdist() {
+    if [ ! -d ./.status ]; then
+        mkdir ./.status
+    fi
+    tar cf - $DIST | sha1sum > ./.status/dist
+}
+
+
+
 if [ -d $DIST ]; then
     rm -rf $DIST
 fi
@@ -46,6 +55,7 @@ mv compact.html index.html
 
 
 # Done!
+
 
 cd ..
 

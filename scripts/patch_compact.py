@@ -18,7 +18,7 @@ def main():
     print("Processing automatic patching.")
 
     with open(MAIN_PATH, encoding='utf-8') as file:
-        main = BeautifulSoup(file.read())
+        main = BeautifulSoup(file.read(), features="html.parser")
 
     app = main.select_one(APP)
     bapp = main.select_one(BACKUP_APP)
@@ -30,7 +30,7 @@ def main():
         raise ValueError(f"{BACKUP_APP} returned None")
 
     for name, comp in read():
-        data = BeautifulSoup(comp)
+        data = BeautifulSoup(comp, features="html.parser")
         if name == "main.html":
             # For whatever reason, main.html is default.
             app.append(data)
