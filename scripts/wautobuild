@@ -2,13 +2,15 @@
 
 EVENT_TYPE="$1"
 EVENT_OBJECT="$2"
+EVENT_SRC="$3"
+EVENT_DEST="$4"
 
 if [ ! "$EVENT_TYPE" = "modified" ] && [ ! "$EVENT_TYPE" = "deleted" ] && [ ! "$EVENT_TYPE" = "created" ]; then
     exit 1
 fi
 
+echo "Detected changes ($EVENT_TYPE $EVENT_OBJECT): $EVENT_SRC"
+
 if [ "$EVENT_OBJECT" = "file" ]; then
-    printf "Building at $(pwd)\n"
-    sleep 1
     scripts/build.sh
 fi
