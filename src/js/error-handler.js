@@ -15,17 +15,23 @@ function sanitize(string) {
 
 
 window.onerror = function(msg, url, line, col, error) {
-    let text = "Uh no, error has occurred!"
+    const name = $("#name")
+    let text = ""
 
     if (['localhost', 'local.rimueirnarn.net'].includes(location.host)) {
-        text += `<br>${sanitize(msg)} at ${sanitize(url)}:${line ? line : null}:${col ? col : null}`
+        text += `${sanitize(msg)} at ${sanitize(url)}:${line ? line : null}:${col ? col : null}`
+    } else {
+        text += "Contact <a href='https://github.com/RimuEirnarn'>RimuEirnarn</a> or add new issue <a href='https://github.com/RimuEirnarn/rimueirnarn.github.io/issues/new/choose'>here</a>"
     }
     
-    $("#alerts").html(`<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-            <i class='bi bi-x-circle-fill'></i>
-            ${text}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`)
+    $("#alerts").prepend(`<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error"><div class="toast-header"><div class='text-danger me-1'><i class="bi bi-x-circle-fill"></i></div><strong class="me-auto">Uh no, error has occured!</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div><div class="toast-body">${text}</div></div>`)
+
+    if (name.hasClass('color-text-cyan')) $("#name").removeClass('color-text-cyan');
+    if (!name.hasClass('text-danger')) $("#name").addClass('text-danger')
+    const toastLiveExample = document.getElementById("toast-error")
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample, {delay: 2000})
+    toastBootstrap.show()
+
 
     var suppressErrorAlert = false;
     return suppressErrorAlert;

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+EVENT_TYPE="$1"
+EVENT_OBJECT="$2"
+
+if [ ! "$EVENT_TYPE" = "modified" ] && [ ! "$EVENT_TYPE" = "deleted" ] && [ ! "$EVENT_TYPE" = "created" ]; then
+    exit 1
+fi
+
+if [ "$EVENT_OBJECT" = "file" ]; then
+    printf "Building at $(pwd)\n"
+    sleep 1
+    scripts/build.sh
+fi

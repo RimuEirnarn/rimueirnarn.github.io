@@ -13,6 +13,10 @@ function sanitize(string) {
   return string.replace(reg, (match)=>(map[match]));
 }
 
+function randint(max) {
+  return Math.floor(Math.random() * max);
+}
+
 
 async function _sleep(time) {
     await new Promise(resolve => setTimeout(resolve, time * 1000))
@@ -56,4 +60,4 @@ function isDebug() {
     return ["localhost", "local.rimueirnarn.net"].includes(location.host)
 }
 
-export { sanitize, getCookie, setCookie, sleep, isDebug }
+export { sanitize, getCookie, setCookie, sleep, isDebug, randint }

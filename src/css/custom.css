@@ -82,9 +82,39 @@ header > div > span{
 }
 
 body {
-    background-image: url('/assets/background.webp');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
+}
+
+.card-profile {
+    max-width: 356px;
+    height: max-content;
+}
+
+.card-profile > img {
+    object-fit: cover;
+}
+
+.height-0 {
+    height: 0
+}
+
+.tr-70 {
+    transform: translateY(-70%);
+}
+
+.ts-09 {
+    font-size: 0.9rem !important;
+}
+
+.force-badge-dark {
+    pointer-events: none;
+    user-select: none;
+}
+
+.force-badge-dark > span{
+    color: #000 !important;
 }

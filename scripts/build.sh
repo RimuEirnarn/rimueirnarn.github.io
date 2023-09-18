@@ -1,22 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
 # Compactingly minify, copy files to dist.
 
 if [ -f .venv/bin/activate ]; then 
-    . .venv/bin/activate
+    source .venv/bin/activate
 fi
 
 DIST="./dist"
+DISTCSS="$DIST/static/css"
+DISTJS="$DIST/static/js"
 SRC="./src"
-
-hashdist() {
-    if [ ! -d ./.status ]; then
-        mkdir ./.status
-    fi
-    tar cf - $DIST | sha1sum > ./.status/dist
-}
-
-
 
 if [ -d $DIST ]; then
     rm -rf $DIST
@@ -43,6 +36,19 @@ cp -r $SRC/components $DIST/
 cp $SRC/main.html $DIST/
 cp $SRC/404.html $DIST/
 
+# Step 2.1, combining css files
+
+cat $SRC/css/{color,custom,preloaded}.css > $DISTCSS/app.css
+cat $DISTCSS/app.css > $DISTCSS/404.css
+cat $SRC/css/404.css >> $DISTCSS/404.css
+
+rm $DISTCSS/{color,custom,preloaded}.css
+
+# Step 2.2, combining some js (non-module) files
+
+cat $DISTJS/{jobcontrol,preloaded,debug-check,error-handler,keybinds}.js > $DISTJS/pre-main.js
+rm $DISTJS/{jobcontrol,preloaded,debug-check,error-handler,keybinds}.js
+
 # Step 3, patching.
 
 cd $DIST
@@ -55,7 +61,6 @@ mv compact.html index.html
 
 
 # Done!
-
 
 cd ..
 

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export PROJECT_ROOT="$(realpath .)"
+
+source $PROJECT_ROOT/.venv/bin/activate
+
+# User-specific, this is because i have reloadrc function.
+if [ "$USER" = "rimu" ]; then
+    reloadrc
+fi
+
+function rimu(){
+    command="$1"
+    if [ "$command" = "" ]; then
+        printf "Available: build, serve, auto\n"
+        return 1
+    fi
+    case $command in
+        "build")
+            printf "\033[94mRimu\033[0m Building~\n"
+            $PROJECT_ROOT/scripts/build.sh
+            ;;
+        "serve")
+            printf "\033[94mRimu\033[0m Serving~\n"
+            sudo python3.11 $PROJECT_ROOT/main.py -t -d -p 443 -H 127.0.0.1 -s /home/rimu/Stuff/HTTPS/local.rimueirnarn.net.pem:/home/rimu/Stuff/HTTPS/local.rimueirnarn.net-key.pem
+            ;;
+        "auto")
+            printf "\033[94mRimu\033[0m Auto Building~\n"
+            $PROJECT_ROOT/scripts/auto-build.sh
+            ;;
+    esac
+}
+
+function derimu(){
+    deactivate
+    unset -f rimu
+    unset -f derimu
+}

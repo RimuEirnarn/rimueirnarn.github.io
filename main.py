@@ -59,14 +59,14 @@ def main(host: str = "127.0.0.1", port: int = 0, debug: bool = False, threaded: 
     if threaded and processes > 1:
         return "Cannot use --threaded and --processes at the same time"
     #print(f"{host = }, {port = }, {debug =}, {threaded = }, {processes = }, {ssl_context = }, {ssl = }")
-    print("Running build script")
-    thisstat = stat(".")
-    user = thisstat.st_uid
-    group = thisstat.st_gid
-    ret = run(["./scripts/build.sh"], user=user, group=group)
-    print(f"Process returned {ret.returncode}")
-    if not ret.returncode == 0:
-        return "Error: Build process failed"
+    #print("Running build script")
+    #thisstat = stat(".")
+    #user = thisstat.st_uid
+    #group = thisstat.st_gid
+    #ret = run(["./scripts/build.sh"], user=user, group=group)
+    #print(f"Process returned {ret.returncode}")
+    #if not ret.returncode == 0:
+    #    return "Error: Build process failed"
     return app.run(host, port, debug=debug, threaded=threaded, processes=processes, ssl_context=ssl)
 
 if __name__ == '__main__':

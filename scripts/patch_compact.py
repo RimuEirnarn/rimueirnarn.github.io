@@ -30,10 +30,11 @@ def main():
         raise ValueError(f"{BACKUP_APP} returned None")
 
     for name, comp in read():
-        data = BeautifulSoup(comp, features="html.parser")
         if name == "main.html":
             # For whatever reason, main.html is default.
+            data = BeautifulSoup(comp, features="html.parser")
             app.append(data)
+        data = BeautifulSoup(f"<div id='pr-{name.split('.')[0]}'>{comp}</div>", features="html.parser")
         bapp.append(data)
 
     with open(OUTPUT, 'w') as file:

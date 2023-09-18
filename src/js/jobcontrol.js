@@ -50,7 +50,7 @@ const _JobControl = () => {
                 success++
                 console.info(`[${name}] ${reason}`)
             };
-            if (status === 'errors' && prevStat === 'starting') {
+            if (status === 'error' && prevStat === 'starting') {
                 errors++
                 console.error(`[${name}] ${reason}`)
             };
@@ -155,3 +155,4 @@ const _JobControl = () => {
 
 const GJobControl = _JobControl();
 window.GJobControl = GJobControl;
+GJobControl.setJob('RimuEirnarn');

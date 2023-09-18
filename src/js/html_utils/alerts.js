@@ -1,6 +1,6 @@
 // Alerts
 
-import { sanitize } from "/static/js/utils.js"
+import { sanitize, randint } from "/static/js/utils.js"
 
 const JOBNAME = "Alerts.js"
 GJobControl.setJob(JOBNAME)
@@ -44,15 +44,19 @@ function _fetchIcon(type) {
 }
 
 function showAlert(config) {
-    let title = config.title === undefined ? "" : `<strong>${sanitize(config.title)}</strong>`
-    let body = config.body === undefined ? "Content" : config.body
+    let title = config.title === undefined ? "" : `${sanitize(config.title)}`
+    let body = config.body === undefined ? "Content" : `${sanitize(config.body)}`
+    let delay = config.delay === undefined ? 2000 : config.delay
     let aType = _reparse(config.type)
+    let toastId = `liveToast-${randint(999999)}`
 
-    let html = `<div class="alert alert-${aType} alert-dismissible fade show" role="alert">
-    ${_fetchIcon(aType)} ${title} - ${sanitize(body)}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
+
+    let html = `<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="${toastId}"><div class="toast-header"><div class='text-${aType} me-1'>${_fetchIcon(aType)}</div><strong class="me-auto">${title}</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div><div class="toast-body">${body}</div></div>`
     $(ALERT_CONFIG.target).prepend(html)
-    console.info("[alerts.js] Invoked alert")
+    
+    const toastLiveExample = document.getElementById(toastId)
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample, {delay: delay})
+    toastBootstrap.show()
 }
 
 GJobControl.updateJob(JOBNAME, 'done', 'loaded')

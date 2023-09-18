@@ -6,14 +6,14 @@ import { makeModal } from "/static/js/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/js/seamless.js"
 import "/static/js/editor-command.js"
 
-const __version__ = "0.1.5"
+const __version__ = "0.1.7"
 const JOBNAME = "main.js"
 const STATE = {
-    isGaveUp: false
+    isGaveUp: false,
+    wasLoaded: false
 }
 
-// Has been declared in main.html
-// GJobControl.setJob(JOBNAME)
+GJobControl.setJob(JOBNAME)
 
 const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
 
@@ -56,7 +56,7 @@ function _fetchSelection() {
 }
 
 function debugNav() {
-    if ((Object.keys(("#target-debug")).length === 0)) return
+    if (!(Object.keys($("#target-debug")).length === 0)) return
 
     if (isDebug()) {
         let data = `
@@ -142,7 +142,7 @@ function _onViewSelect(textError) {
 }
 
 function settings() {
-    if ((Object.keys(("#ms-button")).length === 0)) return
+    if (!(Object.keys($("#ms-button")).length === 0)) return
     $("#navd-functions").append(`<li><button id="ms-button" class='dropdown-item' type='button'><i class="bi bi-gear"></i> Settings</button></li>`)
     $("#ms-button").on('click', () => {
         makeModal("main-settings", {
@@ -233,7 +233,7 @@ function Status13(response){
 }
 
 function mainLoaded() {
-    if (GJobControl.getCompleted()) return
+    if (STATE.wasLoaded) return
     $("#version").append(` v${sanitize(__version__)}`)
     $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
     $("button#nav-root-goto").on("click", () => {
@@ -259,10 +259,11 @@ function mainLoaded() {
         setCookie("sw.cache.external", "no")
         setCookie("init", "yes")
     }
-    if (!(document.location.pathname === '/compact.html'))
-        transitionRoot()
-    GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
 
+    $("#app").html($(`#pr-${getCookie('default.view')}`).detach())
+    GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
+    STATE.wasLoaded = true
+    throw new Error("okay")
 }
 
 // To Be Added
@@ -292,4 +293,5 @@ document.addEventListener('jobs.control.completed', (e) => {
 window.onload = () => {
     GJobControl.updateJob('RimuEirnarn', 'done', 'Everything has been loaded')
     GJobControl.setComplete()
+    if (STATE.wasLoaded === false) mainLoaded()
 }
