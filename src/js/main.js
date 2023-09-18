@@ -263,7 +263,6 @@ function mainLoaded() {
     $("#app").html($(`#pr-${getCookie('default.view')}`).detach())
     GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
     STATE.wasLoaded = true
-    throw new Error("okay")
 }
 
 // To Be Added
