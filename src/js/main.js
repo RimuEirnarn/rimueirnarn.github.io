@@ -10,7 +10,9 @@ const __version__ = "0.1.8"
 const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false,
-    wasLoaded: false
+    wasLoaded: false,
+    settingsLoaded: false,
+    settingsOpened: false
 }
 
 GJobControl.setJob(JOBNAME)
@@ -56,9 +58,8 @@ function _fetchSelection() {
 }
 
 function debugNav() {
-    if (!(Object.keys($("#target-debug")).length === 0)) return
-
     if (isDebug()) {
+        
         let data = `
 <div class="modal fade" tabindex="-1" id="debug-modal">
   <div class="modal-dialog">
@@ -79,9 +80,13 @@ function debugNav() {
     </div>
   </div>
 </div>
-`        
-        $("#navd-functions").append(`<li><button id="target-debug" class='dropdown-item' type='button'><i class="bi bi-person-fill-exclamation"></i> Debug</button></li>`)
-        $("#target-debug").on('click', () => {
+`
+        $("#debug").on('click', () => {
+            if (document.querySelector("#main-settings")) {
+                new bootstrap.Modal($("#main-settings")).dispose()
+                $("div.modal-backdrop").remove()
+            }
+
             $('.container-0').html(data)
             let textError = $("#debug-modal-error-text")
             let transitionConfig = {
@@ -142,8 +147,7 @@ function _onViewSelect(textError) {
 }
 
 function settings() {
-    if (!(Object.keys($("#ms-button")).length === 0)) return
-    $("#navd-functions").append(`<li><button id="ms-button" class='dropdown-item' type='button'><i class="bi bi-gear"></i> Settings</button></li>`)
+    if (STATE.settingsLoaded) return null;
     $("#ms-button").on('click', () => {
         makeModal("main-settings", {
             title: "Site settings",
@@ -154,6 +158,11 @@ function settings() {
     ${_fetchSelection()}
     </select>
     <p class='visually-hidden text-danger' id='selectionFailure'></p>
+    <hr>
+    <div class='mb-3'>
+        <button id="debug" type='button' class='btn bg-danger'>Debug</button>
+        <button id="anime" type='button' class='btn bg-info'>Anime</button>
+    </div>
   </div>
   <div class="col-12">
     <div class="form-check">
@@ -173,50 +182,30 @@ function settings() {
                 focus: true
         })
         modal.show()
-
+        $("button#anime").on("click", __redir_anime)
+        debugNav()
     })
 }
 
 function __redir_anime() {
+    if (document.querySelector("#main-settings")) {
+        new bootstrap.Modal($("#main-settings")).dispose()
+        $("div.modal-backdrop").remove()
+    }
+
     // do i look like care about this?
     var target = `target-${Math.round(Math.random() * 100)}`
-    var container = document.querySelector(".container-0")
-    var data = `<div class="modal fade" tabindex="-1" id="modal-${target}">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark">
-      <div class="modal-header">
-        <h5 class="modal-title">Anime Redirection</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="${target}-no1"></button>
-      </div>
-      <div class="modal-body">
-        <p>Proceed?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="${target}-no">No</button>
-        <button type="button" class="btn btn-primary" id="${target}">Yes</button>
-      </div>
-    </div>
-  </div>
-</div>`
-    var fragment = document.createDocumentFragment()
-    var inside_container = document.createElement('div')
-    inside_container.innerHTML = data
-    fragment.appendChild(inside_container)
-    container.appendChild(fragment)
-    var target_element = document.querySelector(`#${target}`)
-    target_element.onclick = () => {
-        document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    }
-    document.querySelector(`#${target}-no`).onclick = refresh_modal
-    document.querySelector(`#${target}-no1`).onclick = refresh_modal
-    sleep(0.1, () => {
-        var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {
-            focus: true
-        })
-        modal.show()
+    makeModal(`modal-${target}`, {
+        title: "Anime Redirection",
+        body: `<p>Proceed?</p>`,
+        submitText: "Proceed",
+        onSubmit() {
+            document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        }
     })
+    var modal = new bootstrap.Modal(document.querySelector(`#modal-${target}`), {focus: true})
+    modal.show()
 }
-
 function Status13(response){
     console.info(`status -> ${response}`)
     if (response === "13") {
@@ -244,10 +233,9 @@ function mainLoaded() {
     } else {
         $("#swc-control").remove()
     }
-    $("button#anime").on("click", __redir_anime)
-    //main_switcher()
-    debugNav()
+
     settings()
+    //main_switcher()
     let initCookie = getCookie("init")
     if (initCookie === undefined) {
         showAlert({
