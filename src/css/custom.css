@@ -151,3 +151,7 @@ body {
 .force-badge-dark > span{
     color: #000 !important;
 }
+
+.cardv {
+    height: min-content;
+}
