@@ -6,7 +6,7 @@ import { makeModal } from "/static/js/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/js/seamless.js"
 import "/static/js/editor-command.js"
 
-const __version__ = "0.1.7"
+const __version__ = "0.1.8"
 const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false,
