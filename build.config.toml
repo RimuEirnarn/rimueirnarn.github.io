@@ -1,0 +1,36 @@
+# Build config
+
+patterns = []
+ignores = []
+case_sensitive = true
+# Ignore changes on directory
+ignore_dir = true
+# Watch directories/files for changes
+watches = ["public", "src", 'build.config.toml']
+
+# Configure merging files, any input stored to dist-* will be deleted/ignored
+# if merge.delete_matches is set to true
+# And the modified will be merged
+# If input files cannot be accessed, raise a warning than error.
+merges."$DISTCSS/app.css" = ['$SRCCSS/color.css', '$SRCCSS/custom.css', '$SRCCSS/preloaded.css']
+merges."$DISTCSS/404.css" = ['$DISTCSS/app.css', '$SRCCSS/404.css']
+merges."$DISTJS/pre-main.js" = ['$SRCJS/jobcontrol.js', '$SRCJS/preloaded.js', '$SRCJS/debug-check.js', '$SRCJS/error-handler', '$SRCJS/keybinds.js']
+
+# Setup distribution structure, some files will be ignored/deleted
+# if detected in merges
+dist."/static" = ["src/css", "src/js"]
+dist."/" = ["public"]
+
+# Setup plugins
+# Patch compact is to merge components to main html file, in other word, SSR
+plugins.patch_compact.output = "$DIST/index.html"
+plugins.patch_compact.watchfor = ['src/main.html', '$SRCMP/terminal.html', '$SRCMP/card.html', '$SRCMP/main.html']
+
+# Configure build auto reload on files
+build.auto_reload = true
+# Delete files used for merging in dist
+# Files like dist-css/custom.css will be deleted or ignored to be copied
+merge.delete_matches = true
+# Toggle to delete generated files from merges in dist,
+# If this is true, dist-css/app.css wil be deleted
+merge.delete_generated = false
