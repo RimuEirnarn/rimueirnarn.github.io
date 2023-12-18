@@ -14,7 +14,7 @@ def read():
             yield comp, file.read()
 
 
-def main():
+def main(output):
     print("Processing automatic patching.")
 
     with open(MAIN_PATH, encoding='utf-8') as file:
@@ -37,9 +37,9 @@ def main():
         data = BeautifulSoup(f"<div id='pr-{name.split('.')[0]}'>{comp}</div>", features="html.parser")
         bapp.append(data)
 
-    with open(OUTPUT, 'w') as file:
+    with open(output, 'w') as file:
         file.write(str(main))
     print("Done")
 
 if __name__ == "__main__":
-    main()
+    main(OUTPUT)

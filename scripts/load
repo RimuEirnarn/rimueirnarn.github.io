@@ -22,7 +22,7 @@ function rimu(){
             ;;
         "serve")
             printf "\033[94mRimu\033[0m Serving~\n"
-            sudo python3.11 $PROJECT_ROOT/main.py -t -d -p 443 -H 127.0.0.1 -s /home/rimu/Stuff/HTTPS/local.rimueirnarn.net.pem:/home/rimu/Stuff/HTTPS/local.rimueirnarn.net-key.pem
+            sudo python3.11 $PROJECT_ROOT/main.py -t -d -p 443 -H 0.0.0.0 -s /home/rimu/Stuff/HTTPS/local.rimueirnarn.net.pem:/home/rimu/Stuff/HTTPS/local.rimueirnarn.net-key.pem
             ;;
         "auto")
             printf "\033[94mRimu\033[0m Auto Building~\n"

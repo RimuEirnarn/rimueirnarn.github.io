@@ -39,13 +39,19 @@
   <link rel="stylesheet" href="static/css/app.css">
 
   <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
   <!--script src="/static/js/jobcontrol.js"></script>
   <script src="/static/js/preloaded.js"></script>
   <script src="/static/js/debug-check.js"></script>
   <script src="/static/js/error-handler.js"></script>
   <script src="/static/js/keybinds.js" defer></script-->
-  <script src="/static/js/pre-main.js" defer>
-    <script defer>
+  <script src="/static/js/pre-main.js" defer></script>
+  <script defer>
+     
       if (false) {
       if (location.protocol == 'http:' && !isDebug()) location.protocol = 'https:';
       else console.info("Running on debug")
@@ -70,11 +76,7 @@
         GJobControl.updateJob('ServiceWorker', 'done', 'is disabled forcefully')
       }
   </script> <!--script src="assets/js/bootstrap.bundle.min.js" defer></script-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <script src="/static/js/main.js" defer type='module'></script>
+    <script src="/static/js/main.js" defer type='module'></script>
 
   <!-- sw.js -->
   <!-- some were copied into here -->

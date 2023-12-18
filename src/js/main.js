@@ -1,12 +1,12 @@
 // lmao, pythonic
 
-import { getCookie, setCookie, sleep, isDebug, sanitize } from "/static/js/utils.js"
-import { showAlert } from "/static/js/html_utils/alerts.js"
+import { getCookie, setCookie, sleep, isDebug, sanitize, isSmallScreen } from "/static/js/utils.js"
+import { showAlert, showError } from "/static/js/html_utils/alerts.js"
 import { makeModal } from "/static/js/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/js/seamless.js"
 import "/static/js/editor-command.js"
 
-const __version__ = "0.1.8"
+const __version__ = "0.1.9"
 const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false,
@@ -120,24 +120,33 @@ function debugNav() {
 }
 
 function _onViewSelect(textError) {
+    const hideTE = () => !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
+    const showTE = (text) => {
+        textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
+        textError.text(text)
+    }
     let transitionConfig = {
         success() {
-            !textError.hasClass('visually-hidden') ? textError.addClass('visually-hidden') : null
+            hideTE()
             $("#dcomp-output").text(`/ ${getCookie('default.view')}`)
         },
         error(_, __, error) {
-            textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
-            textError.text(error)
+            showTE(error)
             setCookie('default.view', currentView)
         }
     }
     if (STATE.isGaveUp) {
-        textError.hasClass('visually-hidden') ? textError.removeClass('visually-hidden') : null
-        textError.text("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
+        showTE("Unable to change, the site owner has gave up. To disable this behavior, you can't.")
         return
     }
     let component = $("#viewSelect").val()
     if (!component) {
+        return
+    }
+    // Card is unstable on mobile
+    if (component === "card" && !isDebug() && isSmallScreen()) {
+        showTE("Mobile device cannot access card.")
+        showError("Mobile device cannot access card.")
         return
     }
     setCookie('default.view', component)
@@ -148,6 +157,7 @@ function _onViewSelect(textError) {
 
 function settings() {
     if (STATE.settingsLoaded) return null;
+    const debugOption = isDebug() ? `<button id="debug" type='button' class='btn bg-danger'>Debug</button>` : ""
     $("#ms-button").on('click', () => {
         makeModal("main-settings", {
             title: "Site settings",
@@ -160,8 +170,9 @@ function settings() {
     <p class='visually-hidden text-danger' id='selectionFailure'></p>
     <hr>
     <div class='mb-3'>
-        <button id="debug" type='button' class='btn bg-danger'>Debug</button>
+        ${debugOption}
         <button id="anime" type='button' class='btn bg-info'>Anime</button>
+        <button id='view-elogs' type='button' class='btn bg-danger'>View Logs</button>
     </div>
   </div>
   <div class="col-12">
@@ -183,6 +194,11 @@ function settings() {
         })
         modal.show()
         $("button#anime").on("click", __redir_anime)
+        $("button#view-elogs").on('click', () => {
+            transitionTo("error")
+            modal.hide()
+            document.querySelector("#main-settings").addEventListener('hidden.bs.modal', (e) => modal.dispose())
+        })
         debugNav()
     })
 }

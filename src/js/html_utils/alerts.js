@@ -59,6 +59,17 @@ function showAlert(config) {
     toastBootstrap.show()
 }
 
+const showError = (body) => {
+    showAlert({title: 'Error!', body: body, delay: 5000, type: 'error'})
+}
+const showWarning = (body) => {
+    showAlert({title: 'Warning!', body: body, delay: 5000, type: 'warning'})
+}
+const showInfo = (body) => {
+    showAlert({title: 'Info!', body: body, delay: 5000, type: 'info'})
+}
+
+
 GJobControl.updateJob(JOBNAME, 'done', 'loaded')
 
-export { showAlert }
+export { showAlert, showError, showWarning, showInfo }

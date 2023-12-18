@@ -60,4 +60,8 @@ function isDebug() {
     return ["localhost", "local.rimueirnarn.net"].includes(location.host)
 }
 
-export { sanitize, getCookie, setCookie, sleep, isDebug, randint }
+function isSmallScreen() {
+    return window.matchMedia("(max-width: 767px)").matches
+}
+
+export { sanitize, getCookie, setCookie, sleep, isDebug, randint, isSmallScreen }

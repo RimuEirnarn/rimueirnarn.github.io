@@ -1,0 +1,13 @@
+<title>RimuEirnarn - Error Logs</title>
+<div class="card text-white cmain-background mb-3 shadow-lg">
+    <div class="card-body">
+      <ul id="error-logs">
+      </ul>
+    </div>
+</div>
+
+<script>
+  for (let i of _ErrorEventLog.view()) {
+    $("#error-logs").prepend(`<li>[${sanitize(i.time)}] ${i.data}</li>`)
+  }
+</script>
