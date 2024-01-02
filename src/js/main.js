@@ -293,6 +293,17 @@ document.addEventListener('jobs.control.completed', (e) => {
     console.info(`[${JOBNAME}] ${detail.stats.success} / ${detail.stats.jobs} (${detail.stats.rate*100}%) [${detail.stats.errors} errors]`)
 })
 
+function _resize_event() {
+    if (isSmallScreen() && getCookie("default.view") === "card") {
+       setCookie("default.view", "main")
+       transitionRoot()
+    }
+}
+
+_resize_event()
+
+document.addEventListener('resize', _resize_event)
+
 window.onload = () => {
     GJobControl.updateJob('RimuEirnarn', 'done', 'Everything has been loaded')
     GJobControl.setComplete()
