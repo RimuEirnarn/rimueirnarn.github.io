@@ -7,7 +7,7 @@ import { transitionRoot, transitionTo } from "/static/js/seamless.js"
 import "/static/js/editor-command.js"
 
 const __package__ = "PRE-EnigmaRimu.js"
-const __version__ = "0.2.2"
+const __version__ = "0.2.1"
 const JOBNAME = "main.js"
 const STATE = {
     isGaveUp: false,
