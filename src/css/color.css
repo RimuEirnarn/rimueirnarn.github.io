@@ -95,14 +95,20 @@
 .color-353546,.color-hover-353546:hover{background-color: #353546!important;}
 .color-border-353546,.color-hover-border-353546:hover{border-color: #353546!important;}
 
+:root {
+    --app-color: 41, 40, 54, 0.6;
+    --nav-color: 53, 53, 70, 0.8;
+    --cmain-color: 33, 37, 41, 0.6;
+}
+
 .app-background {
-    background-color: rgba(41, 40, 54, 0.6) !important;
+    background-color: rgba(var(--app-color)) !important;
 }
 
 .nav-background {
-    background-color: rgba(53, 53, 70, 0.8) !important;
+    background-color: rgba(var(--nav-color)) !important;
 }
 
 .cmain-background {
-    background-color: rgba(33, 37, 41, 0.6) !important;
+    background-color: rgba(var(--cmain-color)) !important;
 }

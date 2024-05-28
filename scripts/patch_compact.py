@@ -4,7 +4,7 @@ from pathlib import Path
 MAIN_PATH = "./main.html"
 OUTPUT = "./compact.html"
 COMPONENT_PATH = Path("components")
-MAIN_COMPS = ['main.html', 'terminal.html', 'card.html']
+MAIN_COMPS = ['main.html', 'terminal.html', 'card.html', 'chat.html']
 APP = "#app"
 BACKUP_APP = "#app-backup"
 

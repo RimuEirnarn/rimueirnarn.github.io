@@ -6,6 +6,7 @@ import { makeModal } from "/static/js/html_utils/modals.js"
 import { transitionRoot, transitionTo } from "/static/js/seamless.js"
 import "/static/js/editor-command.js"
 
+const __package__ = "PRE-EnigmaRimu.js"
 const __version__ = "0.1.9"
 const JOBNAME = "main.js"
 const STATE = {
@@ -19,20 +20,20 @@ GJobControl.setJob(JOBNAME)
 
 const SWEnabled = $("#app").attr('data-sw') === 'true' ? true : false
 
-/**
- * show current project version or atleast the new version/rework version.
- */
-function show_version() {
-    console.log(__version__)
-}
-
 function swCacheControl() {}
 
 const varies = {
     main: "Default view",
     terminal: "Terminal-like view",
-    card: "Card view"
+    card: "Card view",
+    chat: "Chat view"
 }
+
+// Limit what mobile can do
+const desktop_views = [
+    'card',
+    'chat'
+]
 
 function refresh_modal(){
     var container = document.querySelector(".container-0")
@@ -144,7 +145,7 @@ function _onViewSelect(textError) {
         return
     }
     // Card is unstable on mobile
-    if (component === "card" && !isDebug() && isSmallScreen()) {
+    if (desktop_views.includes(component) && !isDebug() && isSmallScreen()) {
         showTE("Mobile device cannot access card.")
         showError("Mobile device cannot access card.")
         return
@@ -264,7 +265,12 @@ function mainLoaded() {
         setCookie("init", "yes")
     }
 
-    $("#app").html($(`#pr-${getCookie('default.view')}`).detach())
+    var component = getCookie('default.view')
+    if (desktop_views.includes(component) && isSmallScreen()) {
+        showAlert({title: "Incompatible view", body: `Selected view (${component}) is not supported on mobile yet. Particularly because it can cause the view to be fuzzy.`, type: 'info', delay: 5000})
+    } else {
+        $("#app").html($(`#pr-${getCookie('default.view')}`).detach())
+    }
     GJobControl.updateJob(JOBNAME, 'done', `Loaded, debug: ${isDebug()}, version: ${__version__}`)
     STATE.wasLoaded = true
 }
@@ -297,4 +303,5 @@ window.onload = () => {
     GJobControl.updateJob('RimuEirnarn', 'done', 'Everything has been loaded')
     GJobControl.setComplete()
     if (STATE.wasLoaded === false) mainLoaded()
+    console.log(`${location.hostname}: running ${__package__} v${__version__}`)
 }

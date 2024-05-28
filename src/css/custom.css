@@ -139,6 +139,10 @@ body {
     transform: translateY(-70%);
 }
 
+.tr-p10 {
+    transform: translateY(10%);
+}
+
 .ts-09 {
     font-size: 0.9rem !important;
 }
