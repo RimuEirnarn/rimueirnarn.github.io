@@ -37,7 +37,7 @@ def main(output):
         data = BeautifulSoup(f"<div id='pr-{name.split('.')[0]}'>{comp}</div>", features="html.parser")
         bapp.append(data)
 
-    with open(output, 'w') as file:
+    with open(output, 'w', encoding='utf-8') as file:
         file.write(str(main))
     print("Done")
 

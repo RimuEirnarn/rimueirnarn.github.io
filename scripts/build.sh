@@ -53,7 +53,11 @@ rm $DISTJS/{jobcontrol,preloaded,debug-check,error-handler,keybinds}.js
 
 cd $DIST
 
-python3.11 ../scripts/patch_compact.py
+if [ ! "$OS" = "Windows_NT" ]; then
+    python ../scripts/patch_compact.py 
+else
+    py ../scripts/patch_compact.py
+fi
 mv compact.html index.html
 
 # This line cause deployment to be broken
