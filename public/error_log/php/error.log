@@ -1,0 +1,1 @@
+Fatal error: Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin' in /home/runner/php-base/html/wp-login.php:42

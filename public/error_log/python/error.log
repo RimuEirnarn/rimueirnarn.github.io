@@ -1,0 +1,2 @@
+[main.py:145] [31/01/2025 00.00.00]: [critical] Unable to connect to database (password invalid)
+[main.py:145] [31/01/2025 00.00.03]: [critical] Suspicious admin login detected
