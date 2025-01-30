@@ -1,0 +1,3016 @@
+<!doctype html>
+<html lang="id" dir="ltr">
+
+<!-- Mirrored from localhost:8080/phpmyadmin/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 21:51:15 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow,notranslate">
+  <meta name="google" content="notranslate">
+  <style id="cfs-style">
+    html {
+      display: none;
+    }
+  </style>
+  <link rel="icon" href="//localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="//localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="//localhost/phpmyadmin/themes/pmahomme/jquery/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="//localhost/phpmyadmin/js/vendor/codemirror/lib/codemirror.css?v=5.2.1">
+  <link rel="stylesheet" type="text/css"
+    href="//localhost/phpmyadmin/js/vendor/codemirror/addon/hint/show-hint.css?v=5.2.1">
+  <link rel="stylesheet" type="text/css" href="//localhost/phpmyadmin/js/vendor/codemirror/addon/lint/lint.css?v=5.2.1">
+  <link rel="stylesheet" type="text/css" href="//localhost/phpmyadmin/themes/pmahomme/css/theme.css?v=5.2.1">
+  <title>localhost:8080 / 127.0.0.1 | phpMyAdmin 5.2.1</title>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery.min.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery-migrate.min.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/sprintf.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/ajax.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/keyhandler.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery-ui.min.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/name-conflict-fixes.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/bootstrap/bootstrap.bundle.min.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/js.cookie.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery.validate.min.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery-ui-timepicker-addon.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/jquery/jquery.debounce-1.0.6.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/menu_resizer.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/cross_framing_protection.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/messages.php?l=en&amp;v=5.2.1&amp;lang=id"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/config.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/doclinks.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/functions.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/navigation.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/indexes.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/common.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/page_settings.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/home.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/lib/codemirror.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/mode/sql/sql.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/addon/runmode/runmode.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/addon/hint/show-hint.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/addon/hint/sql-hint.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/codemirror/addon/lint/lint.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/codemirror/addon/lint/sql-lint.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/vendor/tracekit.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/error_report.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/drag_drop_import.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript"
+    src="//localhost/phpmyadmin/js/dist/shortcuts_handler.js?v=5.2.1"></script>
+  <script data-cfasync="false" type="text/javascript" src="//localhost/phpmyadmin/js/dist/console.js?v=5.2.1"></script>
+
+  <script data-cfasync="false" type="text/javascript">
+    // <![CDATA[
+    CommonParams.setAll({ common_query: "lang=en", opendb_url: "index.php?route=/database/structure&lang=en", lang: "en", server: "1", table: "", db: "", token: "355e5b303e2a2c715377633b59403e74", text_dir: "ltr", LimitChars: "50", pftext: "", confirm: true, LoginCookieValidity: "1440", session_gc_maxlifetime: "1440", logged_in: true, is_https: false, rootPath: "/phpmyadmin/", arg_separator: "&", version: "5.2.1", auth_type: "config", user: "root" });
+    var firstDayOfCalendar = '0';
+    var themeImagePath = '//localhost/phpmyadmin/.\/themes\/pmahomme\/img\/';
+    var mysqlDocTemplate = '//localhost/phpmyadmin/.\/url.php\u003Furl\u003Dhttps\u00253A\u00252F\u00252Fdev.mysql.com\u00252Fdoc\u00252Frefman\u00252F8.0\u00252Fen\u00252F\u002525s.html';
+    var maxInputVars = 1000;
+
+    if ($.datepicker) {
+      $.datepicker.regional[''].closeText = 'Selesai';
+      $.datepicker.regional[''].prevText = 'Prev';
+      $.datepicker.regional[''].nextText = 'Berikutnya';
+      $.datepicker.regional[''].currentText = 'Hari\u0020ini';
+      $.datepicker.regional[''].monthNames = [
+        'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember',
+      ];
+      $.datepicker.regional[''].monthNamesShort = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mei',
+        'Jun',
+        'Jul',
+        'Agu',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des',
+      ];
+      $.datepicker.regional[''].dayNames = [
+        'Minggu',
+        'Senin',
+        'Selasa',
+        'Rabu',
+        'Kamis',
+        'Jumat',
+        'Sabtu',
+      ];
+      $.datepicker.regional[''].dayNamesShort = [
+        'Min',
+        'Sen',
+        'Sel',
+        'Rab',
+        'Kam',
+        'Jum',
+        'Sab',
+      ];
+      $.datepicker.regional[''].dayNamesMin = [
+        'Min',
+        'Sn',
+        'Sl',
+        'Rb',
+        'Km',
+        'Jm',
+        'Sb',
+      ];
+      $.datepicker.regional[''].weekHeader = 'Mingguan';
+      $.datepicker.regional[''].showMonthAfterYear = false;
+      $.datepicker.regional[''].yearSuffix = '';
+      $.extend($.datepicker._defaults, $.datepicker.regional['']);
+    }
+
+    if ($.timepicker) {
+      $.timepicker.regional[''].timeText = 'Waktu';
+      $.timepicker.regional[''].hourText = 'Jam';
+      $.timepicker.regional[''].minuteText = 'Menit';
+      $.timepicker.regional[''].secondText = 'Detik';
+      $.extend($.timepicker._defaults, $.timepicker.regional['']);
+    }
+
+    function extendingValidatorMessages() {
+      $.extend($.validator.messages, {
+        required: 'Wajib\u0020diisi',
+        remote: 'Silakan\u0020perbaiki\u0020kolom\u0020ini',
+        email: 'Silakan\u0020masukkan\u0020alamat\u0020email\u0020yang\u0020valid',
+        url: 'Silakan\u0020masukkan\u0020URL\u0020yang\u0020valid',
+        date: 'Silakan\u0020masukkan\u0020tanggal\u0020yang\u0020valid',
+        dateISO: 'Silakan\u0020masukkan\u0020tanggal\u0020yang\u0020valid\u0020\u0028ISO\u0029',
+        number: 'Silakan\u0020masukkan\u0020angka\u0020yang\u0020valid',
+        creditcard: 'Silakan\u0020masukkan\u0020nomor\u0020kartu\u0020kredit\u0020yang\u0020valid',
+        digits: 'Silakan\u0020masukkan\u0020angka\u0020saja',
+        equalTo: 'Silakan\u0020masukkan\u0020lagi\u0020nilai\u0020yang\u0020sama',
+        maxlength: $.validator.format('Silakan\u0020masukkan\u0020tidak\u0020lebih\u0020dari\u0020\u007B0\u007D\u0020karakter'),
+        minlength: $.validator.format('Silakan\u0020masukkan\u0020setidaknya\u0020\u007B0\u007D\u0020karakter'),
+        rangelength: $.validator.format('Silakan\u0020masukkan\u0020nilai\u0020panjang\u0020karakter\u0020antara\u0020\u007B0\u007D\u0020dan\u0020\u007B1\u007D'),
+        range: $.validator.format('Silakan\u0020masukkan'),
+        max: $.validator.format('Silakan\u0020masukkan\u0020nilai\u0020kurang\u0020dari\u0020atau\u0020sama\u0020dengan\u0020\u007B0\u007D'),
+        min: $.validator.format('Silakan\u0020masukkan\u0020nilai\u0020lebih\u0020dari\u0020atau\u0020sama\u0020dengan\u0020\u007B0\u007D'),
+        validationFunctionForDateTime: $.validator.format('Silakan\u0020masukkan\u0020tanggal\u0020dan\u0020jam\u0020yang\u0020valid'),
+        validationFunctionForHex: $.validator.format('Silakan\u0020masukkan\u0020input\u0020HEX\u0020yang\u0020valid'),
+        validationFunctionForMd5: $.validator.format('This\u0020column\u0020can\u0020not\u0020contain\u0020a\u002032\u0020chars\u0020value'),
+        validationFunctionForAesDesEncrypt: $.validator.format('These\u0020functions\u0020are\u0020meant\u0020to\u0020return\u0020a\u0020binary\u0020result\u003B\u0020to\u0020avoid\u0020inconsistent\u0020results\u0020you\u0020should\u0020store\u0020it\u0020in\u0020a\u0020BINARY,\u0020VARBINARY,\u0020or\u0020BLOB\u0020column.')
+      });
+    }
+
+    ConsoleEnterExecutes = false
+
+    AJAX.scriptHandler
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery.min.js', 0)
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery-migrate.min.js', 0)
+      .add('//localhost/phpmyadmin/vendor/sprintf.js', 1)
+      .add('//localhost/phpmyadmin/ajax.js', 0)
+      .add('//localhost/phpmyadmin/keyhandler.js', 1)
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery-ui.min.js', 0)
+      .add('//localhost/phpmyadmin/name-conflict-fixes.js', 1)
+      .add('//localhost/phpmyadmin/vendor/bootstrap/bootstrap.bundle.min.js', 1)
+      .add('//localhost/phpmyadmin/vendor/js.cookie.js', 1)
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery.validate.min.js', 0)
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery-ui-timepicker-addon.js', 0)
+      .add('//localhost/phpmyadmin/vendor/jquery/jquery.debounce-1.0.6.js', 0)
+      .add('//localhost/phpmyadmin/menu_resizer.js', 1)
+      .add('//localhost/phpmyadmin/cross_framing_protection.js', 0)
+      .add('//localhost/phpmyadmin/messages.php', 0)
+      .add('//localhost/phpmyadmin/config.js', 1)
+      .add('//localhost/phpmyadmin/doclinks.js', 1)
+      .add('//localhost/phpmyadmin/functions.js', 1)
+      .add('//localhost/phpmyadmin/navigation.js', 1)
+      .add('//localhost/phpmyadmin/indexes.js', 1)
+      .add('//localhost/phpmyadmin/common.js', 1)
+      .add('//localhost/phpmyadmin/page_settings.js', 1)
+      .add('//localhost/phpmyadmin/home.js', 1)
+      .add('//localhost/phpmyadmin/vendor/codemirror/lib/codemirror.js', 0)
+      .add('//localhost/phpmyadmin/vendor/codemirror/mode/sql/sql.js', 0)
+      .add('//localhost/phpmyadmin/vendor/codemirror/addon/runmode/runmode.js', 0)
+      .add('//localhost/phpmyadmin/vendor/codemirror/addon/hint/show-hint.js', 0)
+      .add('//localhost/phpmyadmin/vendor/codemirror/addon/hint/sql-hint.js', 0)
+      .add('//localhost/phpmyadmin/vendor/codemirror/addon/lint/lint.js', 0)
+      .add('//localhost/phpmyadmin/codemirror/addon/lint/sql-lint.js', 0)
+      .add('//localhost/phpmyadmin/vendor/tracekit.js', 1)
+      .add('//localhost/phpmyadmin/error_report.js', 1)
+      .add('//localhost/phpmyadmin/drag_drop_import.js', 1)
+      .add('//localhost/phpmyadmin/shortcuts_handler.js', 1)
+      .add('//localhost/phpmyadmin/console.js', 1)
+      ;
+    $(function () {
+      AJAX.fireOnload('//localhost/phpmyadmin/vendor/sprintf.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/keyhandler.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/name-conflict-fixes.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/vendor/bootstrap/bootstrap.bundle.min.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/vendor/js.cookie.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/menu_resizer.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/config.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/doclinks.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/functions.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/navigation.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/indexes.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/common.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/page_settings.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/home.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/vendor/tracekit.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/error_report.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/drag_drop_import.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/shortcuts_handler.js');
+      AJAX.fireOnload('//localhost/phpmyadmin/console.js');
+    });
+    // ]]>
+  </script>
+
+  <noscript>
+    <style>
+      html {
+        display: block
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <div id="pma_navigation" class="d-print-none" data-config-navigation-width="240">
+    <div id="pma_navigation_resizer"></div>
+    <div id="pma_navigation_collapser"></div>
+    <div id="pma_navigation_content">
+      <div id="pma_navigation_header">
+
+        <div id="pmalogo">
+          <a href="//localhost/phpmyadmin/index.php?lang=id">
+            <img id="imgpmalogo" src="//localhost/phpmyadmin/themes/pmahomme/img/logo_left.png" alt="phpMyAdmin">
+          </a>
+        </div>
+
+        <div id="navipanellinks">
+          <a href="//localhost/phpmyadmin/index.php?route=/&amp;lang=id" title="Beranda"><img
+              src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Beranda" alt="Beranda"
+              class="icon ic_b_home"></a>
+
+          <a class="logout disableAjax" href="//localhost/phpmyadmin/index.php?route=/logout&amp;lang=id"
+            title="Sesi data kosong"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Sesi data kosong"
+              alt="Sesi data kosong" class="icon ic_s_loggoff"></a>
+
+          <a href="//localhost/phpmyadmin/doc/html/index.html" title="Dokumentasi phpMyAdmin" target="_blank"
+            rel="noopener noreferrer"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+              title="Dokumentasi phpMyAdmin" alt="Dokumentasi phpMyAdmin" class="icon ic_b_docs"></a>
+
+          <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fmariadb.com%2Fkb%2Fen%2Fdocumentation%2F"
+            title="MariaDB Documentation" target="_blank" rel="noopener noreferrer"><img
+              src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="MariaDB Documentation"
+              alt="MariaDB Documentation" class="icon ic_b_sqlhelp"></a>
+
+          <a id="pma_navigation_settings_icon" href="#" title="Pengaturan panel navigasi"><img
+              src="//localhost/phpmyadmin/themes/dot.gif" title="Pengaturan panel navigasi"
+              alt="Pengaturan panel navigasi" class="icon ic_s_cog"></a>
+
+          <a id="pma_navigation_reload" href="#" title="Muat ulang panel navigasi"><img
+              src="//localhost/phpmyadmin/themes/dot.gif" title="Muat ulang panel navigasi"
+              alt="Muat ulang panel navigasi" class="icon ic_s_reload"></a>
+        </div>
+
+
+        <img src="//localhost/phpmyadmin/themes/dot.gif" title="Memproses…" alt="Memproses…"
+          style="visibility: hidden; display:none" class="icon ic_ajax_clock_small throbber">
+      </div>
+      <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
+
+        <div class="pma_quick_warp">
+          <div class="drop_list"><button title="Tabel terakhir" class="drop_button btn">Terbaru</button>
+            <ul id="pma_recent_list">
+              <li class="warp_link">
+                <a
+                  href="//localhost/phpmyadmin/index.php?route=/table/recent-favorite&amp;db=database&amp;table=data_siswa&amp;lang=id">
+                  `database`.`data_siswa`
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="drop_list"><button title="Tabel favorit" class="drop_button btn">Favorit</button>
+            <ul id="pma_favorite_list">
+              <li class="warp_link">
+                Tidak ada tabel favorit terbaru. </li>
+            </ul>
+          </div>
+          <div class="clearfloat"></div>
+        </div>
+
+
+        <div class="clearfloat"></div>
+
+        <ul>
+
+          <!-- CONTROLS START -->
+          <li id="navigation_controls_outer">
+            <div id="navigation_controls">
+              <a href="#" id="pma_navigation_collapse" title="Tutup semua"><img
+                  src="//localhost/phpmyadmin/themes/dot.gif" title="Tutup semua" alt="Tutup semua"
+                  class="icon ic_s_collapseall"></a>
+              <a href="#" id="pma_navigation_sync" title="Unlink dari panel utama"><img
+                  src="//localhost/phpmyadmin/themes/dot.gif" title="Unlink dari panel utama"
+                  alt="Unlink dari panel utama" class="icon ic_s_link"></a>
+            </div>
+          </li>
+          <!-- CONTROLS ENDS -->
+
+        </ul>
+
+
+
+        <div id='pma_navigation_tree_content'>
+          <ul>
+            <li class="first new_database italics">
+              <div class="block">
+                <i class="first"></i>
+              </div>
+
+              <div class="block second">
+                <a href="//localhost/phpmyadmin/index.php?route=/server/databases&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Baru" alt="Baru"
+                    class="icon ic_b_newdb"></a>
+              </div>
+
+              <a class="hover_show_full" href="//localhost/phpmyadmin/index.php?route=/server/databases&amp;lang=id"
+                title="Baru">Baru</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="database">
+              <div class="block">
+                <i></i>
+                <b></b>
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.ZGF0YWJhc2U=" data-vpath="cm9vdA==.ZGF0YWJhc2U="
+                    data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=database&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=database&amp;lang=id"
+                title="Struktur">database</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="database">
+              <div class="block">
+                <i></i>
+                <b></b>
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h"
+                    data-vpath="cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h" data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a
+                  href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=information_schema&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=information_schema&amp;lang=id"
+                title="Struktur">information_schema</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="database">
+              <div class="block">
+                <i></i>
+                <b></b>
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.bXlzcWw=" data-vpath="cm9vdA==.bXlzcWw="
+                    data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=mysql&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=mysql&amp;lang=id"
+                title="Struktur">mysql</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="database">
+              <div class="block">
+                <i></i>
+                <b></b>
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h"
+                    data-vpath="cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h" data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a
+                  href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=performance_schema&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=performance_schema&amp;lang=id"
+                title="Struktur">performance_schema</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="database">
+              <div class="block">
+                <i></i>
+                <b></b>
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.cGhwbXlhZG1pbg=="
+                    data-vpath="cm9vdA==.cGhwbXlhZG1pbg==" data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=phpmyadmin&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=phpmyadmin&amp;lang=id"
+                title="Struktur">phpmyadmin</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+            <li class="last database">
+              <div class="block">
+                <i></i>
+
+                <a class="expander" href="#">
+                  <span class="hide paths_nav" data-apath="cm9vdA==.dGVzdA==" data-vpath="cm9vdA==.dGVzdA=="
+                    data-pos="0"></span>
+                  <img src="//localhost/phpmyadmin/themes/dot.gif" title="Bentangkan/Tutup" alt="Bentangkan/Tutup"
+                    class="icon ic_b_plus">
+                </a>
+              </div>
+
+              <div class="block second">
+                <a href="//localhost/phpmyadmin/index.php?route=/database/operations&amp;db=test&amp;lang=id"><img
+                    src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Operasi database"
+                    alt="Operasi database" class="icon ic_s_db"></a>
+              </div>
+
+              <a class="hover_show_full"
+                href="//localhost/phpmyadmin/index.php?route=/database/structure&amp;db=test&amp;lang=id"
+                title="Struktur">test</a>
+
+
+
+
+              <div class="clearfloat"></div>
+
+
+
+            </li>
+
+          </ul>
+        </div>
+
+
+      </div>
+
+      <div id="pma_navi_settings_container">
+        <div id="pma_navigation_settings">
+          <div class="page_settings">
+            <form method="post" action="//localhost/phpmyadmin/index.php?route=%2F&amp;server=1&amp;lang=id"
+              class="config-form disableAjax">
+              <input type="hidden" name="tab_hash" value="">
+              <input type="hidden" name="check_page_refresh" id="check_page_refresh" value="">
+              <input type="hidden" name="lang" value="id"><input type="hidden" name="token"
+                value="355e5b303e2a2c715377633b59403e74">
+              <input type="hidden" name="submit_save" value="Navi">
+
+              <ul class="nav nav-tabs" id="configFormDisplayTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="Navi_panel-tab" href="#Navi_panel" data-bs-toggle="tab" role="tab"
+                    aria-controls="Navi_panel" aria-selected="true">Panel navigasi</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Navi_tree-tab" href="#Navi_tree" data-bs-toggle="tab" role="tab"
+                    aria-controls="Navi_tree" aria-selected="false">Panel navigasi</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Navi_servers-tab" href="#Navi_servers" data-bs-toggle="tab" role="tab"
+                    aria-controls="Navi_servers" aria-selected="false">Server</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Navi_databases-tab" href="#Navi_databases" data-bs-toggle="tab" role="tab"
+                    aria-controls="Navi_databases" aria-selected="false">Basis data</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Navi_tables-tab" href="#Navi_tables" data-bs-toggle="tab" role="tab"
+                    aria-controls="Navi_tables" aria-selected="false">Tabel</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="Navi_panel" role="tabpanel" aria-labelledby="Navi_panel-tab">
+                  <div class="card border-top-0">
+                    <div class="card-body">
+                      <h5 class="card-title visually-hidden">Panel navigasi</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Atur tampilan panel navigasi.</h6>
+
+                      <fieldset class="optbox">
+                        <legend>Panel navigasi</legend>
+
+
+                        <table class="table table-borderless">
+                          <tr>
+                            <th>
+                              <label for="ShowDatabasesNavigationAsTree">Tampilkan cabang navigasi databases</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_ShowDatabasesNavigationAsTree"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>di panel navigasi, timpa cabang database serta selectornya</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="ShowDatabasesNavigationAsTree"
+                                  id="ShowDatabasesNavigationAsTree" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#ShowDatabasesNavigationAsTree"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationLinkWithMainPanel">Link ke panel utama</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLinkWithMainPanel"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Menghubungkan dengan panel utama untuk menyoroti database atau tabel yang saat
+                                ini.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationLinkWithMainPanel"
+                                  id="NavigationLinkWithMainPanel" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationLinkWithMainPanel"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationDisplayLogo">Tampilkan logo</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationDisplayLogo"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Tampilkan logo di panel navigasi.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationDisplayLogo" id="NavigationDisplayLogo" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationDisplayLogo"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationLogoLink">URL tautan logo</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLogoLink"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Arahkan URL untuk logo pada panel navigasi.</small>
+                            </th>
+
+                            <td>
+                              <input type="text" name="NavigationLogoLink" id="NavigationLogoLink" value="index.php"
+                                class="w-75">
+
+
+
+                              <a class="restore-default hide" href="#NavigationLogoLink"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationLogoLinkWindow">Sasaran tautan logo</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLogoLinkWindow"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Open the linked page in the main window (<code>main</code>) or in a new one
+                                (<code>new</code>).</small>
+                            </th>
+
+                            <td>
+                              <select name="NavigationLogoLinkWindow" id="NavigationLogoLinkWindow" class="w-75">
+                                <option value="main" selected>main</option>
+                                <option value="new">new</option>
+                              </select>
+
+
+
+                              <a class="restore-default hide" href="#NavigationLogoLinkWindow"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreePointerEnable">Aktifkan penyorotan</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreePointerEnable"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Sorot server yang dikenai kursor.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreePointerEnable"
+                                  id="NavigationTreePointerEnable" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreePointerEnable"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="FirstLevelNavigationItems">Item maksimum di tingkat pertama</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_FirstLevelNavigationItems"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Jumlah item yang dapat ditampilkan pada setiap halaman dari cabang
+                                navigasi.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="FirstLevelNavigationItems" id="FirstLevelNavigationItems"
+                                value="100" class="">
+
+
+
+                              <a class="restore-default hide" href="#FirstLevelNavigationItems"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeDisplayItemFilterMinimum">Jumlah minimum item yang ditampilkan
+                                di kotak tabel filter</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDisplayItemFilterMinimum"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Tentukan jumlah minimum item (tabel, view, routines dan event) untuk menampilkan
+                                kotak filter.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="NavigationTreeDisplayItemFilterMinimum"
+                                id="NavigationTreeDisplayItemFilterMinimum" value="30" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeDisplayItemFilterMinimum"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NumRecentTables">Tabel yang terakhir digunakan</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NumRecentTables"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Jumlah maksimum tabel yang terakhir digunakan; atur 0 untuk
+                                menonaktifkannya.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="NumRecentTables" id="NumRecentTables" value="10" class="">
+
+
+
+                              <a class="restore-default hide" href="#NumRecentTables"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NumFavoriteTables">Tabel favorit</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NumFavoriteTables"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Jumlah maksimum tabel favorit; atur 0 untuk menonaktifkannya.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="NumFavoriteTables" id="NumFavoriteTables" value="10" class="">
+
+
+
+                              <a class="restore-default hide" href="#NumFavoriteTables"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationWidth">Lebar panel navigasi</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationWidth"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Setel ke 0 untuk menutup panel navigasi.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="NavigationWidth" id="NavigationWidth" value="240" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationWidth"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+
+                        </table>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="Navi_tree" role="tabpanel" aria-labelledby="Navi_tree-tab">
+                  <div class="card border-top-0">
+                    <div class="card-body">
+                      <h5 class="card-title visually-hidden">Panel navigasi</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Atur panel navigasi.</h6>
+
+                      <fieldset class="optbox">
+                        <legend>Panel navigasi</legend>
+
+
+                        <table class="table table-borderless">
+                          <tr>
+                            <th>
+                              <label for="MaxNavigationItems">Item maksimal di cabang</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_MaxNavigationItems"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Jumlah item yang dapat ditampilkan pada setiap halaman dari pohon navigasi.</small>
+                            </th>
+
+                            <td>
+                              <input type="number" name="MaxNavigationItems" id="MaxNavigationItems" value="50"
+                                class="">
+
+
+
+                              <a class="restore-default hide" href="#MaxNavigationItems"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeEnableGrouping">Item Group di pohon</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeEnableGrouping"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Mengelompokkan barang di cabang navigasi (ditentukan oleh pemisah yang
+                                didefinisikan di tab Database dan Tabel di atas).</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeEnableGrouping"
+                                  id="NavigationTreeEnableGrouping" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeEnableGrouping"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeEnableExpansion">Bolehkan perluasan pohon navigasi</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeEnableExpansion"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Apakah akan menonaktifkan kemungkinan ekspansi database atau tidak.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeEnableExpansion"
+                                  id="NavigationTreeEnableExpansion" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeEnableExpansion"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeShowTables">Tampilkan tabel pada cabang</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowTables"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Apakah akan menampilkan tabel di bawah database di pohon navigasi</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeShowTables" id="NavigationTreeShowTables"
+                                  checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeShowTables"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeShowViews">Tampilkan Views dalam bentuk bercabang</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowViews"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Apakah menampilkan views di bawah database di navigation tree</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeShowViews" id="NavigationTreeShowViews"
+                                  checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeShowViews"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeShowFunctions">Tampilkan Fungsi dalam bentuk bercabang</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowFunctions"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Apakah akan menampilkan fungsi di bawah database di navigation tree</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeShowFunctions"
+                                  id="NavigationTreeShowFunctions" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeShowFunctions"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeShowProcedures">Tampilkan prosedur di percabangan</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowProcedures"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Apakah akan menampilkan prosedur di bawah database di pohon navigasi</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeShowProcedures"
+                                  id="NavigationTreeShowProcedures" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeShowProcedures"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeShowEvents">Tunjukkan events dalam pohon</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowEvents"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Entah untuk menampilkan events di bawah database di navigation tree</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeShowEvents" id="NavigationTreeShowEvents"
+                                  checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeShowEvents"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeAutoexpandSingleDb">Expand single database</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeAutoexpandSingleDb"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Whether to expand single database in the navigation tree automatically.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationTreeAutoexpandSingleDb"
+                                  id="NavigationTreeAutoexpandSingleDb" checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeAutoexpandSingleDb"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+
+                        </table>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="Navi_servers" role="tabpanel" aria-labelledby="Navi_servers-tab">
+                  <div class="card border-top-0">
+                    <div class="card-body">
+                      <h5 class="card-title visually-hidden">Server</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Opsi tampilan server.</h6>
+
+                      <fieldset class="optbox">
+                        <legend>Server</legend>
+
+
+                        <table class="table table-borderless">
+                          <tr>
+                            <th>
+                              <label for="NavigationDisplayServers">Tampilkan pilihan server</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationDisplayServers"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Tampilkan pilihan server di bagian atas panel navigasi.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="NavigationDisplayServers" id="NavigationDisplayServers"
+                                  checked>
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#NavigationDisplayServers"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="DisplayServersList">Tampilkan server dalam bentuk daftar</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_DisplayServersList"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>Tampilkan daftar server dalam bentuk daftar dan bukan tarik-turun.</small>
+                            </th>
+
+                            <td>
+                              <span class="checkbox">
+                                <input type="checkbox" name="DisplayServersList" id="DisplayServersList">
+                              </span>
+
+
+
+                              <a class="restore-default hide" href="#DisplayServersList"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+
+                        </table>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="Navi_databases" role="tabpanel" aria-labelledby="Navi_databases-tab">
+                  <div class="card border-top-0">
+                    <div class="card-body">
+                      <h5 class="card-title visually-hidden">Basis data</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Opsi tampilan basis data.</h6>
+
+                      <fieldset class="optbox">
+                        <legend>Basis data</legend>
+
+
+                        <table class="table table-borderless">
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeDisplayDbFilterMinimum">Jumlah minimum database yang ditampilkan
+                                di kotak tabel filter</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDisplayDbFilterMinimum"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                            </th>
+
+                            <td>
+                              <input type="number" name="NavigationTreeDisplayDbFilterMinimum"
+                                id="NavigationTreeDisplayDbFilterMinimum" value="30" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeDisplayDbFilterMinimum"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeDbSeparator">Pemisah hierarki basis data</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDbSeparator"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>String yang memisahkan basis data ke dalam tingkat hierarki yang berbeda.</small>
+                            </th>
+
+                            <td>
+                              <input type="text" size="25" name="NavigationTreeDbSeparator"
+                                id="NavigationTreeDbSeparator" value="_" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeDbSeparator"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+
+                        </table>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="Navi_tables" role="tabpanel" aria-labelledby="Navi_tables-tab">
+                  <div class="card border-top-0">
+                    <div class="card-body">
+                      <h5 class="card-title visually-hidden">Tabel</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Opsi tampilan tabel.</h6>
+
+                      <fieldset class="optbox">
+                        <legend>Tabel</legend>
+
+
+                        <table class="table table-borderless">
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeDefaultTabTable">Target ikon akses cepat</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDefaultTabTable"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                            </th>
+
+                            <td>
+                              <select name="NavigationTreeDefaultTabTable" id="NavigationTreeDefaultTabTable"
+                                class="w-75">
+                                <option value="structure" selected>Struktur</option>
+                                <option value="sql">SQL</option>
+                                <option value="search">Cari</option>
+                                <option value="insert">Tambahkan</option>
+                                <option value="browse">Jelajahi</option>
+                              </select>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeDefaultTabTable"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeDefaultTabTable2">Target buat ikon akses cepat kedua</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDefaultTabTable2"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                            </th>
+
+                            <td>
+                              <select name="NavigationTreeDefaultTabTable2" id="NavigationTreeDefaultTabTable2"
+                                class="w-75">
+                                <option value="" selected></option>
+                                <option value="structure">Struktur</option>
+                                <option value="sql">SQL</option>
+                                <option value="search">Cari</option>
+                                <option value="insert">Tambahkan</option>
+                                <option value="browse">Jelajahi</option>
+                              </select>
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeDefaultTabTable2"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeTableSeparator">Pemisah hierarki tabel</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeTableSeparator"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                              <small>String yang memisahkan tabel ke dalam tingkat hierarki yang berbeda.</small>
+                            </th>
+
+                            <td>
+                              <input type="text" size="25" name="NavigationTreeTableSeparator"
+                                id="NavigationTreeTableSeparator" value="__" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeTableSeparator"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th>
+                              <label for="NavigationTreeTableLevel">Kedalaman hierarki tabel maksimum</label>
+
+                              <span class="doc">
+                                <a href="//localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeTableLevel"
+                                  target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                                    title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                              </span>
+
+
+                            </th>
+
+                            <td>
+                              <input type="number" name="NavigationTreeTableLevel" id="NavigationTreeTableLevel"
+                                value="1" class="">
+
+
+
+                              <a class="restore-default hide" href="#NavigationTreeTableLevel"
+                                title="Kembalikan nilai bawaan"><img src="//localhost/phpmyadmin/themes/dot.gif"
+                                  title="Kembalikan nilai bawaan" alt="Kembalikan nilai bawaan"
+                                  class="icon ic_s_reload"></a>
+
+                            </td>
+
+                          </tr>
+
+                        </table>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <script type="text/javascript">
+              if (typeof configInlineParams === 'undefined' || !Array.isArray(configInlineParams)) {
+                configInlineParams = [];
+              }
+              configInlineParams.push(function () {
+                registerFieldValidator('FirstLevelNavigationItems', 'validatePositiveNumber', true);
+                registerFieldValidator('NavigationTreeDisplayItemFilterMinimum', 'validatePositiveNumber', true);
+                registerFieldValidator('NumRecentTables', 'validateNonNegativeNumber', true);
+                registerFieldValidator('NumFavoriteTables', 'validateNonNegativeNumber', true);
+                registerFieldValidator('NavigationWidth', 'validateNonNegativeNumber', true);
+                registerFieldValidator('MaxNavigationItems', 'validatePositiveNumber', true);
+                registerFieldValidator('NavigationTreeTableLevel', 'validatePositiveNumber', true);
+
+                $.extend(Messages, {
+                  'error_nan_p': 'Bukan\u0020angka\u0020positif\u0021',
+                  'error_nan_nneg': 'Bukan\u0020angka\u0020non\u002Dnegatif\u0021',
+                  'error_incorrect_port': 'Bukan\u0020angka\u0020port\u0020yang\u0020sah\u0021',
+                  'error_invalid_value': 'Nilai\u0020yang\u0020salah\u0021',
+                  'error_value_lte': 'Nilai\u0020harus\u0020sama\u0020dengan\u0020atau\u0020lebih\u0020kecil\u0020dari\u0020\u0025s\u0021',
+                });
+
+                $.extend(defaultValues, {
+                  'ShowDatabasesNavigationAsTree': true,
+                  'NavigationLinkWithMainPanel': true,
+                  'NavigationDisplayLogo': true,
+                  'NavigationLogoLink': 'index.php',
+                  'NavigationLogoLinkWindow': ['main'],
+                  'NavigationTreePointerEnable': true,
+                  'FirstLevelNavigationItems': '100',
+                  'NavigationTreeDisplayItemFilterMinimum': '30',
+                  'NumRecentTables': '10',
+                  'NumFavoriteTables': '10',
+                  'NavigationWidth': '240',
+                  'MaxNavigationItems': '50',
+                  'NavigationTreeEnableGrouping': true,
+                  'NavigationTreeEnableExpansion': true,
+                  'NavigationTreeShowTables': true,
+                  'NavigationTreeShowViews': true,
+                  'NavigationTreeShowFunctions': true,
+                  'NavigationTreeShowProcedures': true,
+                  'NavigationTreeShowEvents': true,
+                  'NavigationTreeAutoexpandSingleDb': true,
+                  'NavigationDisplayServers': true,
+                  'DisplayServersList': false,
+                  'NavigationTreeDisplayDbFilterMinimum': '30',
+                  'NavigationTreeDbSeparator': '_',
+                  'NavigationTreeDefaultTabTable': ['structure'],
+                  'NavigationTreeDefaultTabTable2': [''],
+                  'NavigationTreeTableSeparator': '__',
+                  'NavigationTreeTableLevel': '1'
+                });
+              });
+              if (typeof configScriptLoaded !== 'undefined' && configInlineParams) {
+                loadInlineConfig();
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pma_drop_handler">
+      Letakkan berkas disini </div>
+    <div class="pma_sql_import_status">
+      <h2>
+        SQL upload ( <span class="pma_import_count">0</span> )
+        <span class="close">x</span>
+        <span class="minimize">-</span>
+      </h2>
+      <div></div>
+    </div>
+  </div>
+  <div class="modal fade" id="unhideNavItemModal" tabindex="-1" aria-labelledby="unhideNavItemModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="unhideNavItemModalLabel">Tampilkan navigasi pohon item tersembunyi.</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="createViewModal" tabindex="-1" aria-labelledby="createViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" id="createViewModalDialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createViewModalLabel">Buat tampilan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="createViewModalGoButton">Kirim</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <noscript>
+    <div class="alert alert-danger" role="alert">
+      <img src="//localhost/phpmyadmin/themes/dot.gif" title="" alt="" class="icon ic_s_error"> Javascript harus
+      diaktifkan lewat point ini!
+    </div>
+
+  </noscript>
+
+  <div id="floating_menubar" class="d-print-none"></div>
+  <nav id="server-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-navbar">
+      <li class="breadcrumb-item">
+        <img src="//localhost/phpmyadmin/themes/dot.gif" title="" alt="" class="icon ic_s_host">
+        <a href="//localhost/phpmyadmin/index.php?route=/&amp;lang=id" data-raw-text="127.0.0.1" draggable="false">
+          Server: 127.0.0.1
+        </a>
+      </li>
+
+    </ol>
+  </nav>
+  <div id="topmenucontainer" class="menucontainer">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="topmenu" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/databases&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Basis data" alt="Basis data"
+                class="icon ic_s_db">&nbsp;Basis data
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/sql&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="SQL" alt="SQL" class="icon ic_b_sql">&nbsp;SQL
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/status&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Status" alt="Status"
+                class="icon ic_s_status">&nbsp;Status
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap"
+              href="//localhost/phpmyadmin/index.php?route=/server/privileges&amp;viewing_mode=server&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Akun pengguna" alt="Akun pengguna"
+                class="icon ic_s_rights">&nbsp;Akun pengguna
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/export&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Ekspor" alt="Ekspor"
+                class="icon ic_b_export">&nbsp;Ekspor
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/import&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Impor" alt="Impor"
+                class="icon ic_b_import">&nbsp;Impor
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap"
+              href="//localhost/phpmyadmin/index.php?route=/preferences/manage&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Pengaturan" alt="Pengaturan"
+                class="icon ic_b_tblops">&nbsp;Pengaturan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap"
+              href="//localhost/phpmyadmin/index.php?route=/server/replication&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Replikasi" alt="Replikasi"
+                class="icon ic_s_replication">&nbsp;Replikasi
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/variables&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Variabel" alt="Variabel"
+                class="icon ic_s_vars">&nbsp;Variabel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap"
+              href="//localhost/phpmyadmin/index.php?route=/server/collations&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Set Karakter" alt="Set Karakter"
+                class="icon ic_s_asci">&nbsp;Set Karakter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/engines&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Mesin" alt="Mesin"
+                class="icon ic_b_engine">&nbsp;Mesin
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="//localhost/phpmyadmin/index.php?route=/server/plugins&amp;lang=id">
+              <img src="//localhost/phpmyadmin/themes/dot.gif" title="Plugin" alt="Plugin"
+                class="icon ic_b_plugin">&nbsp;Plugin
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <span id="page_nav_icons" class="d-print-none">
+    <span id="lock_page_icon"></span>
+    <span id="page_settings_icon">
+      <img src="//localhost/phpmyadmin/themes/dot.gif" title="Pengaturan Terkait dengan Halaman"
+        alt="Pengaturan Terkait dengan Halaman" class="icon ic_s_cog">
+    </span>
+    <a id="goto_pagetop" href="#"><img src="//localhost/phpmyadmin/themes/dot.gif"
+        title="Klik pada bar untuk menggulir ke atas halaman" alt="Klik pada bar untuk menggulir ke atas halaman"
+        class="icon ic_s_top"></a>
+  </span>
+
+  <div id="pma_console_container" class="d-print-none">
+    <div id="pma_console">
+      <div class="toolbar collapsed">
+        <div class="switch_button console_switch">
+          <img src="//localhost/phpmyadmin/themes/dot.gif" title="Konsol Kueri SQL" alt="Konsol Kueri SQL"
+            class="icon ic_console">
+          <span>Konsol</span>
+        </div>
+        <div class="button clear">
+
+          <span>Bersihkan</span>
+        </div>
+        <div class="button history">
+
+          <span>Riwayat</span>
+        </div>
+        <div class="button options">
+
+          <span>Opsi</span>
+        </div>
+        <div class="button bookmarks">
+
+          <span>Bookmark</span>
+        </div>
+        <div class="button debug hide">
+
+          <span>Men-Debug SQL</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="console_message_container">
+          <div class="message welcome">
+            <span id="instructions-0">
+              Tekan Ctrl+Enter untuk menjalankan kueri </span>
+            <span class="hide" id="instructions-1">
+              Press Enter to execute query </span>
+          </div>
+        </div><!-- console_message_container -->
+        <div class="query_input">
+          <span class="console_query_input"></span>
+        </div>
+      </div><!-- message end -->
+      <div class="mid_layer"></div>
+      <div class="card" id="debug_console">
+        <div class="toolbar ">
+          <div class="button order order_asc">
+
+            <span>ascending</span>
+          </div>
+          <div class="button order order_desc">
+
+            <span>descending</span>
+          </div>
+          <div class="text">
+
+            <span>Order:</span>
+          </div>
+          <div class="switch_button">
+
+            <span>Men-Debug SQL</span>
+          </div>
+          <div class="button order_by sort_count">
+
+            <span>Jumlah</span>
+          </div>
+          <div class="button order_by sort_exec">
+
+            <span>Execution order</span>
+          </div>
+          <div class="button order_by sort_time">
+
+            <span>Time taken</span>
+          </div>
+          <div class="text">
+
+            <span>Order by:</span>
+          </div>
+          <div class="button group_queries">
+
+            <span>Group queries</span>
+          </div>
+          <div class="button ungroup_queries">
+
+            <span>Ungroup queries</span>
+          </div>
+        </div>
+        <div class="content debug">
+          <div class="message welcome"></div>
+          <div class="debugLog"></div>
+        </div> <!-- Content -->
+        <div class="templates">
+          <div class="debug_query action_content">
+            <span class="action collapse">
+              Tampilkan
+            </span>
+            <span class="action expand">
+              Buka
+            </span>
+            <span class="action dbg_show_trace">
+              Show trace
+            </span>
+            <span class="action dbg_hide_trace">
+              Hide trace
+            </span>
+            <span class="text count hide">
+              Jumlah
+              : <span></span>
+            </span>
+            <span class="text time">
+              Time taken
+              : <span></span>
+            </span>
+          </div>
+        </div> <!-- Template -->
+      </div> <!-- Debug SQL card -->
+      <div class="card" id="pma_bookmarks">
+        <div class="toolbar ">
+          <div class="switch_button">
+
+            <span>Bookmark</span>
+          </div>
+          <div class="button refresh">
+
+            <span>Segarkan</span>
+          </div>
+          <div class="button add">
+
+            <span>Tambah</span>
+          </div>
+        </div>
+        <div class="content bookmark">
+          <div class="message welcome">
+            <span>Tidak ada penanda</span>
+          </div>
+
+        </div>
+        <div class="mid_layer"></div>
+        <div class="card add">
+          <div class="toolbar ">
+            <div class="switch_button">
+
+              <span>Tambah bookmark</span>
+            </div>
+          </div>
+          <div class="content add_bookmark">
+            <div class="options">
+              <label>
+                Label: <input type="text" name="label">
+              </label>
+              <label>
+                Basis data target: <input type="text" name="targetdb">
+              </label>
+              <label>
+                <input type="checkbox" name="shared">Bagikan bookmark </label>
+              <button class="btn btn-primary" type="submit" name="submit">Oke</button>
+            </div> <!-- options -->
+            <div class="query_input">
+              <span class="bookmark_add_input"></span>
+            </div>
+          </div>
+        </div> <!-- Add bookmark card -->
+      </div> <!-- Bookmarks card -->
+      <div class="card" id="pma_console_options">
+        <div class="toolbar ">
+          <div class="switch_button">
+
+            <span>Opsi</span>
+          </div>
+          <div class="button default">
+
+            <span>Kembalikan nilai bawaan</span>
+          </div>
+        </div>
+        <div class="content">
+          <label>
+            <input type="checkbox" name="always_expand">Selalu tampilkan pesan kueri </label>
+          <br>
+          <label>
+            <input type="checkbox" name="start_history">Tampilkan riwayat kueri di awal </label>
+          <br>
+          <label>
+            <input type="checkbox" name="current_query">Show current browsing query </label>
+          <br>
+          <label>
+            <input type="checkbox" name="enter_executes">
+            Execute queries on Enter and insert new line with Shift+Enter. To make this permanent, view settings.
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" name="dark_theme">Beralih ke tema gelap </label>
+          <br>
+        </div>
+      </div> <!-- Options card -->
+      <div class="templates">
+        <div class="query_actions">
+          <span class="action collapse">
+            Tampilkan
+          </span>
+          <span class="action expand">
+            Buka
+          </span>
+          <span class="action requery">
+            Kueri ulang
+          </span>
+          <span class="action edit">
+            Ubah
+          </span>
+          <span class="action explain">
+            Jelaskan
+          </span>
+          <span class="action profiling">
+            Profil
+          </span>
+          <span class="action bookmark">
+            Bookmarks
+          </span>
+          <span class="text failed">
+            Kueri gagal
+          </span>
+          <span class="text targetdb">
+            Basis data
+            : <span></span>
+          </span>
+          <span class="text query_time">
+            Waktu eksekusi kueri
+            : <span></span>
+          </span>
+        </div>
+      </div>
+    </div> <!-- #console end -->
+  </div> <!-- #console_container end -->
+
+
+  <div id="page_content">
+
+
+    <div class="modal fade" id="previewSqlModal" tabindex="-1" aria-labelledby="previewSqlModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previewSqlModalLabel">Memproses</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="enumEditorModal" tabindex="-1" aria-labelledby="enumEditorModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enumEditorModalLabel">Editor ENUM/SET</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="enumEditorGoButton"
+              data-bs-dismiss="modal">Kirim</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="createViewModal" tabindex="-1" aria-labelledby="createViewModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg" id="createViewModalDialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createViewModalLabel">Buat tampilan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="createViewModalGoButton">Kirim</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="maincontainer">
+      <a class="hide" id="sync_favorite_tables"
+        href="//localhost/phpmyadmin/index.php?route=/database/structure/favorite-table&amp;ajax_request=1&amp;favorite_table=1&amp;sync_favorite_tables=1&amp;lang=id"></a>
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <div class="col-lg-7 col-12">
+
+            <div class="card mt-4">
+              <div class="card-header">
+                Pengaturan umum </div>
+              <ul class="list-group list-group-flush">
+
+
+                <li id="li_select_mysql_collation" class="list-group-item">
+                  <form method="post" action="//localhost/phpmyadmin/index.php?route=/collation-connection&amp;lang=id"
+                    class="row row-cols-lg-auto align-items-center disableAjax">
+                    <input type="hidden" name="lang" value="id"><input type="hidden" name="token"
+                      value="355e5b303e2a2c715377633b59403e74">
+                    <div class="col-12">
+                      <label for="collationConnectionSelect" class="col-form-label">
+                        <img src="//localhost/phpmyadmin/themes/dot.gif" title="" alt="" class="icon ic_s_asci">
+                        Server connection collation: <a
+                          href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F8.0%2Fen%2Fcharset-connection.html"
+                          target="mysql_doc"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                            title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                      </label>
+                    </div>
+                    <div class="col-12">
+                      <select lang="en" dir="ltr" name="collation_connection" id="collationConnectionSelect"
+                        class="form-select autosubmit">
+                        <option value="">Penyortiran</option>
+                        <option value=""></option>
+                        <optgroup label="armscii8" title="ARMSCII-8 Armenian">
+                          <option value="armscii8_bin" title="Armenia, biner">armscii8_bin</option>
+                          <option value="armscii8_general_ci" title="Armenia, tidak peka huruf kapital">
+                            armscii8_general_ci</option>
+                          <option value="armscii8_general_nopad_ci"
+                            title="Armenia, tanpa-pad, tidak peka huruf kapital">armscii8_general_nopad_ci</option>
+                          <option value="armscii8_nopad_bin" title="Armenia, tanpa-pad, biner">armscii8_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="ascii" title="US ASCII">
+                          <option value="ascii_bin" title="Eropa Barat, biner">ascii_bin</option>
+                          <option value="ascii_general_ci" title="Eropa Barat, tidak peka huruf kapital">
+                            ascii_general_ci</option>
+                          <option value="ascii_general_nopad_ci"
+                            title="Eropa Barat, tanpa-pad, tidak peka huruf kapital">ascii_general_nopad_ci</option>
+                          <option value="ascii_nopad_bin" title="Eropa Barat, tanpa-pad, biner">ascii_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="big5" title="Big5 Traditional Chinese">
+                          <option value="big5_bin" title="Cina Tradisional, biner">big5_bin</option>
+                          <option value="big5_chinese_ci" title="Cina Tradisional, tidak peka huruf kapital">
+                            big5_chinese_ci</option>
+                          <option value="big5_chinese_nopad_ci"
+                            title="Cina Tradisional, tanpa-pad, tidak peka huruf kapital">big5_chinese_nopad_ci</option>
+                          <option value="big5_nopad_bin" title="Cina Tradisional, tanpa-pad, biner">big5_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="binary" title="Binary pseudo charset">
+                          <option value="binary" title="Biner">binary</option>
+                        </optgroup>
+                        <optgroup label="cp1250" title="Windows Central European">
+                          <option value="cp1250_bin" title="Eropa Tengah, biner">cp1250_bin</option>
+                          <option value="cp1250_croatian_ci" title="Kroasia, tidak peka huruf kapital">
+                            cp1250_croatian_ci</option>
+                          <option value="cp1250_czech_cs" title="Ceko, peka kapitalisasi">cp1250_czech_cs</option>
+                          <option value="cp1250_general_ci" title="Eropa Tengah, tidak peka huruf kapital">
+                            cp1250_general_ci</option>
+                          <option value="cp1250_general_nopad_ci"
+                            title="Eropa Tengah, tanpa-pad, tidak peka huruf kapital">cp1250_general_nopad_ci</option>
+                          <option value="cp1250_nopad_bin" title="Eropa Tengah, tanpa-pad, biner">cp1250_nopad_bin
+                          </option>
+                          <option value="cp1250_polish_ci" title="Polandia, tidak peka huruf kapital">cp1250_polish_ci
+                          </option>
+                        </optgroup>
+                        <optgroup label="cp1251" title="Windows Cyrillic">
+                          <option value="cp1251_bin" title="Sirilik, biner">cp1251_bin</option>
+                          <option value="cp1251_bulgarian_ci" title="Bulgaria, tidak peka huruf kapital">
+                            cp1251_bulgarian_ci</option>
+                          <option value="cp1251_general_ci" title="Sirilik, tidak peka huruf kapital">cp1251_general_ci
+                          </option>
+                          <option value="cp1251_general_cs" title="Sirilik, peka kapitalisasi">cp1251_general_cs
+                          </option>
+                          <option value="cp1251_general_nopad_ci" title="Sirilik, tanpa-pad, tidak peka huruf kapital">
+                            cp1251_general_nopad_ci</option>
+                          <option value="cp1251_nopad_bin" title="Sirilik, tanpa-pad, biner">cp1251_nopad_bin</option>
+                          <option value="cp1251_ukrainian_ci" title="Ukrainia, tidak peka huruf kapital">
+                            cp1251_ukrainian_ci</option>
+                        </optgroup>
+                        <optgroup label="cp1256" title="Windows Arabic">
+                          <option value="cp1256_bin" title="Arab, biner">cp1256_bin</option>
+                          <option value="cp1256_general_ci" title="Arab, tidak peka huruf kapital">cp1256_general_ci
+                          </option>
+                          <option value="cp1256_general_nopad_ci" title="Arab, tanpa-pad, tidak peka huruf kapital">
+                            cp1256_general_nopad_ci</option>
+                          <option value="cp1256_nopad_bin" title="Arab, tanpa-pad, biner">cp1256_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="cp1257" title="Windows Baltic">
+                          <option value="cp1257_bin" title="Baltik, biner">cp1257_bin</option>
+                          <option value="cp1257_general_ci" title="Baltik, tidak peka huruf kapital">cp1257_general_ci
+                          </option>
+                          <option value="cp1257_general_nopad_ci" title="Baltik, tanpa-pad, tidak peka huruf kapital">
+                            cp1257_general_nopad_ci</option>
+                          <option value="cp1257_lithuanian_ci" title="Lithuania, tidak peka huruf kapital">
+                            cp1257_lithuanian_ci</option>
+                          <option value="cp1257_nopad_bin" title="Baltik, tanpa-pad, biner">cp1257_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="cp850" title="DOS West European">
+                          <option value="cp850_bin" title="Eropa Barat, biner">cp850_bin</option>
+                          <option value="cp850_general_ci" title="Eropa Barat, tidak peka huruf kapital">
+                            cp850_general_ci</option>
+                          <option value="cp850_general_nopad_ci"
+                            title="Eropa Barat, tanpa-pad, tidak peka huruf kapital">cp850_general_nopad_ci</option>
+                          <option value="cp850_nopad_bin" title="Eropa Barat, tanpa-pad, biner">cp850_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="cp852" title="DOS Central European">
+                          <option value="cp852_bin" title="Eropa Tengah, biner">cp852_bin</option>
+                          <option value="cp852_general_ci" title="Eropa Tengah, tidak peka huruf kapital">
+                            cp852_general_ci</option>
+                          <option value="cp852_general_nopad_ci"
+                            title="Eropa Tengah, tanpa-pad, tidak peka huruf kapital">cp852_general_nopad_ci</option>
+                          <option value="cp852_nopad_bin" title="Eropa Tengah, tanpa-pad, biner">cp852_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="cp866" title="DOS Russian">
+                          <option value="cp866_bin" title="Rusia, biner">cp866_bin</option>
+                          <option value="cp866_general_ci" title="Rusia, tidak peka huruf kapital">cp866_general_ci
+                          </option>
+                          <option value="cp866_general_nopad_ci" title="Rusia, tanpa-pad, tidak peka huruf kapital">
+                            cp866_general_nopad_ci</option>
+                          <option value="cp866_nopad_bin" title="Rusia, tanpa-pad, biner">cp866_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="cp932" title="SJIS for Windows Japanese">
+                          <option value="cp932_bin" title="Jepang, biner">cp932_bin</option>
+                          <option value="cp932_japanese_ci" title="Jepang, tidak peka huruf kapital">cp932_japanese_ci
+                          </option>
+                          <option value="cp932_japanese_nopad_ci" title="Jepang, tanpa-pad, tidak peka huruf kapital">
+                            cp932_japanese_nopad_ci</option>
+                          <option value="cp932_nopad_bin" title="Jepang, tanpa-pad, biner">cp932_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="dec8" title="DEC West European">
+                          <option value="dec8_bin" title="Eropa Barat, biner">dec8_bin</option>
+                          <option value="dec8_nopad_bin" title="Eropa Barat, tanpa-pad, biner">dec8_nopad_bin</option>
+                          <option value="dec8_swedish_ci" title="Swedia, tidak peka huruf kapital">dec8_swedish_ci
+                          </option>
+                          <option value="dec8_swedish_nopad_ci" title="Swedia, tanpa-pad, tidak peka huruf kapital">
+                            dec8_swedish_nopad_ci</option>
+                        </optgroup>
+                        <optgroup label="eucjpms" title="UJIS for Windows Japanese">
+                          <option value="eucjpms_bin" title="Jepang, biner">eucjpms_bin</option>
+                          <option value="eucjpms_japanese_ci" title="Jepang, tidak peka huruf kapital">
+                            eucjpms_japanese_ci</option>
+                          <option value="eucjpms_japanese_nopad_ci" title="Jepang, tanpa-pad, tidak peka huruf kapital">
+                            eucjpms_japanese_nopad_ci</option>
+                          <option value="eucjpms_nopad_bin" title="Jepang, tanpa-pad, biner">eucjpms_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="euckr" title="EUC-KR Korean">
+                          <option value="euckr_bin" title="Korea, biner">euckr_bin</option>
+                          <option value="euckr_korean_ci" title="Korea, tidak peka huruf kapital">euckr_korean_ci
+                          </option>
+                          <option value="euckr_korean_nopad_ci" title="Korea, tanpa-pad, tidak peka huruf kapital">
+                            euckr_korean_nopad_ci</option>
+                          <option value="euckr_nopad_bin" title="Korea, tanpa-pad, biner">euckr_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="gb2312" title="GB2312 Simplified Chinese">
+                          <option value="gb2312_bin" title="Cina Sederhana, biner">gb2312_bin</option>
+                          <option value="gb2312_chinese_ci" title="Cina Sederhana, tidak peka huruf kapital">
+                            gb2312_chinese_ci</option>
+                          <option value="gb2312_chinese_nopad_ci"
+                            title="Cina Sederhana, tanpa-pad, tidak peka huruf kapital">gb2312_chinese_nopad_ci</option>
+                          <option value="gb2312_nopad_bin" title="Cina Sederhana, tanpa-pad, biner">gb2312_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="gbk" title="GBK Simplified Chinese">
+                          <option value="gbk_bin" title="Cina Sederhana, biner">gbk_bin</option>
+                          <option value="gbk_chinese_ci" title="Cina Sederhana, tidak peka huruf kapital">gbk_chinese_ci
+                          </option>
+                          <option value="gbk_chinese_nopad_ci"
+                            title="Cina Sederhana, tanpa-pad, tidak peka huruf kapital">gbk_chinese_nopad_ci</option>
+                          <option value="gbk_nopad_bin" title="Cina Sederhana, tanpa-pad, biner">gbk_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="geostd8" title="GEOSTD8 Georgian">
+                          <option value="geostd8_bin" title="Georgia, biner">geostd8_bin</option>
+                          <option value="geostd8_general_ci" title="Georgia, tidak peka huruf kapital">
+                            geostd8_general_ci</option>
+                          <option value="geostd8_general_nopad_ci" title="Georgia, tanpa-pad, tidak peka huruf kapital">
+                            geostd8_general_nopad_ci</option>
+                          <option value="geostd8_nopad_bin" title="Georgia, tanpa-pad, biner">geostd8_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="greek" title="ISO 8859-7 Greek">
+                          <option value="greek_bin" title="Yunani, biner">greek_bin</option>
+                          <option value="greek_general_ci" title="Yunani, tidak peka huruf kapital">greek_general_ci
+                          </option>
+                          <option value="greek_general_nopad_ci" title="Yunani, tanpa-pad, tidak peka huruf kapital">
+                            greek_general_nopad_ci</option>
+                          <option value="greek_nopad_bin" title="Yunani, tanpa-pad, biner">greek_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="hebrew" title="ISO 8859-8 Hebrew">
+                          <option value="hebrew_bin" title="Ibrani, biner">hebrew_bin</option>
+                          <option value="hebrew_general_ci" title="Ibrani, tidak peka huruf kapital">hebrew_general_ci
+                          </option>
+                          <option value="hebrew_general_nopad_ci" title="Ibrani, tanpa-pad, tidak peka huruf kapital">
+                            hebrew_general_nopad_ci</option>
+                          <option value="hebrew_nopad_bin" title="Ibrani, tanpa-pad, biner">hebrew_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="hp8" title="HP West European">
+                          <option value="hp8_bin" title="Eropa Barat, biner">hp8_bin</option>
+                          <option value="hp8_english_ci" title="Inggris, tidak peka huruf kapital">hp8_english_ci
+                          </option>
+                          <option value="hp8_english_nopad_ci" title="Inggris, tanpa-pad, tidak peka huruf kapital">
+                            hp8_english_nopad_ci</option>
+                          <option value="hp8_nopad_bin" title="Eropa Barat, tanpa-pad, biner">hp8_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="keybcs2" title="DOS Kamenicky Czech-Slovak">
+                          <option value="keybcs2_bin" title="Cecko-Slovakia, biner">keybcs2_bin</option>
+                          <option value="keybcs2_general_ci" title="Cecko-Slovakia, tidak peka huruf kapital">
+                            keybcs2_general_ci</option>
+                          <option value="keybcs2_general_nopad_ci"
+                            title="Cecko-Slovakia, tanpa-pad, tidak peka huruf kapital">keybcs2_general_nopad_ci
+                          </option>
+                          <option value="keybcs2_nopad_bin" title="Cecko-Slovakia, tanpa-pad, biner">keybcs2_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="koi8r" title="KOI8-R Relcom Russian">
+                          <option value="koi8r_bin" title="Rusia, biner">koi8r_bin</option>
+                          <option value="koi8r_general_ci" title="Rusia, tidak peka huruf kapital">koi8r_general_ci
+                          </option>
+                          <option value="koi8r_general_nopad_ci" title="Rusia, tanpa-pad, tidak peka huruf kapital">
+                            koi8r_general_nopad_ci</option>
+                          <option value="koi8r_nopad_bin" title="Rusia, tanpa-pad, biner">koi8r_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="koi8u" title="KOI8-U Ukrainian">
+                          <option value="koi8u_bin" title="Ukrainia, biner">koi8u_bin</option>
+                          <option value="koi8u_general_ci" title="Ukrainia, tidak peka huruf kapital">koi8u_general_ci
+                          </option>
+                          <option value="koi8u_general_nopad_ci" title="Ukrainia, tanpa-pad, tidak peka huruf kapital">
+                            koi8u_general_nopad_ci</option>
+                          <option value="koi8u_nopad_bin" title="Ukrainia, tanpa-pad, biner">koi8u_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="latin1" title="cp1252 West European">
+                          <option value="latin1_bin" title="Eropa Barat, biner">latin1_bin</option>
+                          <option value="latin1_danish_ci" title="Denmark, tidak peka huruf kapital">latin1_danish_ci
+                          </option>
+                          <option value="latin1_general_ci" title="Eropa Barat, tidak peka huruf kapital">
+                            latin1_general_ci</option>
+                          <option value="latin1_general_cs" title="Eropa Barat, peka kapitalisasi">latin1_general_cs
+                          </option>
+                          <option value="latin1_german1_ci" title="Jerman (Urutan Kamus), tidak peka huruf kapital">
+                            latin1_german1_ci</option>
+                          <option value="latin1_german2_ci"
+                            title="Jerman (urutan buku telepon), tidak peka huruf kapital">latin1_german2_ci</option>
+                          <option value="latin1_nopad_bin" title="Eropa Barat, tanpa-pad, biner">latin1_nopad_bin
+                          </option>
+                          <option value="latin1_spanish_ci" title="Spanyol (modern), tidak peka huruf kapital">
+                            latin1_spanish_ci</option>
+                          <option value="latin1_swedish_ci" title="Swedia, tidak peka huruf kapital">latin1_swedish_ci
+                          </option>
+                          <option value="latin1_swedish_nopad_ci" title="Swedia, tanpa-pad, tidak peka huruf kapital">
+                            latin1_swedish_nopad_ci</option>
+                        </optgroup>
+                        <optgroup label="latin2" title="ISO 8859-2 Central European">
+                          <option value="latin2_bin" title="Eropa Tengah, biner">latin2_bin</option>
+                          <option value="latin2_croatian_ci" title="Kroasia, tidak peka huruf kapital">
+                            latin2_croatian_ci</option>
+                          <option value="latin2_czech_cs" title="Ceko, peka kapitalisasi">latin2_czech_cs</option>
+                          <option value="latin2_general_ci" title="Eropa Tengah, tidak peka huruf kapital">
+                            latin2_general_ci</option>
+                          <option value="latin2_general_nopad_ci"
+                            title="Eropa Tengah, tanpa-pad, tidak peka huruf kapital">latin2_general_nopad_ci</option>
+                          <option value="latin2_hungarian_ci" title="Hungaria, tidak peka huruf kapital">
+                            latin2_hungarian_ci</option>
+                          <option value="latin2_nopad_bin" title="Eropa Tengah, tanpa-pad, biner">latin2_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="latin5" title="ISO 8859-9 Turkish">
+                          <option value="latin5_bin" title="Turki, biner">latin5_bin</option>
+                          <option value="latin5_nopad_bin" title="Turki, tanpa-pad, biner">latin5_nopad_bin</option>
+                          <option value="latin5_turkish_ci" title="Turki, tidak peka huruf kapital">latin5_turkish_ci
+                          </option>
+                          <option value="latin5_turkish_nopad_ci" title="Turki, tanpa-pad, tidak peka huruf kapital">
+                            latin5_turkish_nopad_ci</option>
+                        </optgroup>
+                        <optgroup label="latin7" title="ISO 8859-13 Baltic">
+                          <option value="latin7_bin" title="Baltik, biner">latin7_bin</option>
+                          <option value="latin7_estonian_cs" title="Estonia, peka kapitalisasi">latin7_estonian_cs
+                          </option>
+                          <option value="latin7_general_ci" title="Baltik, tidak peka huruf kapital">latin7_general_ci
+                          </option>
+                          <option value="latin7_general_cs" title="Baltik, peka kapitalisasi">latin7_general_cs</option>
+                          <option value="latin7_general_nopad_ci" title="Baltik, tanpa-pad, tidak peka huruf kapital">
+                            latin7_general_nopad_ci</option>
+                          <option value="latin7_nopad_bin" title="Baltik, tanpa-pad, biner">latin7_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="macce" title="Mac Central European">
+                          <option value="macce_bin" title="Eropa Tengah, biner">macce_bin</option>
+                          <option value="macce_general_ci" title="Eropa Tengah, tidak peka huruf kapital">
+                            macce_general_ci</option>
+                          <option value="macce_general_nopad_ci"
+                            title="Eropa Tengah, tanpa-pad, tidak peka huruf kapital">macce_general_nopad_ci</option>
+                          <option value="macce_nopad_bin" title="Eropa Tengah, tanpa-pad, biner">macce_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="macroman" title="Mac West European">
+                          <option value="macroman_bin" title="Eropa Barat, biner">macroman_bin</option>
+                          <option value="macroman_general_ci" title="Eropa Barat, tidak peka huruf kapital">
+                            macroman_general_ci</option>
+                          <option value="macroman_general_nopad_ci"
+                            title="Eropa Barat, tanpa-pad, tidak peka huruf kapital">macroman_general_nopad_ci</option>
+                          <option value="macroman_nopad_bin" title="Eropa Barat, tanpa-pad, biner">macroman_nopad_bin
+                          </option>
+                        </optgroup>
+                        <optgroup label="sjis" title="Shift-JIS Japanese">
+                          <option value="sjis_bin" title="Jepang, biner">sjis_bin</option>
+                          <option value="sjis_japanese_ci" title="Jepang, tidak peka huruf kapital">sjis_japanese_ci
+                          </option>
+                          <option value="sjis_japanese_nopad_ci" title="Jepang, tanpa-pad, tidak peka huruf kapital">
+                            sjis_japanese_nopad_ci</option>
+                          <option value="sjis_nopad_bin" title="Jepang, tanpa-pad, biner">sjis_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="swe7" title="7bit Swedish">
+                          <option value="swe7_bin" title="Swedia, biner">swe7_bin</option>
+                          <option value="swe7_nopad_bin" title="Swedia, tanpa-pad, biner">swe7_nopad_bin</option>
+                          <option value="swe7_swedish_ci" title="Swedia, tidak peka huruf kapital">swe7_swedish_ci
+                          </option>
+                          <option value="swe7_swedish_nopad_ci" title="Swedia, tanpa-pad, tidak peka huruf kapital">
+                            swe7_swedish_nopad_ci</option>
+                        </optgroup>
+                        <optgroup label="tis620" title="TIS620 Thai">
+                          <option value="tis620_bin" title="Thailand, biner">tis620_bin</option>
+                          <option value="tis620_nopad_bin" title="Thailand, tanpa-pad, biner">tis620_nopad_bin</option>
+                          <option value="tis620_thai_ci" title="Thailand, tidak peka huruf kapital">tis620_thai_ci
+                          </option>
+                          <option value="tis620_thai_nopad_ci" title="Thailand, tanpa-pad, tidak peka huruf kapital">
+                            tis620_thai_nopad_ci</option>
+                        </optgroup>
+                        <optgroup label="ucs2" title="UCS-2 Unicode">
+                          <option value="ucs2_bin" title="Unikode, biner">ucs2_bin</option>
+                          <option value="ucs2_croatian_ci" title="Kroasia, tidak peka huruf kapital">ucs2_croatian_ci
+                          </option>
+                          <option value="ucs2_croatian_mysql561_ci"
+                            title="Kroasia (MySQL 5.6.1), tidak peka huruf kapital">ucs2_croatian_mysql561_ci</option>
+                          <option value="ucs2_czech_ci" title="Ceko, tidak peka huruf kapital">ucs2_czech_ci</option>
+                          <option value="ucs2_danish_ci" title="Denmark, tidak peka huruf kapital">ucs2_danish_ci
+                          </option>
+                          <option value="ucs2_esperanto_ci" title="Esperanto, tidak peka huruf kapital">
+                            ucs2_esperanto_ci</option>
+                          <option value="ucs2_estonian_ci" title="Estonia, tidak peka huruf kapital">ucs2_estonian_ci
+                          </option>
+                          <option value="ucs2_general_ci" title="Unikode, tidak peka huruf kapital">ucs2_general_ci
+                          </option>
+                          <option value="ucs2_general_mysql500_ci"
+                            title="Unikode (MySQL 5.0.0), tidak peka huruf kapital">ucs2_general_mysql500_ci</option>
+                          <option value="ucs2_general_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            ucs2_general_nopad_ci</option>
+                          <option value="ucs2_german2_ci"
+                            title="Jerman (urutan buku telepon), tidak peka huruf kapital">ucs2_german2_ci</option>
+                          <option value="ucs2_hungarian_ci" title="Hungaria, tidak peka huruf kapital">ucs2_hungarian_ci
+                          </option>
+                          <option value="ucs2_icelandic_ci" title="Islandia, tidak peka huruf kapital">ucs2_icelandic_ci
+                          </option>
+                          <option value="ucs2_latvian_ci" title="Latvia, tidak peka huruf kapital">ucs2_latvian_ci
+                          </option>
+                          <option value="ucs2_lithuanian_ci" title="Lithuania, tidak peka huruf kapital">
+                            ucs2_lithuanian_ci</option>
+                          <option value="ucs2_myanmar_ci" title="Myanmar, tidak peka huruf kapital">ucs2_myanmar_ci
+                          </option>
+                          <option value="ucs2_nopad_bin" title="Unikode, tanpa-pad, biner">ucs2_nopad_bin</option>
+                          <option value="ucs2_persian_ci" title="Persia, tidak peka huruf kapital">ucs2_persian_ci
+                          </option>
+                          <option value="ucs2_polish_ci" title="Polandia, tidak peka huruf kapital">ucs2_polish_ci
+                          </option>
+                          <option value="ucs2_roman_ci" title="Eropa Barat, tidak peka huruf kapital">ucs2_roman_ci
+                          </option>
+                          <option value="ucs2_romanian_ci" title="Romania, tidak peka huruf kapital">ucs2_romanian_ci
+                          </option>
+                          <option value="ucs2_sinhala_ci" title="Sinhala, tidak peka huruf kapital">ucs2_sinhala_ci
+                          </option>
+                          <option value="ucs2_slovak_ci" title="Slovakia, tidak peka huruf kapital">ucs2_slovak_ci
+                          </option>
+                          <option value="ucs2_slovenian_ci" title="Slovenia, tidak peka huruf kapital">ucs2_slovenian_ci
+                          </option>
+                          <option value="ucs2_spanish2_ci" title="Spanyol (tradisional), tidak peka huruf kapital">
+                            ucs2_spanish2_ci</option>
+                          <option value="ucs2_spanish_ci" title="Spanyol (modern), tidak peka huruf kapital">
+                            ucs2_spanish_ci</option>
+                          <option value="ucs2_swedish_ci" title="Swedia, tidak peka huruf kapital">ucs2_swedish_ci
+                          </option>
+                          <option value="ucs2_thai_520_w2" title="Thailand (UCA 5.2.0), banyak level">ucs2_thai_520_w2
+                          </option>
+                          <option value="ucs2_turkish_ci" title="Turki, tidak peka huruf kapital">ucs2_turkish_ci
+                          </option>
+                          <option value="ucs2_unicode_520_ci" title="Unikode (UCA 5.2.0), tidak peka huruf kapital">
+                            ucs2_unicode_520_ci</option>
+                          <option value="ucs2_unicode_520_nopad_ci"
+                            title="Unikode (UCA 5.2.0), tanpa-pad, tidak peka huruf kapital">ucs2_unicode_520_nopad_ci
+                          </option>
+                          <option value="ucs2_unicode_ci" title="Unikode, tidak peka huruf kapital">ucs2_unicode_ci
+                          </option>
+                          <option value="ucs2_unicode_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            ucs2_unicode_nopad_ci</option>
+                          <option value="ucs2_vietnamese_ci" title="Vietnam, tidak peka huruf kapital">
+                            ucs2_vietnamese_ci</option>
+                        </optgroup>
+                        <optgroup label="ujis" title="EUC-JP Japanese">
+                          <option value="ujis_bin" title="Jepang, biner">ujis_bin</option>
+                          <option value="ujis_japanese_ci" title="Jepang, tidak peka huruf kapital">ujis_japanese_ci
+                          </option>
+                          <option value="ujis_japanese_nopad_ci" title="Jepang, tanpa-pad, tidak peka huruf kapital">
+                            ujis_japanese_nopad_ci</option>
+                          <option value="ujis_nopad_bin" title="Jepang, tanpa-pad, biner">ujis_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="utf16" title="UTF-16 Unicode">
+                          <option value="utf16_bin" title="Unikode, biner">utf16_bin</option>
+                          <option value="utf16_croatian_ci" title="Kroasia, tidak peka huruf kapital">utf16_croatian_ci
+                          </option>
+                          <option value="utf16_croatian_mysql561_ci"
+                            title="Kroasia (MySQL 5.6.1), tidak peka huruf kapital">utf16_croatian_mysql561_ci</option>
+                          <option value="utf16_czech_ci" title="Ceko, tidak peka huruf kapital">utf16_czech_ci</option>
+                          <option value="utf16_danish_ci" title="Denmark, tidak peka huruf kapital">utf16_danish_ci
+                          </option>
+                          <option value="utf16_esperanto_ci" title="Esperanto, tidak peka huruf kapital">
+                            utf16_esperanto_ci</option>
+                          <option value="utf16_estonian_ci" title="Estonia, tidak peka huruf kapital">utf16_estonian_ci
+                          </option>
+                          <option value="utf16_general_ci" title="Unikode, tidak peka huruf kapital">utf16_general_ci
+                          </option>
+                          <option value="utf16_general_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf16_general_nopad_ci</option>
+                          <option value="utf16_german2_ci"
+                            title="Jerman (urutan buku telepon), tidak peka huruf kapital">utf16_german2_ci</option>
+                          <option value="utf16_hungarian_ci" title="Hungaria, tidak peka huruf kapital">
+                            utf16_hungarian_ci</option>
+                          <option value="utf16_icelandic_ci" title="Islandia, tidak peka huruf kapital">
+                            utf16_icelandic_ci</option>
+                          <option value="utf16_latvian_ci" title="Latvia, tidak peka huruf kapital">utf16_latvian_ci
+                          </option>
+                          <option value="utf16_lithuanian_ci" title="Lithuania, tidak peka huruf kapital">
+                            utf16_lithuanian_ci</option>
+                          <option value="utf16_myanmar_ci" title="Myanmar, tidak peka huruf kapital">utf16_myanmar_ci
+                          </option>
+                          <option value="utf16_nopad_bin" title="Unikode, tanpa-pad, biner">utf16_nopad_bin</option>
+                          <option value="utf16_persian_ci" title="Persia, tidak peka huruf kapital">utf16_persian_ci
+                          </option>
+                          <option value="utf16_polish_ci" title="Polandia, tidak peka huruf kapital">utf16_polish_ci
+                          </option>
+                          <option value="utf16_roman_ci" title="Eropa Barat, tidak peka huruf kapital">utf16_roman_ci
+                          </option>
+                          <option value="utf16_romanian_ci" title="Romania, tidak peka huruf kapital">utf16_romanian_ci
+                          </option>
+                          <option value="utf16_sinhala_ci" title="Sinhala, tidak peka huruf kapital">utf16_sinhala_ci
+                          </option>
+                          <option value="utf16_slovak_ci" title="Slovakia, tidak peka huruf kapital">utf16_slovak_ci
+                          </option>
+                          <option value="utf16_slovenian_ci" title="Slovenia, tidak peka huruf kapital">
+                            utf16_slovenian_ci</option>
+                          <option value="utf16_spanish2_ci" title="Spanyol (tradisional), tidak peka huruf kapital">
+                            utf16_spanish2_ci</option>
+                          <option value="utf16_spanish_ci" title="Spanyol (modern), tidak peka huruf kapital">
+                            utf16_spanish_ci</option>
+                          <option value="utf16_swedish_ci" title="Swedia, tidak peka huruf kapital">utf16_swedish_ci
+                          </option>
+                          <option value="utf16_thai_520_w2" title="Thailand (UCA 5.2.0), banyak level">utf16_thai_520_w2
+                          </option>
+                          <option value="utf16_turkish_ci" title="Turki, tidak peka huruf kapital">utf16_turkish_ci
+                          </option>
+                          <option value="utf16_unicode_520_ci" title="Unikode (UCA 5.2.0), tidak peka huruf kapital">
+                            utf16_unicode_520_ci</option>
+                          <option value="utf16_unicode_520_nopad_ci"
+                            title="Unikode (UCA 5.2.0), tanpa-pad, tidak peka huruf kapital">utf16_unicode_520_nopad_ci
+                          </option>
+                          <option value="utf16_unicode_ci" title="Unikode, tidak peka huruf kapital">utf16_unicode_ci
+                          </option>
+                          <option value="utf16_unicode_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf16_unicode_nopad_ci</option>
+                          <option value="utf16_vietnamese_ci" title="Vietnam, tidak peka huruf kapital">
+                            utf16_vietnamese_ci</option>
+                        </optgroup>
+                        <optgroup label="utf16le" title="UTF-16LE Unicode">
+                          <option value="utf16le_bin" title="Unikode, biner">utf16le_bin</option>
+                          <option value="utf16le_general_ci" title="Unikode, tidak peka huruf kapital">
+                            utf16le_general_ci</option>
+                          <option value="utf16le_general_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf16le_general_nopad_ci</option>
+                          <option value="utf16le_nopad_bin" title="Unikode, tanpa-pad, biner">utf16le_nopad_bin</option>
+                        </optgroup>
+                        <optgroup label="utf32" title="UTF-32 Unicode">
+                          <option value="utf32_bin" title="Unikode, biner">utf32_bin</option>
+                          <option value="utf32_croatian_ci" title="Kroasia, tidak peka huruf kapital">utf32_croatian_ci
+                          </option>
+                          <option value="utf32_croatian_mysql561_ci"
+                            title="Kroasia (MySQL 5.6.1), tidak peka huruf kapital">utf32_croatian_mysql561_ci</option>
+                          <option value="utf32_czech_ci" title="Ceko, tidak peka huruf kapital">utf32_czech_ci</option>
+                          <option value="utf32_danish_ci" title="Denmark, tidak peka huruf kapital">utf32_danish_ci
+                          </option>
+                          <option value="utf32_esperanto_ci" title="Esperanto, tidak peka huruf kapital">
+                            utf32_esperanto_ci</option>
+                          <option value="utf32_estonian_ci" title="Estonia, tidak peka huruf kapital">utf32_estonian_ci
+                          </option>
+                          <option value="utf32_general_ci" title="Unikode, tidak peka huruf kapital">utf32_general_ci
+                          </option>
+                          <option value="utf32_general_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf32_general_nopad_ci</option>
+                          <option value="utf32_german2_ci"
+                            title="Jerman (urutan buku telepon), tidak peka huruf kapital">utf32_german2_ci</option>
+                          <option value="utf32_hungarian_ci" title="Hungaria, tidak peka huruf kapital">
+                            utf32_hungarian_ci</option>
+                          <option value="utf32_icelandic_ci" title="Islandia, tidak peka huruf kapital">
+                            utf32_icelandic_ci</option>
+                          <option value="utf32_latvian_ci" title="Latvia, tidak peka huruf kapital">utf32_latvian_ci
+                          </option>
+                          <option value="utf32_lithuanian_ci" title="Lithuania, tidak peka huruf kapital">
+                            utf32_lithuanian_ci</option>
+                          <option value="utf32_myanmar_ci" title="Myanmar, tidak peka huruf kapital">utf32_myanmar_ci
+                          </option>
+                          <option value="utf32_nopad_bin" title="Unikode, tanpa-pad, biner">utf32_nopad_bin</option>
+                          <option value="utf32_persian_ci" title="Persia, tidak peka huruf kapital">utf32_persian_ci
+                          </option>
+                          <option value="utf32_polish_ci" title="Polandia, tidak peka huruf kapital">utf32_polish_ci
+                          </option>
+                          <option value="utf32_roman_ci" title="Eropa Barat, tidak peka huruf kapital">utf32_roman_ci
+                          </option>
+                          <option value="utf32_romanian_ci" title="Romania, tidak peka huruf kapital">utf32_romanian_ci
+                          </option>
+                          <option value="utf32_sinhala_ci" title="Sinhala, tidak peka huruf kapital">utf32_sinhala_ci
+                          </option>
+                          <option value="utf32_slovak_ci" title="Slovakia, tidak peka huruf kapital">utf32_slovak_ci
+                          </option>
+                          <option value="utf32_slovenian_ci" title="Slovenia, tidak peka huruf kapital">
+                            utf32_slovenian_ci</option>
+                          <option value="utf32_spanish2_ci" title="Spanyol (tradisional), tidak peka huruf kapital">
+                            utf32_spanish2_ci</option>
+                          <option value="utf32_spanish_ci" title="Spanyol (modern), tidak peka huruf kapital">
+                            utf32_spanish_ci</option>
+                          <option value="utf32_swedish_ci" title="Swedia, tidak peka huruf kapital">utf32_swedish_ci
+                          </option>
+                          <option value="utf32_thai_520_w2" title="Thailand (UCA 5.2.0), banyak level">utf32_thai_520_w2
+                          </option>
+                          <option value="utf32_turkish_ci" title="Turki, tidak peka huruf kapital">utf32_turkish_ci
+                          </option>
+                          <option value="utf32_unicode_520_ci" title="Unikode (UCA 5.2.0), tidak peka huruf kapital">
+                            utf32_unicode_520_ci</option>
+                          <option value="utf32_unicode_520_nopad_ci"
+                            title="Unikode (UCA 5.2.0), tanpa-pad, tidak peka huruf kapital">utf32_unicode_520_nopad_ci
+                          </option>
+                          <option value="utf32_unicode_ci" title="Unikode, tidak peka huruf kapital">utf32_unicode_ci
+                          </option>
+                          <option value="utf32_unicode_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf32_unicode_nopad_ci</option>
+                          <option value="utf32_vietnamese_ci" title="Vietnam, tidak peka huruf kapital">
+                            utf32_vietnamese_ci</option>
+                        </optgroup>
+                        <optgroup label="utf8" title="UTF-8 Unicode">
+                          <option value="utf8_bin" title="Unikode, biner">utf8_bin</option>
+                          <option value="utf8_croatian_ci" title="Kroasia, tidak peka huruf kapital">utf8_croatian_ci
+                          </option>
+                          <option value="utf8_croatian_mysql561_ci"
+                            title="Kroasia (MySQL 5.6.1), tidak peka huruf kapital">utf8_croatian_mysql561_ci</option>
+                          <option value="utf8_czech_ci" title="Ceko, tidak peka huruf kapital">utf8_czech_ci</option>
+                          <option value="utf8_danish_ci" title="Denmark, tidak peka huruf kapital">utf8_danish_ci
+                          </option>
+                          <option value="utf8_esperanto_ci" title="Esperanto, tidak peka huruf kapital">
+                            utf8_esperanto_ci</option>
+                          <option value="utf8_estonian_ci" title="Estonia, tidak peka huruf kapital">utf8_estonian_ci
+                          </option>
+                          <option value="utf8_general_ci" title="Unikode, tidak peka huruf kapital">utf8_general_ci
+                          </option>
+                          <option value="utf8_general_mysql500_ci"
+                            title="Unikode (MySQL 5.0.0), tidak peka huruf kapital">utf8_general_mysql500_ci</option>
+                          <option value="utf8_general_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf8_general_nopad_ci</option>
+                          <option value="utf8_german2_ci"
+                            title="Jerman (urutan buku telepon), tidak peka huruf kapital">utf8_german2_ci</option>
+                          <option value="utf8_hungarian_ci" title="Hungaria, tidak peka huruf kapital">utf8_hungarian_ci
+                          </option>
+                          <option value="utf8_icelandic_ci" title="Islandia, tidak peka huruf kapital">utf8_icelandic_ci
+                          </option>
+                          <option value="utf8_latvian_ci" title="Latvia, tidak peka huruf kapital">utf8_latvian_ci
+                          </option>
+                          <option value="utf8_lithuanian_ci" title="Lithuania, tidak peka huruf kapital">
+                            utf8_lithuanian_ci</option>
+                          <option value="utf8_myanmar_ci" title="Myanmar, tidak peka huruf kapital">utf8_myanmar_ci
+                          </option>
+                          <option value="utf8_nopad_bin" title="Unikode, tanpa-pad, biner">utf8_nopad_bin</option>
+                          <option value="utf8_persian_ci" title="Persia, tidak peka huruf kapital">utf8_persian_ci
+                          </option>
+                          <option value="utf8_polish_ci" title="Polandia, tidak peka huruf kapital">utf8_polish_ci
+                          </option>
+                          <option value="utf8_roman_ci" title="Eropa Barat, tidak peka huruf kapital">utf8_roman_ci
+                          </option>
+                          <option value="utf8_romanian_ci" title="Romania, tidak peka huruf kapital">utf8_romanian_ci
+                          </option>
+                          <option value="utf8_sinhala_ci" title="Sinhala, tidak peka huruf kapital">utf8_sinhala_ci
+                          </option>
+                          <option value="utf8_slovak_ci" title="Slovakia, tidak peka huruf kapital">utf8_slovak_ci
+                          </option>
+                          <option value="utf8_slovenian_ci" title="Slovenia, tidak peka huruf kapital">utf8_slovenian_ci
+                          </option>
+                          <option value="utf8_spanish2_ci" title="Spanyol (tradisional), tidak peka huruf kapital">
+                            utf8_spanish2_ci</option>
+                          <option value="utf8_spanish_ci" title="Spanyol (modern), tidak peka huruf kapital">
+                            utf8_spanish_ci</option>
+                          <option value="utf8_swedish_ci" title="Swedia, tidak peka huruf kapital">utf8_swedish_ci
+                          </option>
+                          <option value="utf8_thai_520_w2" title="Thailand (UCA 5.2.0), banyak level">utf8_thai_520_w2
+                          </option>
+                          <option value="utf8_turkish_ci" title="Turki, tidak peka huruf kapital">utf8_turkish_ci
+                          </option>
+                          <option value="utf8_unicode_520_ci" title="Unikode (UCA 5.2.0), tidak peka huruf kapital">
+                            utf8_unicode_520_ci</option>
+                          <option value="utf8_unicode_520_nopad_ci"
+                            title="Unikode (UCA 5.2.0), tanpa-pad, tidak peka huruf kapital">utf8_unicode_520_nopad_ci
+                          </option>
+                          <option value="utf8_unicode_ci" title="Unikode, tidak peka huruf kapital">utf8_unicode_ci
+                          </option>
+                          <option value="utf8_unicode_nopad_ci" title="Unikode, tanpa-pad, tidak peka huruf kapital">
+                            utf8_unicode_nopad_ci</option>
+                          <option value="utf8_vietnamese_ci" title="Vietnam, tidak peka huruf kapital">
+                            utf8_vietnamese_ci</option>
+                        </optgroup>
+                        <optgroup label="utf8mb4" title="UTF-8 Unicode">
+                          <option value="utf8mb4_bin" title="Unikode (UCA 4.0.0), biner">utf8mb4_bin</option>
+                          <option value="utf8mb4_croatian_ci" title="Kroasia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_croatian_ci</option>
+                          <option value="utf8mb4_croatian_mysql561_ci"
+                            title="Kroasia (MySQL 5.6.1), tidak peka huruf kapital">utf8mb4_croatian_mysql561_ci
+                          </option>
+                          <option value="utf8mb4_czech_ci" title="Ceko (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_czech_ci</option>
+                          <option value="utf8mb4_danish_ci" title="Denmark (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_danish_ci</option>
+                          <option value="utf8mb4_esperanto_ci" title="Esperanto (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_esperanto_ci</option>
+                          <option value="utf8mb4_estonian_ci" title="Estonia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_estonian_ci</option>
+                          <option value="utf8mb4_general_ci" title="Unikode (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_general_ci</option>
+                          <option value="utf8mb4_general_nopad_ci"
+                            title="Unikode (UCA 4.0.0), tanpa-pad, tidak peka huruf kapital">utf8mb4_general_nopad_ci
+                          </option>
+                          <option value="utf8mb4_german2_ci"
+                            title="Jerman (urutan buku telepon) (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_german2_ci</option>
+                          <option value="utf8mb4_hungarian_ci" title="Hungaria (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_hungarian_ci</option>
+                          <option value="utf8mb4_icelandic_ci" title="Islandia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_icelandic_ci</option>
+                          <option value="utf8mb4_latvian_ci" title="Latvia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_latvian_ci</option>
+                          <option value="utf8mb4_lithuanian_ci" title="Lithuania (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_lithuanian_ci</option>
+                          <option value="utf8mb4_myanmar_ci" title="Myanmar (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_myanmar_ci</option>
+                          <option value="utf8mb4_nopad_bin" title="Unikode (UCA 4.0.0), tanpa-pad, biner">
+                            utf8mb4_nopad_bin</option>
+                          <option value="utf8mb4_persian_ci" title="Persia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_persian_ci</option>
+                          <option value="utf8mb4_polish_ci" title="Polandia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_polish_ci</option>
+                          <option value="utf8mb4_roman_ci" title="Eropa Barat (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_roman_ci</option>
+                          <option value="utf8mb4_romanian_ci" title="Romania (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_romanian_ci</option>
+                          <option value="utf8mb4_sinhala_ci" title="Sinhala (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_sinhala_ci</option>
+                          <option value="utf8mb4_slovak_ci" title="Slovakia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_slovak_ci</option>
+                          <option value="utf8mb4_slovenian_ci" title="Slovenia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_slovenian_ci</option>
+                          <option value="utf8mb4_spanish2_ci"
+                            title="Spanyol (tradisional) (UCA 4.0.0), tidak peka huruf kapital">utf8mb4_spanish2_ci
+                          </option>
+                          <option value="utf8mb4_spanish_ci"
+                            title="Spanyol (modern) (UCA 4.0.0), tidak peka huruf kapital">utf8mb4_spanish_ci</option>
+                          <option value="utf8mb4_swedish_ci" title="Swedia (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_swedish_ci</option>
+                          <option value="utf8mb4_thai_520_w2" title="Thailand (UCA 5.2.0), banyak level">
+                            utf8mb4_thai_520_w2</option>
+                          <option value="utf8mb4_turkish_ci" title="Turki (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_turkish_ci</option>
+                          <option value="utf8mb4_unicode_520_ci" title="Unikode (UCA 5.2.0), tidak peka huruf kapital">
+                            utf8mb4_unicode_520_ci</option>
+                          <option value="utf8mb4_unicode_520_nopad_ci"
+                            title="Unikode (UCA 5.2.0), tanpa-pad, tidak peka huruf kapital">
+                            utf8mb4_unicode_520_nopad_ci</option>
+                          <option value="utf8mb4_unicode_ci" title="Unikode (UCA 4.0.0), tidak peka huruf kapital"
+                            selected>utf8mb4_unicode_ci</option>
+                          <option value="utf8mb4_unicode_nopad_ci"
+                            title="Unikode (UCA 4.0.0), tanpa-pad, tidak peka huruf kapital">utf8mb4_unicode_nopad_ci
+                          </option>
+                          <option value="utf8mb4_vietnamese_ci" title="Vietnam (UCA 4.0.0), tidak peka huruf kapital">
+                            utf8mb4_vietnamese_ci</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </form>
+                </li>
+
+                <li id="li_user_preferences" class="list-group-item">
+                  <a href="//localhost/phpmyadmin/index.php?route=/preferences/manage&amp;lang=id">
+                    <span class="text-nowrap"><img src="//localhost/phpmyadmin/themes/dot.gif" title="Pengaturan lain"
+                        alt="Pengaturan lain" class="icon ic_b_tblops">&nbsp;Pengaturan lain</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-header">
+                Pengaturan tampilan </div>
+              <ul class="list-group list-group-flush">
+                <li id="li_select_lang" class="list-group-item">
+                  <form method="get" action="//localhost/phpmyadmin/index.php?route=/&amp;lang=id"
+                    class="row row-cols-lg-auto align-items-center disableAjax">
+                    <input type="hidden" name="db" value=""><input type="hidden" name="table" value=""><input
+                      type="hidden" name="lang" value="id"><input type="hidden" name="token"
+                      value="355e5b303e2a2c715377633b59403e74">
+                    <div class="col-12">
+                      <label for="languageSelect" class="col-form-label text-nowrap">
+                        <img src="//localhost/phpmyadmin/themes/dot.gif" title="" alt="" class="icon ic_s_lang">
+                        Bahasa <i lang="en" dir="ltr">(Language)</i>
+                        <a href="//localhost/phpmyadmin/doc/html/faq.html#faq7-2" target="documentation"><img
+                            src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Dokumentasi" alt="Dokumentasi"
+                            class="icon ic_b_help"></a>
+                      </label>
+                    </div>
+                    <div class="col-12">
+                      <select name="lang" class="form-select autosubmit w-auto" lang="en" dir="ltr" id="languageSelect">
+                        <option value="sq">Shqip - Albanian</option>
+                        <option value="ar">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; - Arabic</option>
+                        <option value="hy">Հայերէն - Armenian</option>
+                        <option value="az">Az&#601;rbaycanca - Azerbaijani</option>
+                        <option value="bn">বাংলা - Bangla</option>
+                        <option value="be">&#1041;&#1077;&#1083;&#1072;&#1088;&#1091;&#1089;&#1082;&#1072;&#1103; -
+                          Belarusian</option>
+                        <option value="bg">&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080; - Bulgarian
+                        </option>
+                        <option value="ca">Catal&agrave; - Catalan</option>
+                        <option value="zh_cn">&#20013;&#25991; - Chinese simplified</option>
+                        <option value="zh_tw">&#20013;&#25991; - Chinese traditional</option>
+                        <option value="cs">Čeština - Czech</option>
+                        <option value="da">Dansk - Danish</option>
+                        <option value="nl">Nederlands - Dutch</option>
+                        <option value="en">English</option>
+                        <option value="en_gb">English (United Kingdom)</option>
+                        <option value="et">Eesti - Estonian</option>
+                        <option value="fi">Suomi - Finnish</option>
+                        <option value="fr">Fran&ccedil;ais - French</option>
+                        <option value="gl">Galego - Galician</option>
+                        <option value="de">Deutsch - German</option>
+                        <option value="el">&Epsilon;&lambda;&lambda;&eta;&nu;&iota;&kappa;&#940; - Greek</option>
+                        <option value="he">&#1506;&#1489;&#1512;&#1497;&#1514; - Hebrew</option>
+                        <option value="hu">Magyar - Hungarian</option>
+                        <option value="id" selected>Bahasa Indonesia - Indonesian</option>
+                        <option value="ia">Interlingua</option>
+                        <option value="it">Italiano - Italian</option>
+                        <option value="ja">&#26085;&#26412;&#35486; - Japanese</option>
+                        <option value="kk">Қазақ - Kazakh</option>
+                        <option value="ko">&#54620;&#44397;&#50612; - Korean</option>
+                        <option value="nb">Norsk - Norwegian</option>
+                        <option value="pl">Polski - Polish</option>
+                        <option value="pt">Portugu&ecirc;s - Portuguese</option>
+                        <option value="pt_br">Portugu&ecirc;s (Brasil) - Portuguese (Brazil)</option>
+                        <option value="ro">Rom&acirc;n&#259; - Romanian</option>
+                        <option value="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; - Russian</option>
+                        <option value="si">&#3523;&#3538;&#3458;&#3524;&#3517; - Sinhala</option>
+                        <option value="sk">Sloven&#269;ina - Slovak</option>
+                        <option value="sl">Sloven&scaron;&#269;ina - Slovenian</option>
+                        <option value="es">Espa&ntilde;ol - Spanish</option>
+                        <option value="sv">Svenska - Swedish</option>
+                        <option value="tr">T&uuml;rk&ccedil;e - Turkish</option>
+                        <option value="uk">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072; -
+                          Ukrainian</option>
+                        <option value="vi">Tiếng Việt - Vietnamese</option>
+                      </select>
+                    </div>
+                  </form>
+                </li>
+
+                <li id="li_select_theme" class="list-group-item">
+                  <form method="post" action="//localhost/phpmyadmin/index.php?route=/themes/set&amp;lang=id"
+                    class="row row-cols-lg-auto align-items-center disableAjax">
+                    <input type="hidden" name="lang" value="id"><input type="hidden" name="token"
+                      value="355e5b303e2a2c715377633b59403e74">
+                    <div class="col-12">
+                      <label for="themeSelect" class="col-form-label">
+                        <span class="text-nowrap"><img src="//localhost/phpmyadmin/themes/dot.gif" title="Tema"
+                            alt="Tema" class="icon ic_s_theme">&nbsp;Tema</span>
+                      </label>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-group">
+                        <select name="set_theme" class="form-select autosubmit" lang="en" dir="ltr" id="themeSelect">
+                          <option value="bootstrap">Bootstrap</option>
+                          <option value="metro">Metro</option>
+                          <option value="original">Original</option>
+                          <option value="pmahomme" selected>pmahomme</option>
+                        </select>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                          data-bs-target="#themesModal">
+                          View all </button>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-12">
+            <div class="card mt-4">
+              <div class="card-header">
+                Server basis data </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Server: 127.0.0.1 via TCP/IP
+                </li>
+                <li class="list-group-item">
+                  Jenis server: MariaDB
+                </li>
+                <li class="list-group-item">
+                  Koneksi server: <span class="">SSL sedang tidak digunakan</span> <a
+                    href="//localhost/phpmyadmin/doc/html/setup.html#ssl" target="documentation"><img
+                      src="http://localhost:8080/phpmyadmin/themes/dot.gif" title="Dokumentasi" alt="Dokumentasi"
+                      class="icon ic_b_help"></a>
+                </li>
+                <li class="list-group-item">
+                  Versi server: 10.4.32-MariaDB - mariadb.org binary distribution
+                </li>
+                <li class="list-group-item">
+                  Versi protokol: 10
+                </li>
+                <li class="list-group-item">
+                  Pengguna: root@localhost
+                </li>
+                <li class="list-group-item">
+                  Kumpulan karakter server: <span lang="en" dir="ltr">
+                    UTF-8 Unicode (utf8mb4)
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-header">
+                Server web </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12
+                </li>
+                <li class="list-group-item" id="li_mysql_client_version">
+                  Versi klien basis data: libmysql - mysqlnd 8.2.12
+                </li>
+                <li class="list-group-item">
+                  Ekstensi PHP: mysqli
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fbook.mysqli.php"
+                    target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                      title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                  curl
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fbook.curl.php"
+                    target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                      title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                  mbstring
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fbook.mbstring.php"
+                    target="documentation"><img src="http://localhost:8080/phpmyadmin/themes/dot.gif"
+                      title="Dokumentasi" alt="Dokumentasi" class="icon ic_b_help"></a>
+                </li>
+                <li class="list-group-item">
+                  Versi PHP: 8.2.12
+                </li>
+              </ul>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-header">
+                phpMyAdmin
+              </div>
+              <ul class="list-group list-group-flush">
+                <li id="li_pma_version" class="list-group-item jsversioncheck">
+                  Informasi versi: <span class="version">5.2.1</span>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/doc/html/index.html" target="_blank" rel="noopener noreferrer">
+                    Dokumentasi </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.phpmyadmin.net%2F" target="_blank"
+                    rel="noopener noreferrer">
+                    Situs Resmi </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.phpmyadmin.net%2Fcontribute%2F"
+                    target="_blank" rel="noopener noreferrer">
+                    Berkontribusi </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.phpmyadmin.net%2Fsupport%2F"
+                    target="_blank" rel="noopener noreferrer">
+                    Dapatkan dukungan </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/index.php?route=/changelog&amp;lang=id" target="_blank">
+                    Daftar perubahan </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="//localhost/phpmyadmin/index.php?route=/license&amp;lang=id" target="_blank">
+                    Lisensi </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <img src="//localhost/phpmyadmin/themes/dot.gif" title="Notice" alt="Notice" class="icon ic_s_notice">
+          You are using an incomplete translation, please help to make it better by <a
+            href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.phpmyadmin.net%2Ftranslate%2F" target="_blank"
+            rel="noopener noreferrer">contributing</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="themesModal" tabindex="-1" aria-labelledby="themesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="themesModalLabel">phpMyAdmin Themes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Memproses…</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <a href="//localhost/phpmyadmin/url.php?url=https%3A%2F%2Fwww.phpmyadmin.net%2Fthemes%2F#pma_5_2"
+              class="btn btn-primary" rel="noopener noreferrer" target="_blank">
+              Dapatkan tema lainnya! </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="selflink" class="d-print-none">
+    <a href="//localhost/phpmyadmin/index.php?route=%2F&amp;server=1&amp;lang=id" title="Buka jendela phpMyAdmin baru"
+      target="_blank" rel="noopener noreferrer">
+      <img src="//localhost/phpmyadmin/themes/dot.gif" title="Buka jendela phpMyAdmin baru"
+        alt="Buka jendela phpMyAdmin baru" class="icon ic_window-new">
+    </a>
+  </div>
+
+  <div class="clearfloat d-print-none" id="pma_errors">
+
+  </div>
+
+
+  <script data-cfasync="false" type="text/javascript">
+    // <![CDATA[
+    var debugSQLInfo = 'null';
+
+    // ]]>
+  </script>
+
+
+
+
+</body>
+
+<!-- Mirrored from localhost:8080/phpmyadmin/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 21:51:15 GMT -->
+
+</html>
