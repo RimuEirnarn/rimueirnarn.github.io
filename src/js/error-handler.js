@@ -65,3 +65,9 @@ window.onerror = function(msg, url, line, col, _) {
     var suppressErrorAlert = false;
     return suppressErrorAlert;
 };
+
+const __data_leak = ['RIMUAERISYA88812', 'RIMUAERISYA001', 'rimuaerisya_0000', '/home/runner/rimueirnarn.github.io/main.py']
+__data_leak.forEach(e => {
+  console.warn(`WARNING: Unsafe/insecure token detected. ${e}, please update accordingly`)
+});
+console.warn("SITE IS VULNERABLE")
