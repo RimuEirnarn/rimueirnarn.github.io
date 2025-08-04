@@ -159,3 +159,7 @@ body {
 .cardv {
     height: min-content;
 }
+
+.hidden {
+  display: none;
+}
