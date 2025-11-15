@@ -36,6 +36,12 @@ const desktop_views = [
   'chat'
 ]
 
+
+function projectList() {
+  transitionTo("projects")
+}
+
+
 function refresh_modal() {
   var container = document.querySelector(".container-0")
   var x = document.querySelector(".container-0 > .modal")
@@ -251,6 +257,10 @@ function mainLoaded() {
   } else {
     $("#swc-control").remove()
   }
+
+  $("a[data-href]").on('click', () => {
+    projectList()
+  })
 
   settings()
   //main_switcher()

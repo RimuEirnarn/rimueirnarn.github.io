@@ -1,0 +1,15 @@
+<title>RimuEirnarn - Projects</title>
+<div class="card text-white cmain-background mb-3 shadow-lg">
+  <div class="card-body">
+    <ul id="abc"></ul>
+  </div>
+</div>
+
+<script>
+  const projects = [
+    {url: 'https://github.com/RimuEirnarn/LuminaDB', title: "LuminaDB", content: "Easy to use SQLite ORM for your Python apps!"}
+  ]
+  for (let i of projects) {
+    $("#abc").prepend(`<li><a href="${i.url}"> ${i.title} ${i.content}</li>`)
+  }
+</script>
