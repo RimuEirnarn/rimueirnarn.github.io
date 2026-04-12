@@ -1,0 +1,107 @@
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  background: repeating-linear-gradient(rgba(18, 16, 16, 0) 0px,
+      rgba(18, 16, 16, 0) 2px,
+      rgba(18, 16, 16, 0.5) 3px);
+  pointer-events: none;
+  /* Allows you to click things underneath */
+  z-index: 10;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+
+  5% {
+    opacity: 0.34769;
+  }
+
+  10% {
+    opacity: 0.23604;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+
+  /* 0% { opacity: 0.3; } */
+  /* 5% { opacity: 0.4; }
+  10% { opacity: 0.5; }
+  100% { opacity: 0.9; } */
+}
+
+.crt-flicker {
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  animation: flicker 0.15s infinite;
+}
+
+.crt-pixels {
+  background-size: 3px 3px;
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  opacity: 0.05;
+}
+
+.crt-container {
+  background: #121010;
+  color: #32ff32;
+  /* Classic Phosphor Green */
+  text-shadow: 0 0 5px #32ff32;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+.cyrene {
+  color: #F480D2;
+}
+
+.content {
+  text-align: center;
+  line-height: 2;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 98vh;
+  height: 98dvh;
+}
+
+.no-center {
+  align-items: normal !important;
+  text-align: left !important;
+  justify-content: left;
+}
