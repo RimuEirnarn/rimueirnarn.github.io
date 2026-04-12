@@ -7,9 +7,12 @@ await (async () => {
     } catch (_) {
         data = "ERROR: Network issues"
     }
-    document.querySelector("#content").innerHTML = data
+    const content = document.querySelector("#content")
+    content.innerHTML = data
+    try {
+        content.removeAttribute("data-highlighted")
+    } catch {}
+    if (hljs) {
+        hljs.highlightAll()
+    }
 })()
-
-if (hljs) {
-    hljs.highlightAll()
-}
