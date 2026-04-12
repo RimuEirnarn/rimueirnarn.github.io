@@ -7,3 +7,4 @@ start.sh
 __pycache__
 /.status/dist
 !/public/*
+/public/world/main.py
