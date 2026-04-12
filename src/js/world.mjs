@@ -9,3 +9,7 @@ await (async () => {
     }
     document.querySelector("#content").innerHTML = data
 })()
+
+if (hljs) {
+    hljs.highlightAll()
+}

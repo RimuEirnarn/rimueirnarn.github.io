@@ -105,3 +105,11 @@ html {
   text-align: left !important;
   justify-content: left;
 }
+
+pre, code {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0;
+}

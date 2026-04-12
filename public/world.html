@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="/static/js/world.mjs" defer type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
   <link rel="stylesheet" href="/static/css/crt.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/dark.min.css">
 </head>
-<body class="crt-overlay">
-  <div class="crt-container">
+<body class="crt-overlay no-center">
+  <div class="crt-container no-center">
     <div class="scanlines"></div>
-    <div class="content" id="content"></div>
+    <div class="content no-center">
+      <pre><code id="content">
+print("Hello, Cyrene")
+      </code></pre>
+    </div>
   </div>
+  <script defer>
+    hljs.highlightAll()
+  </script>
 </body>
 </html>
